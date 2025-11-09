@@ -1,4 +1,5 @@
-import { useState, useEffect, FC } from 'react';
+import { useState, useEffect } from 'react';
+import type { FC } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X, Languages } from 'lucide-react';
 import { useTranslation } from 'react-i18next';

@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react';
+
 // API Types
 export interface ContactFormData {
   name: string;
@@ -24,7 +26,7 @@ export interface NavItem {
 }
 
 export interface ServiceItem {
-  icon: JSX.Element;
+  icon: ReactNode;
   title: string;
   description: string;
 }
@@ -35,13 +37,13 @@ export interface TechnologyItem {
 }
 
 export interface ReasonItem {
-  icon: JSX.Element;
+  icon: ReactNode;
   title: string;
   description: string;
 }
 
 export interface CardItem {
-  icon: JSX.Element;
+  icon: ReactNode;
   title: string;
   description: string;
 }

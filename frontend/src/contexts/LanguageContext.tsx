@@ -1,4 +1,5 @@
-import { createContext, useContext, useEffect, useState, ReactNode, FC } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
+import type { ReactNode, FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { LanguageContextType, SupportedLanguage } from '../types';
 

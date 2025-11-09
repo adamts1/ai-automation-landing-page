@@ -1,4 +1,5 @@
-import { useState, FC, FormEvent, ChangeEvent } from 'react';
+import { useState } from 'react';
+import type { FC, FormEvent, ChangeEvent } from 'react';
 import { motion } from 'framer-motion';
 import { Send, MessageCircle, Loader2 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';

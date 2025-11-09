@@ -1,3 +1,4 @@
+import type { FC } from 'react';
 import { motion } from 'framer-motion';
 import { TrendingUp, Globe, Heart, PhoneCall } from 'lucide-react';
 import { useTranslation } from 'react-i18next';

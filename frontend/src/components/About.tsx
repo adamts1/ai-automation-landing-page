@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 import { motion } from 'framer-motion';
 import { Globe2, Users, Target } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
