@@ -1,0 +1,127 @@
+{
+  "header": {
+    "logo": "AI Automation Agency",
+    "services": "Services",
+    "about": "About",
+    "technologies": "Technologies",
+    "whyUs": "Why Us",
+    "contact": "Contact",
+    "getStarted": "Get Started"
+  },
+  "hero": {
+    "badge": "AI-Powered Solutions",
+    "title": "Developing AI-Based Automation Solutions",
+    "subtitle": "We build intelligent automations and chatbots that boost efficiency and ROI instantly.",
+    "cta": "Get Free Consultation"
+  },
+  "about": {
+    "title": "About Us",
+    "description1": "We're a global automation agency helping corporations worldwide implement AI-driven solutions. Combining deep tech knowledge with personal, professional service.",
+    "description2": "Our team of experts specializes in creating cutting-edge automation solutions that deliver measurable results. From small businesses to enterprise corporations, we've helped hundreds of clients transform their operations with AI.",
+    "stats": {
+      "projects": "Projects",
+      "countries": "Countries",
+      "satisfaction": "Satisfaction"
+    },
+    "cards": {
+      "globalReach": {
+        "title": "Global Reach",
+        "description": "Serving clients across 50+ countries"
+      },
+      "expertTeam": {
+        "title": "Expert Team",
+        "description": "Specialized AI engineers & consultants"
+      },
+      "resultDriven": {
+        "title": "Result-Driven",
+        "description": "Focused on delivering measurable ROI"
+      },
+      "fastDeploy": {
+        "title": "Fast Deploy",
+        "description": "Quick implementation & onboarding"
+      }
+    }
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive AI solutions tailored to transform your business operations",
+    "items": {
+      "automation": {
+        "title": "AI Business Automation",
+        "description": "Streamline operations with intelligent automation solutions that reduce costs and boost productivity across your entire organization."
+      },
+      "chatbots": {
+        "title": "Smart Chatbots",
+        "description": "Deploy conversational AI across WhatsApp, Instagram, Telegram, Messenger, and more to engage customers 24/7."
+      },
+      "integrations": {
+        "title": "Custom Integrations",
+        "description": "Smooth and fast integration with all your systems and platforms."
+      }
+    }
+  },
+  "technologies": {
+    "title": "Our Technology Stack",
+    "subtitle": "We leverage cutting-edge technologies to build robust and scalable solutions",
+    "description": "Our tech stack is carefully chosen to ensure maximum performance, scalability, and reliability. We stay up-to-date with the latest technologies to provide you with the best solutions."
+  },
+  "whyUs": {
+    "title": "Why Choose Us",
+    "subtitle": "We deliver results that matter to your business",
+    "reasons": {
+      "roi": {
+        "title": "Instant ROI",
+        "description": "See immediate returns on investment with automated processes that start working from day one."
+      },
+      "global": {
+        "title": "Global Experience",
+        "description": "Proven track record serving Fortune 500 companies and startups across 50+ countries."
+      },
+      "service": {
+        "title": "Personal & Professional Service",
+        "description": "Dedicated support team ensuring your success with personalized attention and expertise."
+      },
+      "consultation": {
+        "title": "Free Consultation",
+        "description": "Get expert advice and strategic planning at no cost. We analyze your needs before you commit."
+      }
+    }
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "Ready to transform your business? Contact us for a free consultation",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "message": "Message",
+      "messagePlaceholder": "Tell us about your project",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "success": "✓ Message Sent!",
+      "error": "Failed to send message. Please try again."
+    },
+    "info": {
+      "title": "Let's Build Something Amazing",
+      "description": "Our team is ready to help you implement AI solutions that drive real results. Get in touch today and let's discuss how we can transform your business.",
+      "email": "adamtsityat@gmail.com",
+      "whatsapp": "24/7 WhatsApp Support",
+      "coverage": "Global Coverage",
+      "consultation": {
+        "title": "Free Consultation",
+        "description": "Schedule a free 30-minute consultation to discuss your automation needs",
+        "button": "Book Now"
+      }
+    }
+  },
+  "footer": {
+    "description": "Transforming businesses worldwide with cutting-edge AI automation solutions and intelligent chatbots.",
+    "quickLinks": "Quick Links",
+    "contact": "Contact",
+    "phone": "+1 (555) 123-4567",
+    "coverage": "Global Coverage",
+    "copyright": "AI Automation Agency. All rights reserved."
+  }
+}
+
