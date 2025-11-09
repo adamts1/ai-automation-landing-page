@@ -3,8 +3,8 @@ import { initReactI18next } from 'react-i18next';
 import enTranslations from './translations/en.json';
 import heTranslations from './translations/he.json';
 
-// Get saved language or default to 'en'
-const savedLanguage = localStorage.getItem('language') || 'en';
+// Get saved language or default to 'he' (Hebrew)
+const savedLanguage = localStorage.getItem('language') || 'he';
 
 i18n
   .use(initReactI18next)
@@ -18,7 +18,7 @@ i18n
       },
     },
     lng: savedLanguage,
-    fallbackLng: 'en',
+    fallbackLng: 'he',
     interpolation: {
       escapeValue: false,
     },

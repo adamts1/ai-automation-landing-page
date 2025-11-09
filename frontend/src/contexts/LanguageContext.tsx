@@ -23,7 +23,7 @@ export const LanguageProvider: FC<LanguageProviderProps> = ({ children }) => {
   const changeLanguage = (lang: SupportedLanguage): void => {
     i18n.changeLanguage(lang);
     setLanguage(lang);
-    setIsRTL(lang === 'en');
+    setIsRTL(lang === 'he');
     localStorage.setItem('language', lang);
   };
 
