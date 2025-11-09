@@ -130,12 +130,15 @@ const Header: FC = () => {
               <span className="font-medium">{language === 'en' ? 'עברית' : 'English'}</span>
             </button>
 
-            <button
-              onClick={() => scrollToSection('contact')}
-              className="w-full mx-4 mt-2 px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full"
-            >
-              {t('header.getStarted')}
-            </button>
+            {/* Mobile Get Started Button */}
+            <div className="px-4 pt-3 pb-2 border-t border-gray-200">
+              <button
+                onClick={() => scrollToSection('contact')}
+                className="w-full px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold hover:shadow-lg transition-all"
+              >
+                {t('header.getStarted')}
+              </button>
+            </div>
           </motion.nav>
         )}
       </div>
