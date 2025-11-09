@@ -100,7 +100,9 @@
       "send": "Send Message",
       "sending": "Sending...",
       "success": "✓ Message Sent!",
-      "error": "Failed to send message. Please try again."
+      "error": "Failed to send message. Please try again.",
+      "successToast": "✅ Message sent successfully! We'll get back to you soon.",
+      "errorToast": "❌ Failed to send message. Please try again or contact us directly."
     },
     "info": {
       "title": "Let's Build Something Amazing",

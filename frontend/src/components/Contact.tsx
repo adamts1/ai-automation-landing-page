@@ -1,8 +1,11 @@
 import { useState, FC, FormEvent, ChangeEvent } from 'react';
 import { motion } from 'framer-motion';
-import { Send, MessageCircle } from 'lucide-react';
+import { Send, MessageCircle, Loader2 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import type { ContactFormData, ApiResponse, ContactSubmitResponse, FormStatus } from '../types';
+import emailjs from '@emailjs/browser';
+import toast, { Toaster } from 'react-hot-toast';
+import { EMAILJS_CONFIG } from '../config/emailjs';
+import type { ContactFormData, FormStatus } from '../types';
 
 const Contact: FC = () => {
   const { t } = useTranslation();
@@ -20,28 +23,57 @@ const Contact: FC = () => {
     setStatus('loading');
 
     try {
-      const response = await fetch('http://localhost:5000/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
+      // Send email using EmailJS
+      const result = await emailjs.send(
+        EMAILJS_CONFIG.SERVICE_ID,
+        EMAILJS_CONFIG.TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_name: 'AI Automation Team', // You can customize this
         },
-        body: JSON.stringify(formData),
-      });
+        EMAILJS_CONFIG.PUBLIC_KEY
+      );
 
-      if (response.ok) {
-        const data: ApiResponse<ContactSubmitResponse> = await response.json();
-        console.log('Success:', data);
-        setStatus('success');
-        setFormData({ name: '', email: '', message: '' });
-        setTimeout(() => setStatus('idle'), 3000);
-      } else {
-        const errorData = await response.json();
-        console.error('Error response:', errorData);
-        setStatus('error');
-      }
+      console.log('Email sent successfully:', result.text);
+      setStatus('success');
+      
+      // Show success toast
+      toast.success(t('contact.form.successToast') || 'Message sent successfully! We\'ll get back to you soon.', {
+        duration: 4000,
+        style: {
+          background: '#10b981',
+          color: '#fff',
+          fontWeight: '600',
+        },
+        iconTheme: {
+          primary: '#fff',
+          secondary: '#10b981',
+        },
+      });
+      
+      setFormData({ name: '', email: '', message: '' });
+      setTimeout(() => setStatus('idle'), 1000);
     } catch (error) {
-      console.error('Network error:', error);
+      console.error('Failed to send email:', error);
       setStatus('error');
+      
+      // Show error toast
+      toast.error(t('contact.form.errorToast') || 'Failed to send message. Please try again or contact us directly.', {
+        duration: 5000,
+        style: {
+          background: '#ef4444',
+          color: '#fff',
+          fontWeight: '600',
+        },
+        iconTheme: {
+          primary: '#fff',
+          secondary: '#ef4444',
+        },
+      });
+      
+      setTimeout(() => setStatus('idle'), 1000);
     }
   };
 
@@ -135,16 +167,17 @@ const Contact: FC = () => {
               </div>
 
               <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                whileHover={{ scale: status === 'loading' ? 1 : 1.02 }}
+                whileTap={{ scale: status === 'loading' ? 1 : 0.98 }}
                 type="submit"
                 disabled={status === 'loading'}
-                className="w-full px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg font-semibold flex items-center justify-center gap-2 hover:shadow-lg transition-all disabled:opacity-50"
+                className="w-full px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg font-semibold flex items-center justify-center gap-2 hover:shadow-lg transition-all disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 {status === 'loading' ? (
-                  t('contact.form.sending')
-                ) : status === 'success' ? (
-                  t('contact.form.success')
+                  <>
+                    <Loader2 size={20} className="animate-spin" />
+                    {t('contact.form.sending')}
+                  </>
                 ) : (
                   <>
                     {t('contact.form.send')}
@@ -152,12 +185,6 @@ const Contact: FC = () => {
                   </>
                 )}
               </motion.button>
-
-              {status === 'error' && (
-                <p className="text-red-400 text-center">
-                  {t('contact.form.error')}
-                </p>
-              )}
             </form>
           </motion.div>
 
@@ -216,6 +243,22 @@ const Contact: FC = () => {
       >
         <MessageCircle size={32} />
       </motion.a>
+
+      {/* Toast Notifications */}
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+        gutter={8}
+        toastOptions={{
+          className: '',
+          duration: 4000,
+          style: {
+            borderRadius: '10px',
+            padding: '16px',
+            fontSize: '16px',
+          },
+        }}
+      />
     </section>
   );
 };
