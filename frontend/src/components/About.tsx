@@ -13,7 +13,7 @@ const About: FC = () => {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
-  
+
   return (
     <section id="about" className="py-8 bg-white">
       <div className="max-w-5xl mx-auto px-4">
@@ -24,9 +24,9 @@ const About: FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="flex flex-col md:flex-row items-center md:items-start gap-6 mb-8"
+            className="flex flex-row justify-center items-center mb-8"
           >
-            {/* Circular Profile Image */}
+            {/* Circular Profile Image - centered */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -34,7 +34,7 @@ const About: FC = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="flex-shrink-0"
             >
-              <div className="w-32 h-32 md:w-40 md:h-40 rounded-full shadow-xl overflow-hidden border-4 border-white ring-2 ring-gray-200">
+              <div className="w-24 h-24 md:w-40 md:h-40 rounded-full shadow-xl overflow-hidden border-4 border-white ring-2 ring-gray-200">
                 <img
                   src={profileImage}
                   alt="Adam Tsityat"
@@ -42,13 +42,6 @@ const About: FC = () => {
                 />
               </div>
             </motion.div>
-
-            {/* Title */}
-            <div className="flex-1 text-center md:text-right rtl:text-right">
-              <h2 className="text-4xl md:text-5xl font-bold gradient-text">
-                {t('about.title')}
-              </h2>
-            </div>
           </motion.div>
 
           {/* Text Content */}
@@ -59,31 +52,31 @@ const About: FC = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="space-y-6"
           >
-            
+
             <p className="text-lg text-gray-700 leading-relaxed">
               {t('about.description1')}
             </p>
-            
+
             <p className="text-lg text-gray-700 leading-relaxed font-semibold">
               {t('about.description2')}
             </p>
-            
+
             <p className="text-lg text-gray-700 leading-relaxed">
               {t('about.description3')}
             </p>
-            
+
             <p className="text-lg text-gray-700 leading-relaxed">
               {t('about.description4')}
             </p>
-            
+
             <p className="text-lg text-gray-700 leading-relaxed">
               {t('about.description5')}
             </p>
-            
+
             <p className="text-lg text-gray-700 leading-relaxed">
               {t('about.description6')}
             </p>
-            
+
             <div className="space-y-2">
               <p className="text-lg text-gray-700 leading-relaxed font-semibold">
                 {t('about.description7')}

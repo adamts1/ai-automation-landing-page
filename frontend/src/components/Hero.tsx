@@ -43,7 +43,6 @@ const Hero: FC = () => {
 
       {/* Content */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -81,30 +80,7 @@ const Hero: FC = () => {
           </motion.div>
 
           {/* Image/Illustration */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="hidden md:block"
-          >
-            <div className="relative">
-              <motion.div
-                animate={{ y: [0, -20, 0] }}
-                transition={{ duration: 4, repeat: Infinity }}
-                className="w-full h-96 bg-white/10 backdrop-blur-sm rounded-3xl shadow-2xl flex items-center justify-center"
-              >
-                <div className="text-center p-8">
-                  <motion.div
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                    className="w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-r from-blue-400 to-purple-400 opacity-30"
-                  />
-                  <Sparkles size={64} className="mx-auto text-white" />
-                </div>
-              </motion.div>
-            </div>
-          </motion.div>
-        </div>
+
       </div>
 
       {/* Scroll Indicator */}
