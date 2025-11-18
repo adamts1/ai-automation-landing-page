@@ -62,7 +62,7 @@ const Hero: FC = () => {
             </motion.div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-              {t('hero.title')}{' '}
+              {t('hero.title')}
             </h1>
 
             <p className="text-lg sm:text-xl text-white/90 mb-8 max-w-2xl">

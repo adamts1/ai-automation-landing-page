@@ -14,7 +14,8 @@ const Contact: FC = () => {
   const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     email: '',
-    message: '',
+    phone: '',
+    description: '',
   });
   
   const [status, setStatus] = useState<FormStatus>('idle');
@@ -31,7 +32,8 @@ const Contact: FC = () => {
         {
           from_name: formData.name,
           from_email: formData.email,
-          message: formData.message,
+          from_phone: formData.phone,
+          message: formData.description,
           to_name: 'AI Automation Team', // You can customize this
         },
         EMAILJS_CONFIG.PUBLIC_KEY
@@ -54,7 +56,7 @@ const Contact: FC = () => {
         },
       });
       
-      setFormData({ name: '', email: '', message: '' });
+      setFormData({ name: '', email: '', phone: '', description: '' });
       setTimeout(() => setStatus('idle'), 1000);
     } catch (error) {
       console.error('Failed to send email:', error);
@@ -110,13 +112,14 @@ const Contact: FC = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           {/* Contact Form */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="max-w-2xl mx-auto"
           >
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
@@ -152,18 +155,34 @@ const Contact: FC = () => {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-2">
-                  {t('contact.form.message')}
+                <label htmlFor="phone" className="block text-sm font-medium mb-2">
+                  {t('contact.form.phone')}
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500 transition-colors"
+                  placeholder={t('contact.form.phonePlaceholder')}
+                />
+              </div>
+
+              <div>
+                <label htmlFor="description" className="block text-sm font-medium mb-2">
+                  {t('contact.form.description')}
                 </label>
                 <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
+                  id="description"
+                  name="description"
+                  value={formData.description}
                   onChange={handleChange}
                   required
                   rows={5}
                   className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500 transition-colors resize-none"
-                  placeholder={t('contact.form.messagePlaceholder')}
+                  placeholder={t('contact.form.descriptionPlaceholder')}
                 />
               </div>
 
@@ -187,46 +206,6 @@ const Contact: FC = () => {
                 )}
               </motion.button>
             </form>
-          </motion.div>
-
-          {/* Contact Info */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="space-y-8"
-          >
-            <div className="bg-gray-800 p-8 rounded-2xl">
-              <h3 className="text-2xl font-bold mb-4">{t('contact.info.title')}</h3>
-              <p className="text-gray-300 mb-6">
-                {t('contact.info.description')}
-              </p>
-              <ul className="space-y-4 text-gray-300">
-                <li className="flex items-center gap-3">
-                  <span className="text-2xl">📧</span>
-                  <span>{t('contact.info.email')}</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <span className="text-2xl">💬</span>
-                  <span>{t('contact.info.whatsapp')}</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <span className="text-2xl">🌍</span>
-                  <span>{t('contact.info.coverage')}</span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="bg-gradient-to-br from-blue-600 to-purple-600 p-8 rounded-2xl">
-              <h4 className="text-xl font-bold mb-2">{t('contact.info.consultation.title')}</h4>
-              <p className="text-white/90 mb-4">
-                {t('contact.info.consultation.description')}
-              </p>
-              <button className="px-6 py-3 bg-white text-purple-700 rounded-lg font-semibold hover:shadow-lg transition-all">
-                {t('contact.info.consultation.button')}
-              </button>
-            </div>
           </motion.div>
         </div>
       </div>

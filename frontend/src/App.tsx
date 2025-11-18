@@ -2,9 +2,8 @@ import type { FC } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
+import VideoDemo from './components/VideoDemo';
 import About from './components/About';
-import Technologies from './components/Technologies';
-import WhyChooseUs from './components/WhyChooseUs';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -14,9 +13,8 @@ const App: FC = () => {
       <Header />
       <Hero />
       <Services />
+      <VideoDemo />
       <About />
-      <Technologies />
-      <WhyChooseUs />
       <Contact />
       <Footer />
     </div>

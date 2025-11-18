@@ -36,9 +36,8 @@ const Header: FC = () => {
 
   const navItems: NavItem[] = [
     { label: t('header.services'), id: 'services' },
+    { label: t('header.video'), id: 'video' },
     { label: t('header.about'), id: 'about' },
-    { label: t('header.technologies'), id: 'technologies' },
-    { label: t('header.whyUs'), id: 'why-us' },
     { label: t('header.contact'), id: 'contact' },
   ];
 

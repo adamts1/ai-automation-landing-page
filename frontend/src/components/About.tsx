@@ -1,87 +1,107 @@
 import type { FC } from 'react';
 import { motion } from 'framer-motion';
-import { Globe2, Users, Target } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import profileImage from '../assets/profile.png';
 
 const About: FC = () => {
   const { t } = useTranslation();
+
+  const scrollToContact = (): void => {
+    const element: HTMLElement | null = document.getElementById('contact');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   
   return (
-    <section id="about" className="py-20 bg-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Text Content */}
+    <section id="about" className="py-8 bg-white">
+      <div className="max-w-5xl mx-auto px-4">
+        <div className="space-y-6">
+          {/* Header with Circular Profile Image */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
+            className="flex flex-col md:flex-row items-center md:items-start gap-6 mb-8"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">
-              {t('about.title')}
-            </h2>
-            <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              {t('about.description1')}
-            </p>
-            <p className="text-lg text-gray-700 leading-relaxed mb-8">
-              {t('about.description2')}
-            </p>
+            {/* Circular Profile Image */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="flex-shrink-0"
+            >
+              <div className="w-32 h-32 md:w-40 md:h-40 rounded-full shadow-xl overflow-hidden border-4 border-white ring-2 ring-gray-200">
+                <img
+                  src={profileImage}
+                  alt="Adam Tsityat"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </motion.div>
 
+            {/* Title */}
+            <div className="flex-1 text-center md:text-right rtl:text-right">
+              <h2 className="text-4xl md:text-5xl font-bold gradient-text">
+                {t('about.title')}
+              </h2>
+            </div>
           </motion.div>
 
-          {/* Visual Elements */}
+          {/* Text Content */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative"
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="space-y-6"
           >
-            <div className="grid grid-cols-2 gap-6">
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                className="bg-gradient-to-br from-blue-500 to-blue-600 p-8 rounded-2xl text-white"
-              >
-                <Globe2 size={48} className="mb-4" />
-                <h3 className="text-xl font-bold mb-2">{t('about.cards.globalReach.title')}</h3>
-                <p className="text-sm text-blue-100">
-                  {t('about.cards.globalReach.description')}
-                </p>
-              </motion.div>
-
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                className="bg-gradient-to-br from-purple-500 to-purple-600 p-8 rounded-2xl text-white"
-              >
-                <Users size={48} className="mb-4" />
-                <h3 className="text-xl font-bold mb-2">{t('about.cards.expertTeam.title')}</h3>
-                <p className="text-sm text-purple-100">
-                  {t('about.cards.expertTeam.description')}
-                </p>
-              </motion.div>
-
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                className="bg-gradient-to-br from-teal-500 to-teal-600 p-8 rounded-2xl text-white"
-              >
-                <Target size={48} className="mb-4" />
-                <h3 className="text-xl font-bold mb-2">{t('about.cards.resultDriven.title')}</h3>
-                <p className="text-sm text-teal-100">
-                  {t('about.cards.resultDriven.description')}
-                </p>
-              </motion.div>
-
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                className="bg-gradient-to-br from-pink-500 to-pink-600 p-8 rounded-2xl text-white"
-              >
-                <div className="text-4xl mb-4">🚀</div>
-                <h3 className="text-xl font-bold mb-2">{t('about.cards.fastDeploy.title')}</h3>
-                <p className="text-sm text-pink-100">
-                  {t('about.cards.fastDeploy.description')}
-                </p>
-              </motion.div>
+            
+            <p className="text-lg text-gray-700 leading-relaxed">
+              {t('about.description1')}
+            </p>
+            
+            <p className="text-lg text-gray-700 leading-relaxed font-semibold">
+              {t('about.description2')}
+            </p>
+            
+            <p className="text-lg text-gray-700 leading-relaxed">
+              {t('about.description3')}
+            </p>
+            
+            <p className="text-lg text-gray-700 leading-relaxed">
+              {t('about.description4')}
+            </p>
+            
+            <p className="text-lg text-gray-700 leading-relaxed">
+              {t('about.description5')}
+            </p>
+            
+            <p className="text-lg text-gray-700 leading-relaxed">
+              {t('about.description6')}
+            </p>
+            
+            <div className="space-y-2">
+              <p className="text-lg text-gray-700 leading-relaxed font-semibold">
+                {t('about.description7')}
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                {t('about.description8')}
+              </p>
             </div>
+
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={scrollToContact}
+              className="mt-8 inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all"
+            >
+              {t('about.cta')}
+              <ArrowLeft size={20} className="rtl:rotate-180" />
+            </motion.button>
           </motion.div>
         </div>
       </div>

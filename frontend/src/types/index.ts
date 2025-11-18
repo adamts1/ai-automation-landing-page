@@ -4,7 +4,8 @@ import type { ReactNode } from 'react';
 export interface ContactFormData {
   name: string;
   email: string;
-  message: string;
+  phone: string;
+  description: string;
 }
 
 export interface ApiResponse<T = any> {
@@ -28,7 +29,7 @@ export interface NavItem {
 export interface ServiceItem {
   icon: ReactNode;
   title: string;
-  description: string;
+  description?: string;
 }
 
 export interface TechnologyItem {
