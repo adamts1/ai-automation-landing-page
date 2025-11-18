@@ -52,7 +52,7 @@ const Services: FC = () => {
   };
 
   return (
-    <section id="services" className="py-16 bg-gray-50">
+    <section id="services" className="py-20 bg-[#0D1117]">
       <div className="max-w-5xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -71,23 +71,23 @@ const Services: FC = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto"
         >
           {services.map((service, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
-              whileHover={{ y: -10, scale: 1.02 }}
-              className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300"
+              whileHover={{ y: -8, scale: 1.02 }}
+              className="bg-[#161B22] border border-[#30363D] p-8 rounded-xl hover:border-[#58A6FF]/50 transition-all duration-300"
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center text-white mb-6">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#58A6FF] to-[#BC8CFF] rounded-lg flex items-center justify-center text-white mb-6">
                 {service.icon}
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900">
+              <h3 className="text-2xl font-bold mb-4 text-white">
                 {service.title}
               </h3>
               {service.description && (
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-[#C9D1D9] leading-relaxed">
                   {service.description}
                 </p>
               )}

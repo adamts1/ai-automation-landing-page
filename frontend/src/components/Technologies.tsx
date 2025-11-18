@@ -19,7 +19,7 @@ const Technologies: FC = () => {
   ];
 
   return (
-    <section id="technologies" className="py-20 bg-white">
+    <section id="technologies" className="py-20 bg-[#0D1117]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -31,7 +31,7 @@ const Technologies: FC = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">
             {t('technologies.title')}
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-[#C9D1D9] max-w-2xl mx-auto">
             {t('technologies.subtitle')}
           </p>
         </motion.div>
@@ -41,7 +41,7 @@ const Technologies: FC = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6"
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"
         >
           {technologies.map((tech, index) => (
             <motion.div
@@ -50,8 +50,8 @@ const Technologies: FC = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              whileHover={{ scale: 1.1, rotate: 5 }}
-              className={`bg-gradient-to-br ${tech.color} p-6 rounded-2xl shadow-lg flex items-center justify-center text-white font-bold text-lg hover:shadow-2xl transition-all`}
+              whileHover={{ scale: 1.05, y: -4 }}
+              className={`bg-gradient-to-br ${tech.color} p-6 rounded-lg shadow-lg flex items-center justify-center text-white font-bold text-sm hover:shadow-xl transition-all border border-transparent hover:border-white/20`}
             >
               <span className="text-center">{tech.name}</span>
             </motion.div>
@@ -66,7 +66,7 @@ const Technologies: FC = () => {
           transition={{ delay: 0.5 }}
           className="mt-16 text-center"
         >
-          <p className="text-gray-600 max-w-3xl mx-auto">
+          <p className="text-[#C9D1D9] max-w-3xl mx-auto">
             {t('technologies.description')}
           </p>
         </motion.div>

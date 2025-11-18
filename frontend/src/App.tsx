@@ -9,7 +9,7 @@ import Footer from './components/Footer';
 
 const App: FC = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#0D1117]">
       <Header />
       <Hero />
       <Services />

@@ -89,11 +89,11 @@ const Contact: FC = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gray-900 text-white relative overflow-hidden">
+    <section id="contact" className="py-20 bg-[#161B22] text-white relative overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500 rounded-full filter blur-3xl" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500 rounded-full filter blur-3xl" />
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-[#58A6FF] rounded-full filter blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#BC8CFF] rounded-full filter blur-3xl" />
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -104,10 +104,10 @@ const Contact: FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">
             {t('contact.title')}
           </h2>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg text-[#C9D1D9] max-w-2xl mx-auto">
             {t('contact.subtitle')}
           </p>
         </motion.div>
@@ -123,7 +123,7 @@ const Contact: FC = () => {
           >
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2">
+                <label htmlFor="name" className="block text-sm font-medium mb-2 text-[#C9D1D9]">
                   {t('contact.form.name')}
                 </label>
                 <input
@@ -133,13 +133,13 @@ const Contact: FC = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500 transition-colors"
+                  className="w-full px-4 py-3 bg-[#0D1117] border border-[#30363D] rounded-lg focus:outline-none focus:border-[#58A6FF] transition-colors text-white placeholder:text-[#8B949E]"
                   placeholder={t('contact.form.namePlaceholder')}
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2">
+                <label htmlFor="email" className="block text-sm font-medium mb-2 text-[#C9D1D9]">
                   {t('contact.form.email')}
                 </label>
                 <input
@@ -149,13 +149,13 @@ const Contact: FC = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500 transition-colors"
+                  className="w-full px-4 py-3 bg-[#0D1117] border border-[#30363D] rounded-lg focus:outline-none focus:border-[#58A6FF] transition-colors text-white placeholder:text-[#8B949E]"
                   placeholder={t('contact.form.emailPlaceholder')}
                 />
               </div>
 
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium mb-2">
+                <label htmlFor="phone" className="block text-sm font-medium mb-2 text-[#C9D1D9]">
                   {t('contact.form.phone')}
                 </label>
                 <input
@@ -165,13 +165,13 @@ const Contact: FC = () => {
                   value={formData.phone}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500 transition-colors"
+                  className="w-full px-4 py-3 bg-[#0D1117] border border-[#30363D] rounded-lg focus:outline-none focus:border-[#58A6FF] transition-colors text-white placeholder:text-[#8B949E]"
                   placeholder={t('contact.form.phonePlaceholder')}
                 />
               </div>
 
               <div>
-                <label htmlFor="description" className="block text-sm font-medium mb-2">
+                <label htmlFor="description" className="block text-sm font-medium mb-2 text-[#C9D1D9]">
                   {t('contact.form.description')}
                 </label>
                 <textarea
@@ -181,7 +181,7 @@ const Contact: FC = () => {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500 transition-colors resize-none"
+                  className="w-full px-4 py-3 bg-[#0D1117] border border-[#30363D] rounded-lg focus:outline-none focus:border-[#58A6FF] transition-colors resize-none text-white placeholder:text-[#8B949E]"
                   placeholder={t('contact.form.descriptionPlaceholder')}
                 />
               </div>
@@ -191,7 +191,7 @@ const Contact: FC = () => {
                 whileTap={{ scale: status === 'loading' ? 1 : 0.98 }}
                 type="submit"
                 disabled={status === 'loading'}
-                className="w-full px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg font-semibold flex items-center justify-center gap-2 hover:shadow-lg transition-all disabled:opacity-70 disabled:cursor-not-allowed"
+                className="w-full px-8 py-4 bg-gradient-to-r from-[#58A6FF] to-[#BC8CFF] rounded-lg font-semibold flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-[#58A6FF]/30 transition-all disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 {status === 'loading' ? (
                   <>
