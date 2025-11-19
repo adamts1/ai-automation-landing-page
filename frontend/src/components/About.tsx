@@ -52,39 +52,45 @@ const About: FC = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="space-y-6"
           >
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              {t('about.heading')}
+            </h2>
 
             <p className="text-lg text-[#C9D1D9] leading-relaxed">
-              {t('about.description1')}
-            </p>
-
-            <p className="text-lg text-[#C9D1D9] leading-relaxed font-semibold">
-              {t('about.description2')}
-            </p>
-
-            <p className="text-lg text-[#C9D1D9] leading-relaxed">
-              {t('about.description3')}
+              {t('about.paragraph1')}
             </p>
 
             <p className="text-lg text-[#C9D1D9] leading-relaxed">
-              {t('about.description4')}
+              {t('about.paragraph2')}
             </p>
 
             <p className="text-lg text-[#C9D1D9] leading-relaxed">
-              {t('about.description5')}
+              {t('about.paragraph3')}
+            </p>
+
+            <h3 className="text-2xl md:text-3xl font-semibold text-white mt-8 mb-4">
+              {t('about.subheading')}
+            </h3>
+
+            <p className="text-lg text-[#C9D1D9] leading-relaxed">
+              {t('about.service1')}
             </p>
 
             <p className="text-lg text-[#C9D1D9] leading-relaxed">
-              {t('about.description6')}
+              {t('about.service2')}
             </p>
 
-            <div className="space-y-2">
-              <p className="text-lg text-[#C9D1D9] leading-relaxed font-semibold">
-                {t('about.description7')}
-              </p>
-              <p className="text-lg text-[#C9D1D9] leading-relaxed">
-                {t('about.description8')}
-              </p>
-            </div>
+            <p className="text-lg text-[#C9D1D9] leading-relaxed">
+              {t('about.service3')}
+            </p>
+
+            <p className="text-lg text-[#C9D1D9] leading-relaxed">
+              {t('about.service4')}
+            </p>
+
+            <p className="text-lg text-[#C9D1D9] leading-relaxed mt-6">
+              {t('about.paragraphFinal')}
+            </p>
 
             <motion.button
               whileHover={{ scale: 1.05 }}

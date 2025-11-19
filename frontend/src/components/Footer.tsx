@@ -29,7 +29,7 @@ const Footer: FC = () => {
               </motion.a>
               <motion.a
                 whileHover={{ scale: 1.2 }}
-                href="#"
+                href="https://www.linkedin.com/in/adam-tsityat-05340a124/"
                 className="w-10 h-10 bg-[#161B22] border border-[#30363D] rounded-lg flex items-center justify-center hover:bg-[#21262D] hover:border-[#58A6FF] transition-colors"
               >
                 <Linkedin size={18} className="text-[#C9D1D9]" />
@@ -56,11 +56,6 @@ const Footer: FC = () => {
               <li>
                 <a href="#about" className="hover:text-[#58A6FF] transition-colors">
                   {t('header.about')}
-                </a>
-              </li>
-              <li>
-                <a href="#technologies" className="hover:text-[#58A6FF] transition-colors">
-                  {t('header.technologies')}
                 </a>
               </li>
               <li>
