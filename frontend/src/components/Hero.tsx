@@ -48,7 +48,7 @@ const Hero: FC = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center md:text-left"
+            className="text-center md:text-center"
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
@@ -60,11 +60,11 @@ const Hero: FC = () => {
               <span className="text-sm font-medium">{t('hero.badge')}</span>
             </motion.div>
 
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight tracking-tight">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight tracking-tight max-w-2xl mx-auto">
               {t('hero.title')}
             </h1>
 
-            <p className="text-xl sm:text-2xl text-[#C9D1D9] mb-10 max-w-2xl leading-relaxed">
+            <p className="text-xl sm:text-2xl text-[#C9D1D9] mb-10 max-w-2xl mx-auto leading-relaxed">
               {t('hero.subtitle')}
             </p>
 

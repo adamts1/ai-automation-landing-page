@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Linkedin } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import profileImage from '../assets/profile.png';
 
@@ -27,7 +27,7 @@ const About: FC = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="flex-1 space-y-6"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center md:text-center">
               {t('about.heading')}
             </h2>
 
@@ -84,7 +84,7 @@ const About: FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="bg-[#0D1117] rounded-lg p-3 md:p-4 border border-[#30363D] md:flex-shrink-0 md:w-80"
+            className="bg-[#0D1117] rounded-lg p-3 md:p-4 border border-[#30363D] md:flex-shrink-0 md:w-80 md:self-start"
           >
             <div className="flex flex-col items-center text-center space-y-2">
               {/* Profile Image */}
@@ -95,7 +95,7 @@ const About: FC = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="relative"
               >
-                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full shadow-md overflow-hidden border-2 border-[#30363D]">
+                <div className="w-14 h-14 md:w-16 md:h-16 rounded-full shadow-md overflow-hidden border-2 border-[#30363D]">
                   <img
                     src={profileImage}
                     alt="Adam Tsityat"
@@ -105,29 +105,30 @@ const About: FC = () => {
               </motion.div>
 
               {/* Name */}
-              <h2 className="text-xl md:text-2xl font-bold text-white">
+              <h2 className="text-lg md:text-xl font-bold text-white">
                 {t('about.profileName')}
               </h2>
 
-              {/* Tagline */}
-              <p className="text-sm md:text-base text-[#58A6FF] font-medium flex items-center gap-1.5">
-                <span>🚀</span>
-                {t('about.profileTagline')}
+              {/* Description */}
+              <p className="text-xs text-[#C9D1D9] leading-relaxed text-center md:text-right max-w-lg md:max-w-full">
+                {t('about.profileDescription')}
               </p>
 
-              {/* Greeting and Sentences */}
-              <div className="space-y-1.5 text-left max-w-lg md:max-w-full">
-                <p className="text-sm text-[#C9D1D9] flex items-center gap-1.5">
-                  <span>👋</span>
-                  {t('about.profileGreeting')}
-                </p>
-                <p className="text-sm text-[#C9D1D9] leading-relaxed">
-                  {t('about.profileSentence1')}
-                </p>
-                <p className="text-sm text-[#C9D1D9] leading-relaxed">
-                  {t('about.profileSentence2')}
-                </p>
-              </div>
+              {/* Quote */}
+              <p className="text-xs md:text-sm text-[#58A6FF] font-medium italic text-center max-w-lg md:max-w-full">
+                "{t('about.profileQuote')}"
+              </p>
+
+              {/* LinkedIn Link */}
+              <motion.a
+                href="https://www.linkedin.com/in/adam-tsityat-05340a124/"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.1 }}
+                className="mt-1 w-7 h-7 bg-[#161B22] border border-[#30363D] rounded-lg flex items-center justify-center hover:bg-[#21262D] hover:border-[#58A6FF] transition-colors"
+              >
+                <Linkedin size={14} className="text-[#C9D1D9]" />
+              </motion.a>
             </div>
           </motion.div>
 

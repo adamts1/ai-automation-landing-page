@@ -15,11 +15,9 @@
   },
   "about": {
     "title": "About Us",
-    "profileName": "Adam Tsityat",
-    "profileTagline": "Leading businesses and companies to success in the new era",
-    "profileGreeting": "Hi!",
-    "profileSentence1": "I help business owners and companies remove barriers, optimize processes and build smart infrastructures that push forward",
-    "profileSentence2": "quickly, easily, and precisely according to need.",
+    "profileName": "Adam Tsityat — CEO & Founder",
+    "profileDescription": "We are a leading team of experts in automation and AI, providing our clients with personal guidance, precise solutions and the highest level of service.",
+    "profileQuote": "Real success is created when you work smart — not hard.",
     "description1": "We're a global automation agency helping corporations worldwide implement AI-driven solutions. Combining deep tech knowledge with personal, professional service.",
     "description2": "Our team of experts specializes in creating cutting-edge automation solutions that deliver measurable results. From small businesses to enterprise corporations, we've helped hundreds of clients transform their operations with AI.",
     "stats": {
