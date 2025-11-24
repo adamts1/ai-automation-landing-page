@@ -7,6 +7,7 @@ import emailjs from '@emailjs/browser';
 import toast, { Toaster } from 'react-hot-toast';
 import { EMAILJS_CONFIG } from '../config/emailjs';
 import type { ContactFormData, FormStatus } from '../types';
+import Chatbot from './Chatbot';
 
 const Contact: FC = () => {
   const { t } = useTranslation();
@@ -209,6 +210,9 @@ const Contact: FC = () => {
           </motion.div>
         </div>
       </div>
+
+      {/* Chatbot */}
+      <Chatbot />
 
       {/* Floating WhatsApp Button */}
       <motion.a

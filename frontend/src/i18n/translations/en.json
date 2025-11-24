@@ -126,6 +126,19 @@
     "phone": "+1 (555) 123-4567",
     "coverage": "Global Coverage",
     "copyright": "AI Automation Agency. All rights reserved."
+  },
+  "chatbot": {
+    "title": "AI Assistant",
+    "subtitle": "We're here to help",
+    "welcome": "Hello! How can I help you today?",
+    "open": "Open chat",
+    "close": "Close chat",
+    "inputPlaceholder": "Type your message...",
+    "send": "Send message",
+    "error": "I apologize, but I encountered an error. Please try again.",
+    "serverError": "The server is experiencing issues. Please try again in a moment.",
+    "networkError": "Network error. Please check your connection and try again.",
+    "notFound": "The chat service is not available. Please contact us directly."
   }
 }
 
