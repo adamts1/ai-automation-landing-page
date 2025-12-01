@@ -3,6 +3,7 @@
     "logo": "AI Automation Agency",
     "services": "Services",
     "about": "About",
+    "video": "Video Demo",
     "whyUs": "Why Us",
     "contact": "Contact",
     "getStarted": "Get Started"
@@ -15,9 +16,20 @@
   },
   "about": {
     "title": "About Us",
-    "profileName": "Adam Tsityat — CEO & Founder",
+    "heading": "The question isn't if, but when.",
+    "paragraph1": "Businesses that adopt artificial intelligence with automation see a massive jump in performance: more sales, more satisfied customers, and much less unnecessary hassle.",
+    "paragraph2": "Meet your digital employees: working 24/7, never getting tired, never making mistakes, and giving customers a feeling of human, immediate, and accurate service. They close deals, handle issues, update systems, and take the load off you-all without salaries, sick days, or headaches.",
+    "paragraph3": "And this works for any business. Even if you're sure that \"it won't work for us,\" you'll be surprised to discover how much it changes the picture from the first week.",
+    "subheading": "What We Provide",
+    "service1": "Smart consultation and specification",
+    "service2": "Development of automations and AI agents that perform tasks like a human employee",
+    "service3": "Full integration with your systems",
+    "service4": "Ongoing support and maintenance, with extensive experience implementing solutions locally and globally.",
+    "paragraphFinal": "Those who don't adopt the new tools will be left behind. Let us take your business a step forward, into the era where everything works for you and you focus only on growth.",
+    "cta": "I want a free consultation",
+    "profileName": "Adam Tsityat - CEO & Founder",
     "profileDescription": "We are a leading team of experts in automation and AI, providing our clients with personal guidance, precise solutions and the highest level of service.",
-    "profileQuote": "Real success is created when you work smart — not hard.",
+    "profileQuote": "Real success is created when you work smart - not hard.",
     "description1": "We're a global automation agency helping corporations worldwide implement AI-driven solutions. Combining deep tech knowledge with personal, professional service.",
     "description2": "Our team of experts specializes in creating cutting-edge automation solutions that deliver measurable results. From small businesses to enterprise corporations, we've helped hundreds of clients transform their operations with AI.",
     "stats": {
@@ -48,19 +60,35 @@
     "title": "Our Services",
     "subtitle": "Comprehensive AI solutions tailored to transform your business operations",
     "items": {
+      "virtualWorkers": {
+        "title": "Virtual Workers",
+        "description": "AI-based workers that perform tasks for you quickly, accurately, and intelligently: sales, support, data collection, providing information to customers, and guidance."
+      },
+      "chatbots": {
+        "title": "Voice and Text Chatbots",
+        "description": "Customized for WhatsApp, Instagram, Telegram, and more with automation capabilities: CRM updates, email sending, appointment scheduling, inventory checking, and more."
+      },
+      "fullStack": {
+        "title": "Complementary Software Solutions (Full Stack)",
+        "description": "Development of custom systems that complement automation-everything works seamlessly end-to-end."
+      },
+      "smallBusiness": {
+        "title": "Smart, Customized Solution Tailored to Your Business Needs",
+        "description": ""
+      },
       "automation": {
         "title": "AI Business Automation",
         "description": "Streamline operations with intelligent automation solutions that reduce costs and boost productivity across your entire organization."
-      },
-      "chatbots": {
-        "title": "Smart Chatbots",
-        "description": "Deploy conversational AI across WhatsApp, Instagram, Telegram, Messenger, and more to engage customers 24/7."
       },
       "integrations": {
         "title": "Custom Integrations",
         "description": "Smooth and fast integration with all your systems and platforms."
       }
     }
+  },
+  "video": {
+    "title": "Demo Video",
+    "comingSoon": "Coming Soon..."
   },
   "technologies": {
     "title": "Our Technology Stack",
@@ -93,13 +121,17 @@
     "title": "Get In Touch",
     "subtitle": "Ready to transform your business? Contact us for a free consultation",
     "form": {
-      "name": "Name",
+      "name": "Full Name",
       "namePlaceholder": "Your name",
       "email": "Email",
       "emailPlaceholder": "your@email.com",
+      "phone": "Phone",
+      "phonePlaceholder": "Your phone number",
+      "description": "Brief Description",
+      "descriptionPlaceholder": "Tell us about your needs",
       "message": "Message",
       "messagePlaceholder": "Tell us about your project",
-      "send": "Send Message",
+      "send": "Send",
       "sending": "Sending...",
       "success": "✓ Message Sent!",
       "error": "Failed to send message. Please try again.",
