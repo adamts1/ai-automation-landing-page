@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { motion } from 'framer-motion';
-import { Play } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import videoSrc from '../assets/video.mp4';
 
 const VideoDemo: FC = () => {
   const { t } = useTranslation();
@@ -26,28 +26,50 @@ const VideoDemo: FC = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="relative aspect-video bg-gradient-to-br from-[#161B22] to-[#0D1117] rounded-xl shadow-2xl overflow-hidden border border-[#30363D]"
+          className="flex justify-center items-center"
         >
-          {/* Video Placeholder */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-center">
-              <motion.div
-                animate={{ scale: [1, 1.1, 1] }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="w-24 h-24 mx-auto mb-4 bg-gradient-to-br from-[#58A6FF] to-[#BC8CFF] rounded-full flex items-center justify-center shadow-xl"
-              >
-                <Play size={48} className="text-white ml-1" fill="white" />
-              </motion.div>
-              <p className="text-2xl font-bold text-[#C9D1D9]">
-                {t('video.comingSoon')}
-              </p>
+          {/* iPhone Frame */}
+          <div className="relative w-full max-w-[300px]">
+            {/* Outer Frame - Dark Metallic Border */}
+            <div
+              className="relative bg-gradient-to-b from-[#1a1a1a] to-[#0a0a0a] rounded-[44px] p-2.5 shadow-2xl"
+              style={{ borderRadius: '44px' }}
+            >
+              {/* Inner Shadow for Realism */}
+              <div className="absolute inset-0 rounded-[44px] shadow-[inset_0_0_20px_rgba(0,0,0,0.5),inset_0_0_40px_rgba(0,0,0,0.3)] pointer-events-none" />
+              
+              {/* Screen Container */}
+              <div className="relative bg-black rounded-[38px] overflow-hidden" style={{ borderRadius: '38px' }}>
+                {/* Notch */}
+                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 z-10 w-[101px] h-[24px] bg-black rounded-b-[16px] flex items-center justify-center">
+                  {/* Speaker */}
+                  <div className="w-[45px] h-[5px] bg-[#1a1a1a] rounded-full" />
+                  {/* Camera */}
+                  <div className="absolute right-[12px] w-[10px] h-[10px] bg-[#1a1a1a] rounded-full border border-[#2a2a2a]" />
+                </div>
+
+                {/* Video Container with Inner Rounded Corners */}
+                <div 
+                  className="relative w-full aspect-[9/19.5] overflow-hidden"
+                  style={{ borderRadius: '38px' }}
+                >
+                  {/* Subtle Inner Shadow */}
+                  <div className="absolute inset-0 shadow-[inset_0_0_30px_rgba(0,0,0,0.4)] pointer-events-none z-10" />
+                  
+                  {/* Video Element */}
+                  <video
+                    src={videoSrc}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="w-full h-full object-cover"
+                    style={{ borderRadius: '38px' }}
+                  />
+                </div>
+              </div>
             </div>
           </div>
-
-          {/* Decorative Elements */}
-          <div className="absolute top-4 left-4 w-3 h-3 bg-[#58A6FF] rounded-full opacity-50" />
-          <div className="absolute top-4 right-4 w-3 h-3 bg-[#BC8CFF] rounded-full opacity-50" />
-          <div className="absolute bottom-4 left-4 w-3 h-3 bg-[#39D0D8] rounded-full opacity-50" />
         </motion.div>
       </div>
     </section>
