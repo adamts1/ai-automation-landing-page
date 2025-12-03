@@ -54,6 +54,11 @@ const Footer: FC = () => {
                 </a>
               </li>
               <li>
+                <a href="#business-processes" className="hover:text-[#58A6FF] transition-colors">
+                  {t('header.businessProcesses')}
+                </a>
+              </li>
+              <li>
                 <a href="#about" className="hover:text-[#58A6FF] transition-colors">
                   {t('header.about')}
                 </a>

@@ -2,6 +2,7 @@ import type { FC } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
+import BusinessProcesses from './components/BusinessProcesses';
 import VideoDemo from './components/VideoDemo';
 import About from './components/About';
 import Contact from './components/Contact';
@@ -13,6 +14,7 @@ const App: FC = () => {
       <Header />
       <Hero />
       <Services />
+      <BusinessProcesses />
       <VideoDemo />
       <About />
       <Contact />

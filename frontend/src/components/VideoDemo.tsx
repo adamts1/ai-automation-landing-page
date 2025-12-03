@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import videoSrc from '../assets/videoWithLogo.mp4';
+import videoSrc from '../assets/video.mp4';
 
 const VideoDemo: FC = () => {
   const { t } = useTranslation();
