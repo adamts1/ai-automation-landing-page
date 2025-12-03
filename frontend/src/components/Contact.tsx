@@ -202,7 +202,7 @@ const Contact: FC = () => {
                 ) : (
                   <>
                     {t('contact.form.send')}
-                    <Send size={20} className="rtl:rotate180" />
+                    <Send size={20} className="rtl:rotate182" />
                   </>
                 )}
               </motion.button>
