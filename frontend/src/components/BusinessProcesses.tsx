@@ -14,7 +14,7 @@ import {
 import { useTranslation } from 'react-i18next';
 
 interface ProcessItem {
-  icon: JSX.Element;
+  icon: any;
   title: string;
   description: string;
 }
