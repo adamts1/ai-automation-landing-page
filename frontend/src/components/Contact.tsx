@@ -216,7 +216,7 @@ const Contact: FC = () => {
 
       {/* Floating WhatsApp Button */}
       <motion.a
-        href="https://wa.me/+972525600493"
+        href="https://wa.me/+972533807804"
         target="_blank"
         rel="noopener noreferrer"
         initial={{ scale: 0 }}

@@ -175,16 +175,16 @@
   },
   "businessProcesses": {
     "title": "The Automation Processes Your Business Can't Do Without",
-    "subtitle": "We transform busy and exhausting processes into smart machines that work for you 24/7 — from lead generation to payment processing.",
+    "subtitle": "We transform busy and exhausting processes into smart machines that work for you 24/7   from lead generation to payment processing.",
     "description": "Less hassle, more sales, faster service, and an experience that leaves a professional impression.",
     "items": {
       "leadCapture": {
         "title": "Lead Capture and Nurturing",
-        "description": "A smart bot that talks to your customers at the right moment, asks targeted questions, sorts and filters leads — and sends you only the truly hot ones. No more lost leads."
+        "description": "A smart bot that talks to your customers at the right moment, asks targeted questions, sorts and filters leads   and sends you only the truly hot ones. No more lost leads."
       },
       "appointmentScheduling": {
         "title": "Automatic Appointment Scheduling",
-        "description": "A bot that manages your calendar: suggests availability, schedules, reschedules, and sends reminders. Fewer phone calls — more customers arriving on time."
+        "description": "A bot that manages your calendar: suggests availability, schedules, reschedules, and sends reminders. Fewer phone calls   more customers arriving on time."
       },
       "customerSupport": {
         "title": "Smart Customer Support",
@@ -192,7 +192,7 @@
       },
       "sales": {
         "title": "Sales on WhatsApp / Instagram / Website",
-        "description": "The system asks what the customer is looking for, suggests tailored products, checks inventory, and sends a payment link. Your business closes deals 24/7 — even when you're not available."
+        "description": "The system asks what the customer is looking for, suggests tailored products, checks inventory, and sends a payment link. Your business closes deals 24/7   even when you're not available."
       },
       "crmUpdate": {
         "title": "Automatic CRM and Systems Update",
@@ -200,7 +200,7 @@
       },
       "onboarding": {
         "title": "New Customer Onboarding",
-        "description": "Welcome messages, data collection, form sending, customer card creation — all automatic. The customer gets a professional and organized onboarding experience."
+        "description": "Welcome messages, data collection, form sending, customer card creation   all automatic. The customer gets a professional and organized onboarding experience."
       },
       "inventory": {
         "title": "Inventory Check and Product Suggestions",
@@ -208,11 +208,11 @@
       },
       "followUps": {
         "title": "Automatic Follow-ups",
-        "description": "Smart reminders, post-conversation messages, updates, feedback requests — all on time. Stay in touch and remain in the customer's awareness."
+        "description": "Smart reminders, post-conversation messages, updates, feedback requests   all on time. Stay in touch and remain in the customer's awareness."
       },
       "invoices": {
         "title": "Automatic Invoices and Payments",
-        "description": "Sending invoices, payment links, status updates the moment payment is received. Less chasing money — more organized cash flow."
+        "description": "Sending invoices, payment links, status updates the moment payment is received. Less chasing money   more organized cash flow."
       }
     }
   }

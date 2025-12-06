@@ -48,13 +48,13 @@ const Header: FC = () => {
         isScrolled ? 'bg-[#161B22]/95 backdrop-blur-md border-b border-[#30363D] shadow-xl' : 'bg-transparent'
       }`}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
         <div className="flex justify-between items-center py-5">
           {/* Logo */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="text-2xl font-bold gradient-text"
+            className="text-lg sm:text-xl md:text-2xl lg:text-2xl font-bold gradient-text whitespace-nowrap overflow-hidden text-ellipsis flex-1 min-w-0 pr-2"
           >
             {t('header.logo')}
           </motion.div>
