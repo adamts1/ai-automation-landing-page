@@ -1,18 +1,13 @@
 import type { FC } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Linkedin } from 'lucide-react';
+import {  Linkedin } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import profileImage from '../assets/profile.png';
 
 const About: FC = () => {
   const { t } = useTranslation();
 
-  const scrollToContact = (): void => {
-    const element: HTMLElement | null = document.getElementById('contact');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+
 
   return (
     <section id="about" className="py-20 bg-[#161B22]">
