@@ -100,7 +100,6 @@ const Footer: FC = () => {
             <ul className="space-y-2 text-[#8B949E]">
               <li>{t('contact.info.email')}</li>
               <li>{t('footer.phone')}</li>
-              <li>{t('footer.coverage')}</li>
             </ul>
           </div>
         </div>

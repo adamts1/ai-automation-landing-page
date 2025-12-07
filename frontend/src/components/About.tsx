@@ -66,16 +66,6 @@ const About: FC = () => {
             <p className="text-lg text-[#C9D1D9] leading-relaxed mt-6">
               {t('about.paragraphFinal')}
             </p>
-
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={scrollToContact}
-              className="mt-8 inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#58A6FF] to-[#BC8CFF] text-white rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl hover:shadow-[#58A6FF]/30 transition-all duration-200"
-            >
-              {t('about.cta')}
-              <ArrowLeft size={20} className="rtl:rotate-180" />
-            </motion.button>
           </motion.div>
 
           {/* Profile Subsection - Left on desktop */}
