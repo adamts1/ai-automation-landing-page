@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import type { FC } from 'react';
 import { motion } from 'framer-motion';
 import {
@@ -10,65 +11,91 @@ import {
   Package,
   MessageSquare,
   Receipt,
+  Play,
 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { DemoModal } from './BusinessProcesses/DemoModal';
+import { processDemoScenarios, type ProcessKey } from './BusinessProcesses/demoScenarios';
 
 interface ProcessItem {
   icon: any;
   title: string;
   description: string;
+  processKey: ProcessKey;
 }
 
 const BusinessProcesses: FC = () => {
   const { t } = useTranslation();
+  const [selectedProcess, setSelectedProcess] = useState<ProcessKey | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const processes: ProcessItem[] = [
     {
       icon: <Users size={32} />,
       title: t('businessProcesses.items.leadCapture.title'),
       description: t('businessProcesses.items.leadCapture.description'),
+      processKey: 'leadCapture',
     },
     {
       icon: <Calendar size={32} />,
       title: t('businessProcesses.items.appointmentScheduling.title'),
       description: t('businessProcesses.items.appointmentScheduling.description'),
+      processKey: 'appointmentScheduling',
     },
     {
       icon: <Headphones size={32} />,
       title: t('businessProcesses.items.customerSupport.title'),
       description: t('businessProcesses.items.customerSupport.description'),
+      processKey: 'customerSupport',
     },
     {
       icon: <ShoppingCart size={32} />,
       title: t('businessProcesses.items.sales.title'),
       description: t('businessProcesses.items.sales.description'),
+      processKey: 'sales',
     },
     {
       icon: <Database size={32} />,
       title: t('businessProcesses.items.crmUpdate.title'),
       description: t('businessProcesses.items.crmUpdate.description'),
+      processKey: 'crmUpdate',
     },
     {
       icon: <UserPlus size={32} />,
       title: t('businessProcesses.items.onboarding.title'),
       description: t('businessProcesses.items.onboarding.description'),
+      processKey: 'onboarding',
     },
     {
       icon: <Package size={32} />,
       title: t('businessProcesses.items.inventory.title'),
       description: t('businessProcesses.items.inventory.description'),
+      processKey: 'inventory',
     },
     {
       icon: <MessageSquare size={32} />,
       title: t('businessProcesses.items.followUps.title'),
       description: t('businessProcesses.items.followUps.description'),
+      processKey: 'followUps',
     },
     {
       icon: <Receipt size={32} />,
       title: t('businessProcesses.items.invoices.title'),
       description: t('businessProcesses.items.invoices.description'),
+      processKey: 'invoices',
     },
   ];
+
+  const handleProcessClick = (processKey: ProcessKey) => {
+    setSelectedProcess(processKey);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    // Clear selected process after animation
+    setTimeout(() => setSelectedProcess(null), 300);
+  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -124,21 +151,45 @@ const BusinessProcesses: FC = () => {
               key={index}
               variants={itemVariants}
               whileHover={{ y: -8, scale: 1.02 }}
-              className="bg-[#0D1117] border border-[#30363D] p-6 rounded-xl hover:border-[#58A6FF]/50 transition-all duration-300"
+              whileTap={{ scale: 0.98 }}
+              onClick={() => handleProcessClick(process.processKey)}
+              className="group relative bg-[#0D1117] border border-[#30363D] p-6 rounded-xl hover:border-[#58A6FF]/50 active:border-[#58A6FF]/50 transition-all duration-300 cursor-pointer overflow-hidden"
             >
-              <div className="w-14 h-14 bg-gradient-to-br from-[#58A6FF] to-[#BC8CFF] rounded-lg flex items-center justify-center text-white mb-4">
-                {process.icon}
+              {/* Play Button - Top Left Corner */}
+              <div className="absolute top-3 left-3 md:top-4 md:left-4 z-10">
+                <div className="bg-white/95 backdrop-blur-sm rounded-full p-2 md:p-2.5 shadow-lg md:group-hover:scale-110 transition-transform duration-300">
+                  <Play className="w-4 h-4 md:w-5 md:h-5 text-[#58A6FF] fill-[#58A6FF] ml-0.5" />
+                </div>
               </div>
-              <h3 className="text-xl font-bold mb-3 text-white">
-                {process.title}
-              </h3>
-              <p className="text-[#C9D1D9] leading-relaxed text-sm">
-                {process.description}
-              </p>
+
+              {/* Content */}
+              <div className="relative z-0">
+                <div className="w-14 h-14 bg-gradient-to-br from-[#58A6FF] to-[#BC8CFF] rounded-lg flex items-center justify-center text-white mb-4">
+                  {process.icon}
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-white">
+                  {process.title}
+                </h3>
+                <p className="text-[#C9D1D9] leading-relaxed text-sm">
+                  {process.description}
+                </p>
+              </div>
             </motion.div>
           ))}
         </motion.div>
       </div>
+
+      {/* Demo Modal */}
+      {selectedProcess && (
+        <DemoModal
+          isOpen={isModalOpen}
+          onClose={handleCloseModal}
+          title={processes.find((p) => p.processKey === selectedProcess)?.title || ''}
+          scenarios={processDemoScenarios[selectedProcess]}
+          contactName="אלקטרו סליל"
+          businessAccount="Business account"
+        />
+      )}
     </section>
   );
 };
