@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import type { FC } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -9,15 +10,20 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 const App: FC = () => {
+  const [isBusinessProcessModalOpen, setIsBusinessProcessModalOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-[#0D1117]">
       <Header />
       <Hero />
       <Services />
-      <BusinessProcesses />
+      <BusinessProcesses 
+        isModalOpen={isBusinessProcessModalOpen}
+        setIsModalOpen={setIsBusinessProcessModalOpen}
+      />
       <VideoDemo />
       <About />
-      <Contact />
+      <Contact isBusinessProcessModalOpen={isBusinessProcessModalOpen} />
       <Footer />
     </div>
   );

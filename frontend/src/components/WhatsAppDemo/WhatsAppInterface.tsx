@@ -112,7 +112,7 @@ const LinkPreview = ({ url, title, description, image }: LinkPreviewData) => {
 // WhatsApp Interface Component
 export const WhatsAppInterface = ({ 
   scenarios,
-  contactName = 'אלקטרו סליל',
+  contactName = 'אדם בניה',
   businessAccount = 'Business account',
   showNavigation = true,
   showDots = true,

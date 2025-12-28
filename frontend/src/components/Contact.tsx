@@ -9,7 +9,11 @@ import { EMAILJS_CONFIG } from '../config/emailjs';
 import type { ContactFormData, FormStatus } from '../types';
 import Chatbot from './Chatbot';
 
-const Contact: FC = () => {
+interface ContactProps {
+  isBusinessProcessModalOpen: boolean;
+}
+
+const Contact: FC<ContactProps> = ({ isBusinessProcessModalOpen }) => {
   const { t } = useTranslation();
   
   const [formData, setFormData] = useState<ContactFormData>({
@@ -212,7 +216,7 @@ const Contact: FC = () => {
       </div>
 
       {/* Chatbot */}
-      <Chatbot />
+      <Chatbot isBusinessProcessModalOpen={isBusinessProcessModalOpen} />
 
       {/* Floating WhatsApp Button */}
       <motion.a
@@ -223,7 +227,9 @@ const Contact: FC = () => {
         animate={{ scale: 1 }}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
-        className="fixed bottom-8 right-8 w-16 h-16 bg-green-500 rounded-full flex items-center justify-center text-white shadow-2xl hover:bg-green-600 transition-colors z-50"
+        className={`fixed bottom-8 right-8 w-16 h-16 bg-green-500 rounded-full items-center justify-center text-white shadow-2xl hover:bg-green-600 transition-colors z-50 ${
+          isBusinessProcessModalOpen ? 'hidden md:flex' : 'flex'
+        }`}
       >
         <MessageCircle size={32} />
       </motion.a>

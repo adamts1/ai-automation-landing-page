@@ -130,7 +130,7 @@ interface LinkPreviewData {
 ```typescript
 interface WhatsAppInterfaceProps {
   scenarios: DemoScenario[]        // Required: Array of demo scenarios
-  contactName?: string             // Contact name in header (default: 'אלקטרו סליל')
+  contactName?: string             // Contact name in header (default: 'אדם בניה')
   businessAccount?: string         // Business account label (default: 'Business account')
   showNavigation?: boolean         // Show navigation arrows (default: true)
   showDots?: boolean               // Show dot indicators (default: true)

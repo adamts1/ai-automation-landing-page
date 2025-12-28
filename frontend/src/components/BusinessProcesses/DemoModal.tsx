@@ -19,7 +19,7 @@ export const DemoModal: FC<DemoModalProps> = ({
   onClose,
   title,
   scenarios,
-  contactName = 'אלקטרו סליל',
+  contactName = 'אדם בניה',
   businessAccount = 'Business account',
 }) => {
   // Close modal on Escape key
@@ -81,14 +81,16 @@ export const DemoModal: FC<DemoModalProps> = ({
 
               {/* Content */}
               <div className="flex-1 overflow-y-auto p-3 sm:p-6 bg-[#0D1117] relative">
-                <WhatsAppInterface
-                  scenarios={scenarios}
-                  contactName={contactName}
-                  businessAccount={businessAccount}
-                  showNavigation={true}
-                  showDots={true}
-                  showCaption={false}
-                />
+                <div className="min-h-full flex items-center justify-center sm:block">
+                  <WhatsAppInterface
+                    scenarios={scenarios}
+                    contactName={contactName}
+                    businessAccount={businessAccount}
+                    showNavigation={true}
+                    showDots={true}
+                    showCaption={false}
+                  />
+                </div>
                 
                 {/* Title - Bottom Right */}
                 <h2 className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 md:bottom-6 md:right-6 text-sm sm:text-base md:text-lg font-semibold text-white text-right z-10">{title}</h2>

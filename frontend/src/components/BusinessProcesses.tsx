@@ -24,10 +24,14 @@ interface ProcessItem {
   processKey: ProcessKey;
 }
 
-const BusinessProcesses: FC = () => {
+interface BusinessProcessesProps {
+  isModalOpen: boolean;
+  setIsModalOpen: (open: boolean) => void;
+}
+
+const BusinessProcesses: FC<BusinessProcessesProps> = ({ isModalOpen, setIsModalOpen }) => {
   const { t } = useTranslation();
   const [selectedProcess, setSelectedProcess] = useState<ProcessKey | null>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const processes: ProcessItem[] = [
     {
@@ -186,7 +190,7 @@ const BusinessProcesses: FC = () => {
           onClose={handleCloseModal}
           title={processes.find((p) => p.processKey === selectedProcess)?.title || ''}
           scenarios={processDemoScenarios[selectedProcess]}
-          contactName="אלקטרו סליל"
+          contactName="אדם בניה"
           businessAccount="Business account"
         />
       )}

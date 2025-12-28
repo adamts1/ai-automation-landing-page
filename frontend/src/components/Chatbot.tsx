@@ -81,7 +81,11 @@ const generateSessionId = (): string => {
  * Chatbot component that provides an AI-powered chat interface
  * Integrates with n8n webhook for AI responses
  */
-const Chatbot: FC = () => {
+interface ChatbotProps {
+  isBusinessProcessModalOpen?: boolean;
+}
+
+const Chatbot: FC<ChatbotProps> = ({ isBusinessProcessModalOpen = false }) => {
   // ========================================================================
   // Translation Hook
   // ========================================================================
@@ -321,7 +325,9 @@ const Chatbot: FC = () => {
         animate={{ scale: 1 }}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
-        className="fixed bottom-28 right-8 w-16 h-16 bg-gradient-to-r from-[#58A6FF] to-[#BC8CFF] rounded-full flex items-center justify-center text-white shadow-2xl hover:shadow-[#58A6FF]/50 transition-all z-50"
+        className={`fixed bottom-28 right-8 w-16 h-16 bg-gradient-to-r from-[#58A6FF] to-[#BC8CFF] rounded-full items-center justify-center text-white shadow-2xl hover:shadow-[#58A6FF]/50 transition-all z-50 ${
+          isBusinessProcessModalOpen ? 'hidden md:flex' : 'flex'
+        }`}
         aria-label={t('chatbot.open') || 'Open chat'}
       >
         <Bot size={32} />
