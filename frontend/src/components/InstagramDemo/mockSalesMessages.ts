@@ -3,9 +3,10 @@
  * 
  * This file contains example message arrays for sales demonstrations.
  * Replace with actual sales flow data when integrating.
+ * 
+ * NOTE: Instagram now uses WhatsApp Message types for consistency.
  */
 
-import type { InstagramMessage } from './InstagramSalesInterface';
 
 /**
  * Example: Simple product inquiry flow
@@ -16,7 +17,11 @@ import type { InstagramMessage } from './InstagramSalesInterface';
  * - Button quick replies
  * - Call-to-action
  */
-export const simpleProductInquiryFlow: InstagramMessage[] = [
+// NOTE: These mock flows use the old InstagramMessage structure.
+// The actual demo now uses WhatsApp Message types. This file is kept for reference.
+// To use these, convert them to WhatsApp Message format.
+
+export const simpleProductInquiryFlow: any[] = [
   {
     id: '1',
     sender: 'bot',
@@ -41,7 +46,7 @@ export const simpleProductInquiryFlow: InstagramMessage[] = [
  * - System confirmations
  * - Checkout process
  */
-export const ecommerceCheckoutFlow: InstagramMessage[] = [
+export const ecommerceCheckoutFlow: any[] = [
   {
     id: '1',
     sender: 'bot',
@@ -77,7 +82,7 @@ export const ecommerceCheckoutFlow: InstagramMessage[] = [
  * - Date/time selection
  * - Confirmation
  */
-export const serviceBookingFlow: InstagramMessage[] = [
+export const serviceBookingFlow: any[] = [
   {
     id: '1',
     sender: 'bot',
@@ -107,7 +112,7 @@ export const serviceBookingFlow: InstagramMessage[] = [
  * - Multiple button interactions
  * - Lead capture
  */
-export const leadQualificationFlow: InstagramMessage[] = [
+export const leadQualificationFlow: any[] = [
   {
     id: '1',
     sender: 'bot',
