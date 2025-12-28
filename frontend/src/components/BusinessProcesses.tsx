@@ -22,6 +22,10 @@ interface ProcessItem {
   title: string;
   description: string;
   processKey: ProcessKey;
+  contactName?: string;
+  businessAccount?: string;
+  brandName?: string;
+  brandAvatar?: string;
 }
 
 interface BusinessProcessesProps {
@@ -39,54 +43,72 @@ const BusinessProcesses: FC<BusinessProcessesProps> = ({ isModalOpen, setIsModal
       title: t('businessProcesses.items.leadCapture.title'),
       description: t('businessProcesses.items.leadCapture.description'),
       processKey: 'leadCapture',
+      contactName: 'אדם בניה',
+      businessAccount: 'Business account',
     },
     {
       icon: <Calendar size={32} />,
       title: t('businessProcesses.items.appointmentScheduling.title'),
       description: t('businessProcesses.items.appointmentScheduling.description'),
       processKey: 'appointmentScheduling',
+      contactName: 'מרפאה דוגמה',
+      businessAccount: 'Business account',
     },
     {
       icon: <Headphones size={32} />,
       title: t('businessProcesses.items.customerSupport.title'),
       description: t('businessProcesses.items.customerSupport.description'),
       processKey: 'customerSupport',
+      contactName: 'שירות לקוחות',
+      businessAccount: 'Business account',
     },
     {
       icon: <ShoppingCart size={32} />,
       title: t('businessProcesses.items.sales.title'),
       description: t('businessProcesses.items.sales.description'),
       processKey: 'sales',
+      brandName: 'אופנה דוגמה',
+      businessAccount: 'Business account',
     },
     {
       icon: <Database size={32} />,
       title: t('businessProcesses.items.crmUpdate.title'),
       description: t('businessProcesses.items.crmUpdate.description'),
       processKey: 'crmUpdate',
+      contactName: 'מערכת CRM',
+      businessAccount: 'Business account',
     },
     {
       icon: <UserPlus size={32} />,
       title: t('businessProcesses.items.onboarding.title'),
       description: t('businessProcesses.items.onboarding.description'),
       processKey: 'onboarding',
+      contactName: 'צוות אונבורדינג',
+      businessAccount: 'Business account',
     },
     {
       icon: <Package size={32} />,
       title: t('businessProcesses.items.inventory.title'),
       description: t('businessProcesses.items.inventory.description'),
       processKey: 'inventory',
+      contactName: 'ניהול מלאי',
+      businessAccount: 'Business account',
     },
     {
       icon: <MessageSquare size={32} />,
       title: t('businessProcesses.items.followUps.title'),
       description: t('businessProcesses.items.followUps.description'),
       processKey: 'followUps',
+      contactName: 'מעקב לידים',
+      businessAccount: 'Business account',
     },
     {
       icon: <Receipt size={32} />,
       title: t('businessProcesses.items.invoices.title'),
       description: t('businessProcesses.items.invoices.description'),
       processKey: 'invoices',
+      contactName: 'חשבוניות',
+      businessAccount: 'Business account',
     },
   ];
 
@@ -191,9 +213,10 @@ const BusinessProcesses: FC<BusinessProcessesProps> = ({ isModalOpen, setIsModal
           title={processes.find((p) => p.processKey === selectedProcess)?.title || ''}
           scenarios={processDemoScenarios[selectedProcess]}
           processKey={selectedProcess}
-          contactName="אדם בניה"
-          businessAccount="Business account"
-          brandName="Brand Name"
+          contactName={processes.find((p) => p.processKey === selectedProcess)?.contactName}
+          businessAccount={processes.find((p) => p.processKey === selectedProcess)?.businessAccount}
+          brandName={processes.find((p) => p.processKey === selectedProcess)?.brandName}
+          brandAvatar={processes.find((p) => p.processKey === selectedProcess)?.brandAvatar}
         />
       )}
     </section>
