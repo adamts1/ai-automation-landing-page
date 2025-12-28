@@ -1055,15 +1055,160 @@ export const processDemoScenarios: Record<ProcessKey, DemoScenario[]> = {
   ],
   followUps: [
     {
-      title: 'Follow-ups Demo',
+      title: 'מעקב לאחר שיחה',
       messages: [
         {
-          type: 'bot_text',
-          text: 'Hello! Welcome to our service. How can we help you today?',
-          time: '10:00',
-        },
-      ],
+          type: 'bot_buttons',
+          text: 'היי 👋\nתודה על השיחה קודם.\nאם תרצה להתקדם או שיש שאלה — אני כאן.',
+          time: '16:30',
+          buttons: [
+            { id: 'continue_yes', title: 'כן, אשמח להמשיך' },
+            { id: 'continue_later', title: 'אחזור בהמשך' },
+            { id: 'continue_not_relevant', title: 'לא רלוונטי כרגע' }
+          ]
+        }
+      ]
     },
+    {
+      title: 'תזכורת עדינה',
+      messages: [
+        {
+          type: 'bot_buttons',
+          text: 'היי, מזכיר בעדינות 🙂\nרציתי לוודא שההודעה הקודמת לא התפספסה.',
+          time: '10:00',
+          buttons: [
+            { id: 'reminder_relevant', title: 'כן, רלוונטי' },
+            { id: 'reminder_not_now', title: 'לא כרגע' }
+          ]
+        }
+      ]
+    },
+    {
+      title: 'התקשרות מחדש',
+      messages: [
+        {
+          type: 'bot_buttons',
+          text: 'היי, מזכיר בעדינות 🙂\nרציתי לוודא שההודעה הקודמת לא התפספסה.',
+          time: '10:00',
+          buttons: [
+            { id: 'reminder_relevant', title: 'כן, רלוונטי' },
+            { id: 'reminder_not_now', title: 'לא כרגע' }
+          ]
+        },
+        {
+          type: 'user_reply_selection',
+          replyToText: 'היי, מזכיר בעדינות 🙂\nרציתי לוודא שההודעה הקודמת לא התפספסה.',
+          value: 'כן, רלוונטי',
+          choiceId: 'reminder_relevant',
+          source: 'button',
+          time: '10:01'
+        },
+        {
+          type: 'bot_buttons',
+          text: 'מעולה 👍\nאיך תרצה להמשיך?',
+          time: '10:01',
+          buttons: [
+            { id: 'next_step_call', title: 'שיחה קצרה' },
+            { id: 'next_step_quote', title: 'הצעת מחיר' },
+            { id: 'next_step_question', title: 'רק שאלה' }
+          ]
+        }
+      ]
+    },
+    {
+      title: 'מעבר לנציג אנושי',
+      messages: [
+        {
+          type: 'bot_buttons',
+          text: 'מעולה 👍\nאיך תרצה להמשיך?',
+          time: '10:01',
+          buttons: [
+            { id: 'next_step_call', title: 'שיחה קצרה' },
+            { id: 'next_step_quote', title: 'הצעת מחיר' },
+            { id: 'next_step_question', title: 'רק שאלה' }
+          ]
+        },
+        {
+          type: 'user_reply_selection',
+          replyToText: 'מעולה 👍\nאיך תרצה להמשיך?',
+          value: 'שיחה קצרה',
+          choiceId: 'next_step_call',
+          source: 'button',
+          time: '10:02'
+        },
+        {
+          type: 'bot_text',
+          text: 'מצוין.\nמעביר לנציג שיחזור אליך בהקדם.',
+          time: '10:02'
+        },
+        {
+          type: 'bot_text',
+          text: 'היי, קיבלתי את הפנייה שלך.\nנוח לדבר עכשיו או שאחזור בזמן אחר?',
+          time: '10:15'
+        }
+      ]
+    },
+    {
+      title: 'בקשת משוב',
+      messages: [
+        {
+          type: 'bot_buttons',
+          text: 'נשמח לשמוע 🙂\nאיך הייתה החוויה שלך איתנו?',
+          time: '16:00',
+          buttons: [
+            { id: 'feedback_great', title: 'מעולה' },
+            { id: 'feedback_ok', title: 'בסדר' },
+            { id: 'feedback_not_good', title: 'פחות טוב' }
+          ]
+        }
+      ]
+    },
+    {
+      title: 'טיפול במשוב שלילי',
+      messages: [
+        {
+          type: 'bot_buttons',
+          text: 'נשמח לשמוע 🙂\nאיך הייתה החוויה שלך איתנו?',
+          time: '16:00',
+          buttons: [
+            { id: 'feedback_great', title: 'מעולה' },
+            { id: 'feedback_ok', title: 'בסדר' },
+            { id: 'feedback_not_good', title: 'פחות טוב' }
+          ]
+        },
+        {
+          type: 'user_reply_selection',
+          replyToText: 'נשמח לשמוע 🙂\nאיך הייתה החוויה שלך איתנו?',
+          value: 'פחות טוב',
+          choiceId: 'feedback_not_good',
+          source: 'button',
+          time: '16:01'
+        },
+        {
+          type: 'bot_buttons',
+          text: 'תודה על הכנות.\nרוצה שאעביר לנציג כדי שנשתפר?',
+          time: '16:01',
+          buttons: [
+            { id: 'escalate_human', title: 'כן, נציג אנושי' }
+          ]
+        }
+      ]
+    },
+    {
+      title: 'נקודת מגע לטווח ארוך',
+      messages: [
+        {
+          type: 'bot_buttons',
+          text: 'היי,\nעבר קצת זמן מאז שדיברנו.\nרצינו לבדוק אם זה רלוונטי שוב.',
+          time: '11:00',
+          buttons: [
+            { id: 'reengage_yes', title: 'כן' },
+            { id: 'reengage_not_now', title: 'לא כרגע' },
+            { id: 'reengage_remove', title: 'להסיר אותי' }
+          ]
+        }
+      ]
+    }
   ],
   invoices: [
     {
