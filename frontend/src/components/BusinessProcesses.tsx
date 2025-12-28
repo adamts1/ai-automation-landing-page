@@ -190,8 +190,10 @@ const BusinessProcesses: FC<BusinessProcessesProps> = ({ isModalOpen, setIsModal
           onClose={handleCloseModal}
           title={processes.find((p) => p.processKey === selectedProcess)?.title || ''}
           scenarios={processDemoScenarios[selectedProcess]}
+          processKey={selectedProcess}
           contactName="אדם בניה"
           businessAccount="Business account"
+          brandName="Brand Name"
         />
       )}
     </section>

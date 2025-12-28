@@ -1,4 +1,4 @@
-import type { DemoScenario } from '../WhatsAppDemo/WhatsAppInterface';
+import type { DemoScenario, Message } from '../WhatsAppDemo/WhatsAppInterface';
 
 /**
  * Demo scenarios for each business process.
@@ -20,7 +20,7 @@ export type ProcessKey =
  * Placeholder demo scenarios for each business process.
  * Replace these with actual demo data when ready.
  */
-export const processDemoScenarios: Record<ProcessKey, DemoScenario[]> = {
+export const processDemoScenarios: Record<ProcessKey, DemoScenario[] | Message[][]> = {
   customerSupport: [
   {
     title: 'התחלת הזמנה',
@@ -1139,16 +1139,367 @@ export const processDemoScenarios: Record<ProcessKey, DemoScenario[]> = {
     }
   ],
   sales: [
-    {
-      title: 'Sales Demo',
-      messages: [
-        {
-          type: 'bot_text',
-          text: 'Hello! Welcome to our service. How can we help you today?',
-          time: '10:00',
-        },
-      ],
-    },
+    // Step 1: Initial inquiry and category selection
+    [
+      {
+        type: 'user_text',
+        text: 'היי, כמה עולה?',
+        time: '10:15'
+      },
+      {
+        type: 'bot_buttons',
+        text: 'מה מחפש/ת היום?',
+        time: '10:15',
+        buttons: [
+          { id: 'category_dress', title: 'שמלה' },
+          { id: 'category_shirt', title: 'חולצה' },
+          { id: 'category_pants', title: 'מכנס' },
+          { id: 'category_gift', title: 'מתנה' }
+        ]
+      },
+      {
+        type: 'user_reply_selection',
+        replyToText: 'מה מחפש/ת היום?',
+        value: 'שמלה',
+        choiceId: 'category_dress',
+        source: 'button',
+        time: '10:16'
+      }
+    ],
+    // Step 2: Style selection
+    [
+      {
+        type: 'user_text',
+        text: 'היי, כמה עולה?',
+        time: '10:15'
+      },
+      {
+        type: 'bot_buttons',
+        text: 'מה מחפש/ת היום?',
+        time: '10:15',
+        buttons: [
+          { id: 'category_dress', title: 'שמלה' },
+          { id: 'category_shirt', title: 'חולצה' },
+          { id: 'category_pants', title: 'מכנס' },
+          { id: 'category_gift', title: 'מתנה' }
+        ]
+      },
+      {
+        type: 'user_reply_selection',
+        replyToText: 'מה מחפש/ת היום?',
+        value: 'שמלה',
+        choiceId: 'category_dress',
+        source: 'button',
+        time: '10:16'
+      },
+      {
+        type: 'bot_buttons',
+        text: 'איזה סגנון?',
+        time: '10:16',
+        buttons: [
+          { id: 'style_daily', title: 'יומיומית' },
+          { id: 'style_evening', title: 'ערב' },
+          { id: 'style_event', title: 'לאירוע' },
+          { id: 'style_casual', title: 'קז׳ואל' }
+        ]
+      },
+      {
+        type: 'user_reply_selection',
+        replyToText: 'איזה סגנון?',
+        value: 'ערב',
+        choiceId: 'style_evening',
+        source: 'button',
+        time: '10:17'
+      }
+    ],
+    // Step 3: Size selection
+    [
+      {
+        type: 'user_text',
+        text: 'היי, כמה עולה?',
+        time: '10:15'
+      },
+      {
+        type: 'bot_buttons',
+        text: 'מה מחפש/ת היום?',
+        time: '10:15',
+        buttons: [
+          { id: 'category_dress', title: 'שמלה' },
+          { id: 'category_shirt', title: 'חולצה' },
+          { id: 'category_pants', title: 'מכנס' },
+          { id: 'category_gift', title: 'מתנה' }
+        ]
+      },
+      {
+        type: 'user_reply_selection',
+        replyToText: 'מה מחפש/ת היום?',
+        value: 'שמלה',
+        choiceId: 'category_dress',
+        source: 'button',
+        time: '10:16'
+      },
+      {
+        type: 'bot_buttons',
+        text: 'איזה סגנון?',
+        time: '10:16',
+        buttons: [
+          { id: 'style_daily', title: 'יומיומית' },
+          { id: 'style_evening', title: 'ערב' },
+          { id: 'style_event', title: 'לאירוע' },
+          { id: 'style_casual', title: 'קז׳ואל' }
+        ]
+      },
+      {
+        type: 'user_reply_selection',
+        replyToText: 'איזה סגנון?',
+        value: 'ערב',
+        choiceId: 'style_evening',
+        source: 'button',
+        time: '10:17'
+      },
+      {
+        type: 'bot_buttons',
+        text: 'איזו מידה?',
+        time: '10:17',
+        buttons: [
+          { id: 'size_s', title: 'S' },
+          { id: 'size_m', title: 'M' },
+          { id: 'size_l', title: 'L' },
+          { id: 'size_xl', title: 'XL' }
+        ]
+      },
+      {
+        type: 'user_reply_selection',
+        replyToText: 'איזו מידה?',
+        value: 'M',
+        choiceId: 'size_m',
+        source: 'button',
+        time: '10:18'
+      }
+    ],
+    // Step 4: Stock check and product options
+    [
+      {
+        type: 'user_text',
+        text: 'היי, כמה עולה?',
+        time: '10:15'
+      },
+      {
+        type: 'bot_buttons',
+        text: 'מה מחפש/ת היום?',
+        time: '10:15',
+        buttons: [
+          { id: 'category_dress', title: 'שמלה' },
+          { id: 'category_shirt', title: 'חולצה' },
+          { id: 'category_pants', title: 'מכנס' },
+          { id: 'category_gift', title: 'מתנה' }
+        ]
+      },
+      {
+        type: 'user_reply_selection',
+        replyToText: 'מה מחפש/ת היום?',
+        value: 'שמלה',
+        choiceId: 'category_dress',
+        source: 'button',
+        time: '10:16'
+      },
+      {
+        type: 'bot_buttons',
+        text: 'איזה סגנון?',
+        time: '10:16',
+        buttons: [
+          { id: 'style_daily', title: 'יומיומית' },
+          { id: 'style_evening', title: 'ערב' },
+          { id: 'style_event', title: 'לאירוע' },
+          { id: 'style_casual', title: 'קז׳ואל' }
+        ]
+      },
+      {
+        type: 'user_reply_selection',
+        replyToText: 'איזה סגנון?',
+        value: 'ערב',
+        choiceId: 'style_evening',
+        source: 'button',
+        time: '10:17'
+      },
+      {
+        type: 'bot_buttons',
+        text: 'איזו מידה?',
+        time: '10:17',
+        buttons: [
+          { id: 'size_s', title: 'S' },
+          { id: 'size_m', title: 'M' },
+          { id: 'size_l', title: 'L' },
+          { id: 'size_xl', title: 'XL' }
+        ]
+      },
+      {
+        type: 'user_reply_selection',
+        replyToText: 'איזו מידה?',
+        value: 'M',
+        choiceId: 'size_m',
+        source: 'button',
+        time: '10:18'
+      },
+      {
+        type: 'bot_text',
+        text: 'בודק זמינות רגע…',
+        time: '10:18'
+      },
+      {
+        type: 'bot_buttons',
+        text: 'יש לי שתי אפשרויות מעולות:',
+        time: '10:19',
+        buttons: [
+          { id: 'option_black_dress', title: 'שמלה שחורה – 349₪' },
+          { id: 'option_blue_dress', title: 'שמלה כחולה – 379₪' }
+        ]
+      },
+      {
+        type: 'user_reply_selection',
+        replyToText: 'יש לי שתי אפשרויות מעולות:',
+        value: 'שמלה שחורה – 349₪',
+        choiceId: 'option_black_dress',
+        source: 'button',
+        time: '10:20'
+      }
+    ],
+    // Step 5: Payment flow
+    [
+      {
+        type: 'user_text',
+        text: 'היי, כמה עולה?',
+        time: '10:15'
+      },
+      {
+        type: 'bot_buttons',
+        text: 'מה מחפש/ת היום?',
+        time: '10:15',
+        buttons: [
+          { id: 'category_dress', title: 'שמלה' },
+          { id: 'category_shirt', title: 'חולצה' },
+          { id: 'category_pants', title: 'מכנס' },
+          { id: 'category_gift', title: 'מתנה' }
+        ]
+      },
+      {
+        type: 'user_reply_selection',
+        replyToText: 'מה מחפש/ת היום?',
+        value: 'שמלה',
+        choiceId: 'category_dress',
+        source: 'button',
+        time: '10:16'
+      },
+      {
+        type: 'bot_buttons',
+        text: 'איזה סגנון?',
+        time: '10:16',
+        buttons: [
+          { id: 'style_daily', title: 'יומיומית' },
+          { id: 'style_evening', title: 'ערב' },
+          { id: 'style_event', title: 'לאירוע' },
+          { id: 'style_casual', title: 'קז׳ואל' }
+        ]
+      },
+      {
+        type: 'user_reply_selection',
+        replyToText: 'איזה סגנון?',
+        value: 'ערב',
+        choiceId: 'style_evening',
+        source: 'button',
+        time: '10:17'
+      },
+      {
+        type: 'bot_buttons',
+        text: 'איזו מידה?',
+        time: '10:17',
+        buttons: [
+          { id: 'size_s', title: 'S' },
+          { id: 'size_m', title: 'M' },
+          { id: 'size_l', title: 'L' },
+          { id: 'size_xl', title: 'XL' }
+        ]
+      },
+      {
+        type: 'user_reply_selection',
+        replyToText: 'איזו מידה?',
+        value: 'M',
+        choiceId: 'size_m',
+        source: 'button',
+        time: '10:18'
+      },
+      {
+        type: 'bot_text',
+        text: 'בודק זמינות רגע…',
+        time: '10:18'
+      },
+      {
+        type: 'bot_buttons',
+        text: 'יש לי שתי אפשרויות מעולות:',
+        time: '10:19',
+        buttons: [
+          { id: 'option_black_dress', title: 'שמלה שחורה – 349₪' },
+          { id: 'option_blue_dress', title: 'שמלה כחולה – 379₪' }
+        ]
+      },
+      {
+        type: 'user_reply_selection',
+        replyToText: 'יש לי שתי אפשרויות מעולות:',
+        value: 'שמלה שחורה – 349₪',
+        choiceId: 'option_black_dress',
+        source: 'button',
+        time: '10:20'
+      },
+      {
+        type: 'bot_buttons',
+        text: 'מצוין! מה תרצה לעשות?',
+        time: '10:20',
+        buttons: [
+          { id: 'action_payment', title: 'לתשלום' },
+          { id: 'action_photos', title: 'לראות תמונות' },
+          { id: 'action_agent', title: 'שאלה לנציג' }
+        ]
+      },
+      {
+        type: 'user_reply_selection',
+        replyToText: 'מצוין! מה תרצה לעשות?',
+        value: 'לתשלום',
+        choiceId: 'action_payment',
+        source: 'button',
+        time: '10:21'
+      },
+      {
+        type: 'bot_link',
+        text: 'מעבר לתשלום',
+        time: '10:21',
+        buttons: [
+          { id: 'payment_link', title: 'מעבר לתשלום' }
+        ],
+        linkPreview: {
+          url: 'https://payment.example.com/checkout',
+          title: 'תשלום מאובטח',
+          description: 'שמלה שחורה – 349₪'
+        }
+      },
+      {
+        type: 'user_reply_selection',
+        replyToText: 'מעבר לתשלום',
+        value: 'מעבר לתשלום',
+        choiceId: 'payment_link',
+        source: 'button',
+        time: '10:22'
+      },
+      {
+        type: 'bot_text',
+        text: 'התשלום התקבל ✅\nההזמנה נקלטה',
+        time: '10:23'
+      },
+      {
+        type: 'bot_text',
+        text: 'נשלח עדכון משלוח בקרוב',
+        time: '10:23'
+      }
+    ]
   ],
   crmUpdate: [
     {

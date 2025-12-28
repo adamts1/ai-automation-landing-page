@@ -3,15 +3,20 @@ import type { FC } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 import { WhatsAppInterface } from '../WhatsAppDemo/WhatsAppInterface';
-import type { DemoScenario } from '../WhatsAppDemo/WhatsAppInterface';
+import type { DemoScenario, Message } from '../WhatsAppDemo/WhatsAppInterface';
+import { InstagramSalesInterface } from '../InstagramDemo/InstagramSalesInterface';
+import type { ProcessKey } from './demoScenarios';
 
 interface DemoModalProps {
   isOpen: boolean;
   onClose: () => void;
   title: string;
-  scenarios: DemoScenario[];
+  scenarios: DemoScenario[] | Message[][];
+  processKey?: ProcessKey;
   contactName?: string;
   businessAccount?: string;
+  brandName?: string;
+  brandAvatar?: string;
 }
 
 export const DemoModal: FC<DemoModalProps> = ({
@@ -19,9 +24,17 @@ export const DemoModal: FC<DemoModalProps> = ({
   onClose,
   title,
   scenarios,
+  processKey,
   contactName = 'אדם בניה',
   businessAccount = 'Business account',
+  brandName = 'Brand Name',
+  brandAvatar,
 }) => {
+  // Check if this is a sales process (use Instagram) or other (use WhatsApp)
+  const isSalesProcess = processKey === 'sales';
+  const instagramScenarios = isSalesProcess ? (scenarios as Message[][]) : null;
+  const whatsappScenarios = !isSalesProcess ? (scenarios as DemoScenario[]) : null;
+
   // Close modal on Escape key
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -82,14 +95,26 @@ export const DemoModal: FC<DemoModalProps> = ({
               {/* Content */}
               <div className="flex-1 overflow-y-auto p-3 sm:p-6 bg-[#0D1117] relative">
                 <div className="min-h-full flex items-center justify-center sm:block">
-                  <WhatsAppInterface
-                    scenarios={scenarios}
-                    contactName={contactName}
-                    businessAccount={businessAccount}
-                    showNavigation={true}
-                    showDots={true}
-                    showCaption={false}
-                  />
+                  {isSalesProcess && instagramScenarios && instagramScenarios.length > 0 ? (
+                    <InstagramSalesInterface
+                      scenarios={instagramScenarios}
+                      brandName={brandName}
+                      brandAvatar={brandAvatar}
+                      statusText="Active now"
+                      showNavigation={true}
+                      showDots={true}
+                      showCaption={false}
+                    />
+                  ) : whatsappScenarios ? (
+                    <WhatsAppInterface
+                      scenarios={whatsappScenarios}
+                      contactName={contactName}
+                      businessAccount={businessAccount}
+                      showNavigation={true}
+                      showDots={true}
+                      showCaption={false}
+                    />
+                  ) : null}
                 </div>
                 
                 {/* Title - Bottom Center on Mobile, Bottom Right on Desktop */}
