@@ -146,15 +146,504 @@ export const processDemoScenarios: Record<ProcessKey, DemoScenario[]> = {
   ],
   appointmentScheduling: [
     {
-      title: 'Appointment Scheduling Demo',
+      title: 'כניסה - בקשה לקבוע תור',
       messages: [
         {
-          type: 'bot_text',
-          text: 'Hello! Welcome to our service. How can we help you today?',
-          time: '10:00',
+          type: 'user_text',
+          text: 'היי, רוצה לקבוע תור',
+          time: '09:15'
         },
-      ],
+        {
+          type: 'bot_buttons',
+          text: 'בשמחה 🙂\nכדי לקבוע תור בצורה נוחה ומהירה,\nאשאל כמה שאלות קצרות.',
+          time: '09:15',
+          buttons: [
+            { id: 'schedule_appointment', title: 'לקביעת תור' },
+            { id: 'modify_cancel', title: 'שינוי / ביטול תור' }
+          ]
+        }
+      ]
     },
+    {
+      title: 'סוג התור',
+      messages: [
+        {
+          type: 'user_text',
+          text: 'היי, רוצה לקבוע תור',
+          time: '09:15'
+        },
+        {
+          type: 'bot_buttons',
+          text: 'בשמחה 🙂\nכדי לקבוע תור בצורה נוחה ומהירה,\nאשאל כמה שאלות קצרות.',
+          time: '09:15',
+          buttons: [
+            { id: 'schedule_appointment', title: 'לקביעת תור' },
+            { id: 'modify_cancel', title: 'שינוי / ביטול תור' }
+          ]
+        },
+        {
+          type: 'user_reply_selection',
+          replyToText: 'בשמחה 🙂\nכדי לקבוע תור בצורה נוחה ומהירה,\nאשאל כמה שאלות קצרות.',
+          value: 'לקביעת תור',
+          choiceId: 'schedule_appointment',
+          source: 'button',
+          time: '09:16'
+        },
+        {
+          type: 'bot_buttons',
+          text: 'לאיזה סוג תור?',
+          time: '09:16',
+          buttons: [
+            { id: 'appointment_initial', title: 'בדיקה ראשונית' },
+            { id: 'appointment_followup', title: 'ביקורת' },
+            { id: 'appointment_treatment', title: 'טיפול' },
+            { id: 'appointment_consultation', title: 'ייעוץ' }
+          ]
+        }
+      ]
+    },
+    {
+      title: 'העדפת רופא/ה',
+      messages: [
+        {
+          type: 'user_text',
+          text: 'היי, רוצה לקבוע תור',
+          time: '09:15'
+        },
+        {
+          type: 'bot_buttons',
+          text: 'בשמחה 🙂\nכדי לקבוע תור בצורה נוחה ומהירה,\nאשאל כמה שאלות קצרות.',
+          time: '09:15',
+          buttons: [
+            { id: 'schedule_appointment', title: 'לקביעת תור' },
+            { id: 'modify_cancel', title: 'שינוי / ביטול תור' }
+          ]
+        },
+        {
+          type: 'user_reply_selection',
+          replyToText: 'בשמחה 🙂\nכדי לקבוע תור בצורה נוחה ומהירה,\nאשאל כמה שאלות קצרות.',
+          value: 'לקביעת תור',
+          choiceId: 'schedule_appointment',
+          source: 'button',
+          time: '09:16'
+        },
+        {
+          type: 'bot_buttons',
+          text: 'לאיזה סוג תור?',
+          time: '09:16',
+          buttons: [
+            { id: 'appointment_initial', title: 'בדיקה ראשונית' },
+            { id: 'appointment_followup', title: 'ביקורת' },
+            { id: 'appointment_treatment', title: 'טיפול' },
+            { id: 'appointment_consultation', title: 'ייעוץ' }
+          ]
+        },
+        {
+          type: 'user_reply_selection',
+          replyToText: 'לאיזה סוג תור?',
+          value: 'בדיקה ראשונית',
+          choiceId: 'appointment_initial',
+          source: 'button',
+          time: '09:17'
+        },
+        {
+          type: 'bot_buttons',
+          text: 'יש העדפה לרופא/ה?',
+          time: '09:17',
+          buttons: [
+            { id: 'prefer_doctor_yes', title: 'כן' },
+            { id: 'prefer_doctor_no', title: 'לא משנה' }
+          ]
+        }
+      ]
+    },
+    {
+      title: 'בחירת תאריך',
+      messages: [
+        {
+          type: 'user_text',
+          text: 'היי, רוצה לקבוע תור',
+          time: '09:15'
+        },
+        {
+          type: 'bot_buttons',
+          text: 'בשמחה 🙂\nכדי לקבוע תור בצורה נוחה ומהירה,\nאשאל כמה שאלות קצרות.',
+          time: '09:15',
+          buttons: [
+            { id: 'schedule_appointment', title: 'לקביעת תור' },
+            { id: 'modify_cancel', title: 'שינוי / ביטול תור' }
+          ]
+        },
+        {
+          type: 'user_reply_selection',
+          replyToText: 'בשמחה 🙂\nכדי לקבוע תור בצורה נוחה ומהירה,\nאשאל כמה שאלות קצרות.',
+          value: 'לקביעת תור',
+          choiceId: 'schedule_appointment',
+          source: 'button',
+          time: '09:16'
+        },
+        {
+          type: 'bot_buttons',
+          text: 'לאיזה סוג תור?',
+          time: '09:16',
+          buttons: [
+            { id: 'appointment_initial', title: 'בדיקה ראשונית' },
+            { id: 'appointment_followup', title: 'ביקורת' },
+            { id: 'appointment_treatment', title: 'טיפול' },
+            { id: 'appointment_consultation', title: 'ייעוץ' }
+          ]
+        },
+        {
+          type: 'user_reply_selection',
+          replyToText: 'לאיזה סוג תור?',
+          value: 'בדיקה ראשונית',
+          choiceId: 'appointment_initial',
+          source: 'button',
+          time: '09:17'
+        },
+        {
+          type: 'bot_buttons',
+          text: 'יש העדפה לרופא/ה?',
+          time: '09:17',
+          buttons: [
+            { id: 'prefer_doctor_yes', title: 'כן' },
+            { id: 'prefer_doctor_no', title: 'לא משנה' }
+          ]
+        },
+        {
+          type: 'user_reply_selection',
+          replyToText: 'יש העדפה לרופא/ה?',
+          value: 'לא משנה',
+          choiceId: 'prefer_doctor_no',
+          source: 'button',
+          time: '09:18'
+        },
+        {
+          type: 'bot_buttons',
+          text: 'מתי נוח לך?',
+          time: '09:18',
+          buttons: [
+            { id: 'date_today', title: 'היום' },
+            { id: 'date_tomorrow', title: 'מחר' },
+            { id: 'date_this_week', title: 'השבוע' }
+          ]
+        }
+      ]
+    },
+    {
+      title: 'בחירת שעה',
+      messages: [
+        {
+          type: 'user_text',
+          text: 'היי, רוצה לקבוע תור',
+          time: '09:15'
+        },
+        {
+          type: 'bot_buttons',
+          text: 'בשמחה 🙂\nכדי לקבוע תור בצורה נוחה ומהירה,\nאשאל כמה שאלות קצרות.',
+          time: '09:15',
+          buttons: [
+            { id: 'schedule_appointment', title: 'לקביעת תור' },
+            { id: 'modify_cancel', title: 'שינוי / ביטול תור' }
+          ]
+        },
+        {
+          type: 'user_reply_selection',
+          replyToText: 'בשמחה 🙂\nכדי לקבוע תור בצורה נוחה ומהירה,\nאשאל כמה שאלות קצרות.',
+          value: 'לקביעת תור',
+          choiceId: 'schedule_appointment',
+          source: 'button',
+          time: '09:16'
+        },
+        {
+          type: 'bot_buttons',
+          text: 'לאיזה סוג תור?',
+          time: '09:16',
+          buttons: [
+            { id: 'appointment_initial', title: 'בדיקה ראשונית' },
+            { id: 'appointment_followup', title: 'ביקורת' },
+            { id: 'appointment_treatment', title: 'טיפול' },
+            { id: 'appointment_consultation', title: 'ייעוץ' }
+          ]
+        },
+        {
+          type: 'user_reply_selection',
+          replyToText: 'לאיזה סוג תור?',
+          value: 'בדיקה ראשונית',
+          choiceId: 'appointment_initial',
+          source: 'button',
+          time: '09:17'
+        },
+        {
+          type: 'bot_buttons',
+          text: 'יש העדפה לרופא/ה?',
+          time: '09:17',
+          buttons: [
+            { id: 'prefer_doctor_yes', title: 'כן' },
+            { id: 'prefer_doctor_no', title: 'לא משנה' }
+          ]
+        },
+        {
+          type: 'user_reply_selection',
+          replyToText: 'יש העדפה לרופא/ה?',
+          value: 'לא משנה',
+          choiceId: 'prefer_doctor_no',
+          source: 'button',
+          time: '09:18'
+        },
+        {
+          type: 'bot_buttons',
+          text: 'מתי נוח לך?',
+          time: '09:18',
+          buttons: [
+            { id: 'date_today', title: 'היום' },
+            { id: 'date_tomorrow', title: 'מחר' },
+            { id: 'date_this_week', title: 'השבוע' }
+          ]
+        },
+        {
+          type: 'user_reply_selection',
+          replyToText: 'מתי נוח לך?',
+          value: 'מחר',
+          choiceId: 'date_tomorrow',
+          source: 'button',
+          time: '09:19'
+        },
+        {
+          type: 'bot_buttons',
+          text: 'אלו הזמינויות פנויות:',
+          time: '09:19',
+          buttons: [
+            { id: 'time_0930', title: '09:30' },
+            { id: 'time_1100', title: '11:00' },
+            { id: 'time_1630', title: '16:30' }
+          ]
+        }
+      ]
+    },
+    {
+      title: 'פרטי המטופל',
+      messages: [
+        {
+          type: 'user_text',
+          text: 'היי, רוצה לקבוע תור',
+          time: '09:15'
+        },
+        {
+          type: 'bot_buttons',
+          text: 'בשמחה 🙂\nכדי לקבוע תור בצורה נוחה ומהירה,\nאשאל כמה שאלות קצרות.',
+          time: '09:15',
+          buttons: [
+            { id: 'schedule_appointment', title: 'לקביעת תור' },
+            { id: 'modify_cancel', title: 'שינוי / ביטול תור' }
+          ]
+        },
+        {
+          type: 'user_reply_selection',
+          replyToText: 'בשמחה 🙂\nכדי לקבוע תור בצורה נוחה ומהירה,\nאשאל כמה שאלות קצרות.',
+          value: 'לקביעת תור',
+          choiceId: 'schedule_appointment',
+          source: 'button',
+          time: '09:16'
+        },
+        {
+          type: 'bot_buttons',
+          text: 'לאיזה סוג תור?',
+          time: '09:16',
+          buttons: [
+            { id: 'appointment_initial', title: 'בדיקה ראשונית' },
+            { id: 'appointment_followup', title: 'ביקורת' },
+            { id: 'appointment_treatment', title: 'טיפול' },
+            { id: 'appointment_consultation', title: 'ייעוץ' }
+          ]
+        },
+        {
+          type: 'user_reply_selection',
+          replyToText: 'לאיזה סוג תור?',
+          value: 'בדיקה ראשונית',
+          choiceId: 'appointment_initial',
+          source: 'button',
+          time: '09:17'
+        },
+        {
+          type: 'bot_buttons',
+          text: 'יש העדפה לרופא/ה?',
+          time: '09:17',
+          buttons: [
+            { id: 'prefer_doctor_yes', title: 'כן' },
+            { id: 'prefer_doctor_no', title: 'לא משנה' }
+          ]
+        },
+        {
+          type: 'user_reply_selection',
+          replyToText: 'יש העדפה לרופא/ה?',
+          value: 'לא משנה',
+          choiceId: 'prefer_doctor_no',
+          source: 'button',
+          time: '09:18'
+        },
+        {
+          type: 'bot_buttons',
+          text: 'מתי נוח לך?',
+          time: '09:18',
+          buttons: [
+            { id: 'date_today', title: 'היום' },
+            { id: 'date_tomorrow', title: 'מחר' },
+            { id: 'date_this_week', title: 'השבוע' }
+          ]
+        },
+        {
+          type: 'user_reply_selection',
+          replyToText: 'מתי נוח לך?',
+          value: 'מחר',
+          choiceId: 'date_tomorrow',
+          source: 'button',
+          time: '09:19'
+        },
+        {
+          type: 'bot_buttons',
+          text: 'אלו הזמינויות פנויות:',
+          time: '09:19',
+          buttons: [
+            { id: 'time_0930', title: '09:30' },
+            { id: 'time_1100', title: '11:00' },
+            { id: 'time_1630', title: '16:30' }
+          ]
+        },
+        {
+          type: 'user_reply_selection',
+          replyToText: 'אלו הזמינויות פנויות:',
+          value: '11:00',
+          choiceId: 'time_1100',
+          source: 'button',
+          time: '09:20'
+        },
+        {
+          type: 'bot_text',
+          text: 'כדי לסגור את התור—\nשם מלא וטלפון ליצירת קשר',
+          time: '09:20'
+        },
+        {
+          type: 'user_text',
+          text: 'דנה לוי, 054-1234567',
+          time: '09:21'
+        }
+      ]
+    },
+    {
+      title: 'אישור התור - זרימה מלאה',
+      messages: [
+        {
+          type: 'user_text',
+          text: 'היי, רוצה לקבוע תור',
+          time: '09:15'
+        },
+        {
+          type: 'bot_buttons',
+          text: 'בשמחה 🙂\nכדי לקבוע תור בצורה נוחה ומהירה,\nאשאל כמה שאלות קצרות.',
+          time: '09:15',
+          buttons: [
+            { id: 'schedule_appointment', title: 'לקביעת תור' },
+            { id: 'modify_cancel', title: 'שינוי / ביטול תור' }
+          ]
+        },
+        {
+          type: 'user_reply_selection',
+          replyToText: 'בשמחה 🙂\nכדי לקבוע תור בצורה נוחה ומהירה,\nאשאל כמה שאלות קצרות.',
+          value: 'לקביעת תור',
+          choiceId: 'schedule_appointment',
+          source: 'button',
+          time: '09:16'
+        },
+        {
+          type: 'bot_buttons',
+          text: 'לאיזה סוג תור?',
+          time: '09:16',
+          buttons: [
+            { id: 'appointment_initial', title: 'בדיקה ראשונית' },
+            { id: 'appointment_followup', title: 'ביקורת' },
+            { id: 'appointment_treatment', title: 'טיפול' },
+            { id: 'appointment_consultation', title: 'ייעוץ' }
+          ]
+        },
+        {
+          type: 'user_reply_selection',
+          replyToText: 'לאיזה סוג תור?',
+          value: 'בדיקה ראשונית',
+          choiceId: 'appointment_initial',
+          source: 'button',
+          time: '09:17'
+        },
+        {
+          type: 'bot_buttons',
+          text: 'יש העדפה לרופא/ה?',
+          time: '09:17',
+          buttons: [
+            { id: 'prefer_doctor_yes', title: 'כן' },
+            { id: 'prefer_doctor_no', title: 'לא משנה' }
+          ]
+        },
+        {
+          type: 'user_reply_selection',
+          replyToText: 'יש העדפה לרופא/ה?',
+          value: 'לא משנה',
+          choiceId: 'prefer_doctor_no',
+          source: 'button',
+          time: '09:18'
+        },
+        {
+          type: 'bot_buttons',
+          text: 'מתי נוח לך?',
+          time: '09:18',
+          buttons: [
+            { id: 'date_today', title: 'היום' },
+            { id: 'date_tomorrow', title: 'מחר' },
+            { id: 'date_this_week', title: 'השבוע' }
+          ]
+        },
+        {
+          type: 'user_reply_selection',
+          replyToText: 'מתי נוח לך?',
+          value: 'מחר',
+          choiceId: 'date_tomorrow',
+          source: 'button',
+          time: '09:19'
+        },
+        {
+          type: 'bot_buttons',
+          text: 'אלו הזמינויות פנויות:',
+          time: '09:19',
+          buttons: [
+            { id: 'time_0930', title: '09:30' },
+            { id: 'time_1100', title: '11:00' },
+            { id: 'time_1630', title: '16:30' }
+          ]
+        },
+        {
+          type: 'user_reply_selection',
+          replyToText: 'אלו הזמינויות פנויות:',
+          value: '11:00',
+          choiceId: 'time_1100',
+          source: 'button',
+          time: '09:20'
+        },
+        {
+          type: 'bot_text',
+          text: 'כדי לסגור את התור—\nשם מלא וטלפון ליצירת קשר',
+          time: '09:20'
+        },
+        {
+          type: 'user_text',
+          text: 'דנה לוי, 054-1234567',
+          time: '09:21'
+        },
+        {
+          type: 'bot_text',
+          text: 'התור נקבע ✅\n📅 יום: מחר\n🕒 שעה: 11:00\n\nאשלח תזכורת לפני התור.',
+          time: '09:21'
+        }
+      ]
+    }
   ],
   leadCapture: [
     {
