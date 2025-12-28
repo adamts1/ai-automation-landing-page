@@ -1456,14 +1456,115 @@ export const processDemoScenarios: Record<ProcessKey, DemoScenario[]> = {
   ],
   invoices: [
     {
-      title: 'Invoices Demo',
+      title: 'שליחת חשבונית',
       messages: [
         {
-          type: 'bot_text',
-          text: 'Hello! Welcome to our service. How can we help you today?',
-          time: '10:00',
+          type: 'bot_buttons',
+          text: 'היי,\nשלחנו לך חשבונית מסודרת 👇',
+          time: '14:30',
+          buttons: [
+            { id: 'view_invoice', title: 'צפייה בחשבונית' },
+            { id: 'pay_now', title: 'תשלום עכשיו' },
+            { id: 'question_invoice', title: 'שאלה לגבי החשבונית' }
+          ]
+        }
+      ]
+    },
+    {
+      title: 'קישור תשלום',
+      messages: [
+        {
+          type: 'bot_buttons',
+          text: 'היי,\nשלחנו לך חשבונית מסודרת 👇',
+          time: '14:30',
+          buttons: [
+            { id: 'view_invoice', title: 'צפייה בחשבונית' },
+            { id: 'pay_now', title: 'תשלום עכשיו' },
+            { id: 'question_invoice', title: 'שאלה לגבי החשבונית' }
+          ]
         },
-      ],
+        {
+          type: 'user_reply_selection',
+          replyToText: 'היי,\nשלחנו לך חשבונית מסודרת 👇',
+          value: 'תשלום עכשיו',
+          choiceId: 'pay_now',
+          source: 'button',
+          time: '14:31'
+        },
+        {
+          type: 'bot_link',
+          text: 'מצוין.\nאפשר לשלם בצורה מאובטחת כאן:',
+          time: '14:31',
+          linkPreview: {
+            url: 'https://payment.example.com/invoice/12345',
+            title: 'עמוד תשלום מאובטח',
+            description: 'תשלום מאובטח באמצעות כרטיס אשראי או העברה בנקאית',
+            image: 'https://payment.example.com/secure-payment-icon.png'
+          },
+          buttons: [
+            { id: 'payment_completed', title: 'ביצעתי תשלום' }
+          ]
+        }
+      ]
+    },
+    {
+      title: 'אישור תשלום',
+      messages: [
+        {
+          type: 'bot_buttons',
+          text: 'היי,\nשלחנו לך חשבונית מסודרת 👇',
+          time: '14:30',
+          buttons: [
+            { id: 'view_invoice', title: 'צפייה בחשבונית' },
+            { id: 'pay_now', title: 'תשלום עכשיו' },
+            { id: 'question_invoice', title: 'שאלה לגבי החשבונית' }
+          ]
+        },
+        {
+          type: 'user_reply_selection',
+          replyToText: 'היי,\nשלחנו לך חשבונית מסודרת 👇',
+          value: 'תשלום עכשיו',
+          choiceId: 'pay_now',
+          source: 'button',
+          time: '14:31'
+        },
+        {
+          type: 'bot_link',
+          text: 'מצוין.\nאפשר לשלם בצורה מאובטחת כאן:',
+          time: '14:31',
+          linkPreview: {
+            url: 'https://payment.example.com/invoice/12345',
+            title: 'עמוד תשלום מאובטח',
+            description: 'תשלום מאובטח באמצעות כרטיס אשראי או העברה בנקאית',
+            image: 'https://payment.example.com/secure-payment-icon.png'
+          },
+          buttons: [
+            { id: 'payment_completed', title: 'ביצעתי תשלום' }
+          ]
+        },
+        {
+          type: 'user_reply_selection',
+          replyToText: 'מצוין.\nאפשר לשלם בצורה מאובטחת כאן:',
+          value: 'ביצעתי תשלום',
+          choiceId: 'payment_completed',
+          source: 'button',
+          time: '15:00'
+        },
+        {
+          type: 'bot_text',
+          text: 'התשלום התקבל ✅\nתודה רבה!',
+          time: '15:00'
+        },
+        {
+          type: 'bot_buttons',
+          text: 'אם תרצה—\nאוכל לשלוח קבלה או לעזור במשהו נוסף.',
+          time: '15:00',
+          buttons: [
+            { id: 'send_receipt', title: 'שליחת קבלה' },
+            { id: 'human_agent', title: 'נציג אנושי' }
+          ]
+        }
+      ]
     },
   ],
 };
