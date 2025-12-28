@@ -21,7 +21,7 @@ export type ProcessKey =
  * Replace these with actual demo data when ready.
  */
 export const processDemoScenarios: Record<ProcessKey, DemoScenario[]> = {
-  leadCapture: [
+  customerSupport: [
     {
       title: 'לקוח פונה עם צורך כללי',
       messages: [
@@ -156,17 +156,137 @@ export const processDemoScenarios: Record<ProcessKey, DemoScenario[]> = {
       ],
     },
   ],
-  customerSupport: [
+  leadCapture: [
     {
-      title: 'Customer Support Demo',
+      title: 'leadCapture.realEstateInvestor - זיהוי והערכת משקיעי נדל״ן',
       messages: [
+        // 1) Entry point
+        { 
+          type: 'user_text', 
+          text: 'היי, מחפש השקעה בנדל״ן', 
+          time: '14:20' 
+        },
+        {
+          type: 'bot_buttons',
+          text: 'מעולה 👍\nכדי לדייק ולהעביר אותך לאיש הנכון,\nאשאל כמה שאלות קצרות.',
+          time: '14:21',
+          buttons: [
+            { id: 'start_qualification', title: 'להתחיל' },
+            { id: 'talk_to_agent', title: 'לדבר עם סוכן' }
+          ]
+        },
+        // 2) Investment type
+        { 
+          type: 'user_reply_selection', 
+          replyToText: 'מעולה 👍\nכדי לדייק ולהעביר אותך לאיש הנכון,\nאשאל כמה שאלות קצרות.', 
+          value: 'להתחיל', 
+          choiceId: 'start_qualification', 
+          source: 'button', 
+          time: '14:21' 
+        },
+        {
+          type: 'bot_buttons',
+          text: 'איזה סוג השקעה מעניין אותך?',
+          time: '14:22',
+          buttons: [
+            { id: 'investment_type_yield', title: 'תשואה שוטפת' },
+            { id: 'investment_type_appreciation', title: 'השבחה' },
+            { id: 'investment_type_combined', title: 'שילוב' },
+            { id: 'investment_type_exploring', title: 'עדיין בודק' }
+          ]
+        },
+        // 3) Budget range
+        { 
+          type: 'user_reply_selection', 
+          replyToText: 'איזה סוג השקעה מעניין אותך?', 
+          value: 'תשואה שוטפת', 
+          choiceId: 'investment_type_yield', 
+          source: 'button', 
+          time: '14:23' 
+        },
+        {
+          type: 'bot_buttons',
+          text: 'סדר גודל של תקציב?',
+          time: '14:23',
+          buttons: [
+            { id: 'budget_under_1_5', title: 'עד 1.5 מ׳' },
+            { id: 'budget_1_5_to_2_5', title: '1.5–2.5 מ׳' },
+            { id: 'budget_2_5_to_4', title: '2.5–4 מ׳' },
+            { id: 'budget_over_4', title: 'מעל 4 מ׳' }
+          ]
+        },
+        // 4) Area preference (free text)
+        { 
+          type: 'user_reply_selection', 
+          replyToText: 'סדר גודל של תקציב?', 
+          value: '2.5–4 מ׳', 
+          choiceId: 'budget_2_5_to_4', 
+          source: 'button', 
+          time: '14:24' 
+        },
         {
           type: 'bot_text',
-          text: 'Hello! Welcome to our service. How can we help you today?',
-          time: '10:00',
+          text: 'יש אזור שמעניין אותך במיוחד?\n(אפשר לכתוב חופשי)',
+          time: '14:24'
         },
-      ],
-    },
+        { 
+          type: 'user_text', 
+          text: 'מרכז, אזורים עם ביקוש להשכרה', 
+          time: '14:25' 
+        },
+        // 5) Timing
+        {
+          type: 'bot_buttons',
+          text: 'מתי מתוכננת ההשקעה?',
+          time: '14:25',
+          buttons: [
+            { id: 'timing_immediate', title: 'מיידי' },
+            { id: 'timing_near_future', title: 'בחודשים הקרובים' },
+            { id: 'timing_this_year', title: 'בשנה הקרובה' },
+            { id: 'timing_exploring', title: 'רק בוחן אפשרויות' }
+          ]
+        },
+        // 6) Readiness level
+        { 
+          type: 'user_reply_selection', 
+          replyToText: 'מתי מתוכננת ההשקעה?', 
+          value: 'בחודשים הקרובים', 
+          choiceId: 'timing_near_future', 
+          source: 'button', 
+          time: '14:26' 
+        },
+        {
+          type: 'bot_buttons',
+          text: 'כדי שנדע איך לגשת אליך —\nאיפה אתה נמצא בתהליך?',
+          time: '14:26',
+          buttons: [
+            { id: 'readiness_ready', title: 'מוכן להתקדם' },
+            { id: 'readiness_need_offers', title: 'צריך הצעות רלוונטיות' },
+            { id: 'readiness_info_gathering', title: 'רק אוסף מידע' }
+          ]
+        },
+        // 7) Capture & handoff
+        { 
+          type: 'user_reply_selection', 
+          replyToText: 'כדי שנדע איך לגשת אליך —\nאיפה אתה נמצא בתהליך?', 
+          value: 'מוכן להתקדם', 
+          choiceId: 'readiness_ready', 
+          source: 'button', 
+          time: '14:27' 
+        },
+        {
+          type: 'bot_text',
+          text: 'תודה 👍\nמעביר לסוכן עם כל הפרטים.',
+          time: '14:27'
+        },
+        // 8) Human agent message (first touch)
+        {
+          type: 'bot_text',
+          text: 'היי, קיבלתי את הפרטים שלך.\nיש לי כמה כיוונים שיכולים להתאים בדיוק למה שחיפשת.\nמתי נוח שנדבר?',
+          time: '14:28'
+        }
+      ]
+    }
   ],
   sales: [
     {
