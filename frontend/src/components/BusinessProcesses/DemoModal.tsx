@@ -92,8 +92,8 @@ export const DemoModal: FC<DemoModalProps> = ({
                   />
                 </div>
                 
-                {/* Title - Bottom Right */}
-                <h2 className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 md:bottom-6 md:right-6 text-sm sm:text-base md:text-lg font-semibold text-white text-right z-10">{title}</h2>
+                {/* Title - Bottom Center on Mobile, Bottom Right on Desktop */}
+                <h2 className="absolute bottom-3 left-1/2 -translate-x-1/2 sm:bottom-4 md:bottom-6 md:left-auto md:translate-x-0 md:right-6 text-sm sm:text-base md:text-lg font-semibold text-white text-center md:text-right z-10">{title}</h2>
               </div>
             </div>
           </motion.div>

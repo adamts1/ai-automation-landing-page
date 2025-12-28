@@ -170,12 +170,12 @@ export const WhatsAppInterface = ({
     <div className="max-w-5xl mx-auto">
       {/* Phone Viewport Container */}
       <div className="relative mx-auto max-w-[288px] md:max-w-[336px]">
-        {/* Navigation Arrows - Outside Phone */}
+        {/* Navigation Arrows - Outside Phone (Desktop only) */}
         {showNavigation && scenarios.length > 1 && (
           <>
             <button
               onClick={goToNext}
-              className="absolute top-1/2 -translate-y-1/2 -left-12 md:-left-14 z-20 w-10 h-10 rounded-full bg-white/95 hover:bg-white shadow-lg hover:shadow-xl border border-slate-200/50 flex items-center justify-center transition-all hover:scale-110 active:scale-95"
+              className="hidden md:flex absolute top-1/2 -translate-y-1/2 -left-14 z-20 w-10 h-10 rounded-full bg-white/95 hover:bg-white shadow-lg hover:shadow-xl border border-slate-200/50 items-center justify-center transition-all hover:scale-110 active:scale-95"
               aria-label="הבא"
             >
               <svg className="w-5 h-5 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
@@ -184,7 +184,7 @@ export const WhatsAppInterface = ({
             </button>
             <button
               onClick={goToPrevious}
-              className="absolute top-1/2 -translate-y-1/2 -right-12 md:-right-14 z-20 w-10 h-10 rounded-full bg-white/95 hover:bg-white shadow-lg hover:shadow-xl border border-slate-200/50 flex items-center justify-center transition-all hover:scale-110 active:scale-95"
+              className="hidden md:flex absolute top-1/2 -translate-y-1/2 -right-14 z-20 w-10 h-10 rounded-full bg-white/95 hover:bg-white shadow-lg hover:shadow-xl border border-slate-200/50 items-center justify-center transition-all hover:scale-110 active:scale-95"
               aria-label="קודם"
             >
               <svg className="w-5 h-5 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
@@ -398,18 +398,44 @@ export const WhatsAppInterface = ({
         </p>
       )}
 
-      {/* Dots Indicator */}
+      {/* Dots Indicator with Mobile Arrows */}
       {showDots && scenarios.length > 1 && (
-        <div className="flex justify-center gap-2 mt-4">
-          {scenarios.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => goToSlide(idx)}
-              className={`w-2 h-2 rounded-full transition-all ${currentIndex === idx ? 'bg-blue-600 w-6' : 'bg-slate-300'
-                }`}
-              aria-label={`מסך ${idx + 1}`}
-            />
-          ))}
+        <div className="relative flex items-center justify-center gap-2 mt-8 md:mt-4">
+          {/* Mobile Navigation Arrows - On sides of dots */}
+          {showNavigation && (
+            <>
+              <button
+                onClick={goToNext}
+                className="md:hidden absolute left-0 z-20 w-8 h-8 rounded-full bg-white/95 hover:bg-white shadow-lg hover:shadow-xl border border-slate-200/50 flex items-center justify-center transition-all hover:scale-110 active:scale-95"
+                aria-label="הבא"
+              >
+                <svg className="w-4 h-4 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <button
+                onClick={goToPrevious}
+                className="md:hidden absolute right-0 z-20 w-8 h-8 rounded-full bg-white/95 hover:bg-white shadow-lg hover:shadow-xl border border-slate-200/50 flex items-center justify-center transition-all hover:scale-110 active:scale-95"
+                aria-label="קודם"
+              >
+                <svg className="w-4 h-4 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </>
+          )}
+          {/* Dots */}
+          <div className="flex justify-center gap-2">
+            {scenarios.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => goToSlide(idx)}
+                className={`w-2 h-2 rounded-full transition-all ${currentIndex === idx ? 'bg-blue-600 w-6' : 'bg-slate-300'
+                  }`}
+                aria-label={`מסך ${idx + 1}`}
+              />
+            ))}
+          </div>
         </div>
       )}
     </div>
