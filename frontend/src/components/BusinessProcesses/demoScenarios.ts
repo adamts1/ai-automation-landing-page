@@ -1164,15 +1164,156 @@ export const processDemoScenarios: Record<ProcessKey, DemoScenario[]> = {
   ],
   onboarding: [
     {
-      title: 'Onboarding Demo',
+      title: 'הודעת ברכה',
+      messages: [
+        {
+          type: 'bot_buttons',
+          text: 'ברוך/ה הבא/ה 👋\nשמחים שהצטרפת אלינו.\nכדי להתחיל בצורה מסודרת,\nנבקש כמה פרטים קצרים.',
+          time: '10:00',
+          buttons: [
+            { id: 'start_onboarding', title: 'להתחיל אונבורדינג' },
+            { id: 'talk_agent', title: 'לדבר עם נציג' }
+          ]
+        }
+      ]
+    },
+    {
+      title: 'סוג לקוח',
+      messages: [
+        {
+          type: 'bot_buttons',
+          text: 'ברוך/ה הבא/ה 👋\nשמחים שהצטרפת אלינו.\nכדי להתחיל בצורה מסודרת,\nנבקש כמה פרטים קצרים.',
+          time: '10:00',
+          buttons: [
+            { id: 'start_onboarding', title: 'להתחיל אונבורדינג' },
+            { id: 'talk_agent', title: 'לדבר עם נציג' }
+          ]
+        },
+        {
+          type: 'user_reply_selection',
+          replyToText: 'ברוך/ה הבא/ה 👋\nשמחים שהצטרפת אלינו.\nכדי להתחיל בצורה מסודרת,\nנבקש כמה פרטים קצרים.',
+          value: 'להתחיל אונבורדינג',
+          choiceId: 'start_onboarding',
+          source: 'button',
+          time: '10:01'
+        },
+        {
+          type: 'bot_buttons',
+          text: 'איזה סוג לקוח אתה?',
+          time: '10:01',
+          buttons: [
+            { id: 'client_type_private', title: 'פרטי' },
+            { id: 'client_type_business', title: 'עסקי' }
+          ]
+        }
+      ]
+    },
+    {
+      title: 'פרטים בסיסיים',
+      messages: [
+        {
+          type: 'bot_buttons',
+          text: 'איזה סוג לקוח אתה?',
+          time: '10:01',
+          buttons: [
+            { id: 'client_type_private', title: 'פרטי' },
+            { id: 'client_type_business', title: 'עסקי' }
+          ]
+        },
+        {
+          type: 'user_reply_selection',
+          replyToText: 'איזה סוג לקוח אתה?',
+          value: 'עסקי',
+          choiceId: 'client_type_business',
+          source: 'button',
+          time: '10:02'
+        },
+        {
+          type: 'bot_text',
+          text: 'שם מלא וטלפון ליצירת קשר',
+          time: '10:02'
+        },
+        {
+          type: 'user_text',
+          text: 'יעל כהן, 050-1234567',
+          time: '10:03'
+        }
+      ]
+    },
+    {
+      title: 'פרטי עסק / שירות',
       messages: [
         {
           type: 'bot_text',
-          text: 'Hello! Welcome to our service. How can we help you today?',
-          time: '10:00',
+          text: 'שם מלא וטלפון ליצירת קשר',
+          time: '10:02'
         },
-      ],
+        {
+          type: 'user_text',
+          text: 'יעל כהן, 050-1234567',
+          time: '10:03'
+        },
+        {
+          type: 'bot_text',
+          text: 'כדי שנדייק את השירות—\nמה תחום הפעילות שלך?',
+          time: '10:03'
+        },
+        {
+          type: 'user_text',
+          text: 'קליניקה לפיזיותרפיה',
+          time: '10:04'
+        }
+      ]
     },
+    {
+      title: 'טופס אונבורדינג',
+      messages: [
+        {
+          type: 'bot_text',
+          text: 'כדי שנדייק את השירות—\nמה תחום הפעילות שלך?',
+          time: '10:03'
+        },
+        {
+          type: 'user_text',
+          text: 'קליניקה לפיזיותרפיה',
+          time: '10:04'
+        },
+        {
+          type: 'bot_buttons',
+          text: 'כמעט סיימנו 👍\nכאן ניתן למלא טופס פתיחת לקוח קצר:',
+          time: '10:04',
+          buttons: [
+            { id: 'fill_form', title: 'למילוי טופס' }
+          ]
+        }
+      ]
+    },
+    {
+      title: 'אישור והשלמה',
+      messages: [
+        {
+          type: 'bot_buttons',
+          text: 'כמעט סיימנו 👍\nכאן ניתן למלא טופס פתיחת לקוח קצר:',
+          time: '10:04',
+          buttons: [
+            { id: 'fill_form', title: 'למילוי טופס' }
+          ]
+        },
+        {
+          type: 'user_reply_selection',
+          replyToText: 'כמעט סיימנו 👍\nכאן ניתן למלא טופס פתיחת לקוח קצר:',
+          value: 'למילוי טופס',
+          choiceId: 'fill_form',
+          source: 'button',
+          time: '10:05'
+        },
+        {
+          type: 'bot_text',
+          text: 'קיבלנו את הפרטים ✅\nנפתח עבורך כרטיס לקוח\nונעדכן בהמשך.',
+          time: '10:05'
+        }
+      ]
+    }
   ],
   inventory: [
     {
