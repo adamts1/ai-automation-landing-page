@@ -77,7 +77,7 @@ const Header: FC = () => {
       case 'fr':
         return 'FR';
       default:
-        return lang.toUpperCase();
+        return lang || 'EN'.toUpperCase();
     }
   };
 
@@ -91,9 +91,8 @@ const Header: FC = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-[#161B22]/95 backdrop-blur-md border-b border-[#30363D] shadow-xl' : 'bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-[#161B22]/95 backdrop-blur-md border-b border-[#30363D] shadow-xl' : 'bg-transparent'
+        }`}
     >
       <div className="container mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
         <div className="flex justify-between items-center py-5">
@@ -112,21 +111,19 @@ const Header: FC = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`text-sm font-medium transition-all duration-200 hover:text-[#58A6FF] ${
-                  isScrolled ? 'text-[#C9D1D9]' : 'text-white'
-                }`}
+                className={`text-sm font-medium transition-all duration-200 hover:text-[#58A6FF] ${isScrolled ? 'text-[#C9D1D9]' : 'text-white'
+                  }`}
               >
                 {item.label}
               </button>
             ))}
-            
+
             {/* Language Switcher */}
             <div className="relative" ref={languageMenuRef}>
               <button
                 onClick={() => setIsLanguageMenuOpen(!isLanguageMenuOpen)}
-                className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-200 ${
-                  isScrolled ? 'text-[#C9D1D9] hover:bg-[#21262D]' : 'text-white hover:bg-white/10'
-                }`}
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-200 ${isScrolled ? 'text-[#C9D1D9] hover:bg-[#21262D]' : 'text-white hover:bg-white/10'
+                  }`}
                 title="Select language"
               >
                 <Languages size={18} />
@@ -146,11 +143,10 @@ const Header: FC = () => {
                       <button
                         key={lang}
                         onClick={() => handleLanguageChange(lang)}
-                        className={`w-full px-4 py-3 text-left rtl:text-right text-sm transition-colors ${
-                          language === lang
+                        className={`w-full px-4 py-3 text-left rtl:text-right text-sm transition-colors ${language === lang
                             ? 'bg-[#161B22] text-[#58A6FF]'
                             : 'text-[#C9D1D9] hover:bg-[#21262D]'
-                        }`}
+                          }`}
                       >
                         {getLanguageLabel(lang)}
                       </button>
@@ -193,7 +189,7 @@ const Header: FC = () => {
                 {item.label}
               </button>
             ))}
-            
+
             {/* Mobile Language Switcher */}
             <div className="border-t border-[#30363D]">
               <div className="px-4 py-2 text-xs text-[#8B949E] uppercase">Language</div>
@@ -201,11 +197,10 @@ const Header: FC = () => {
                 <button
                   key={lang}
                   onClick={() => handleLanguageChange(lang)}
-                  className={`flex items-center gap-2 w-full px-4 py-3 text-left rtl:text-right transition-colors ${
-                    language === lang
+                  className={`flex items-center gap-2 w-full px-4 py-3 text-left rtl:text-right transition-colors ${language === lang
                       ? 'bg-[#161B22] text-[#58A6FF]'
                       : 'text-[#C9D1D9] hover:bg-[#21262D]'
-                  }`}
+                    }`}
                 >
                   <Languages size={18} />
                   <span className="font-medium">{getLanguageLabel(lang)}</span>
