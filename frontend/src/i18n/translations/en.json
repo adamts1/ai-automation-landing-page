@@ -1,89 +1,56 @@
 {
   "header": {
     "logo": "TSITYAT – AI Boutique Agency",
-    "services": "Services",
-    "businessProcesses": "Business Processes",
-    "about": "About",
-    "video": "Video Demo",
-    "whyUs": "Why Us",
+    "services": "What We Do",
+    "businessProcesses": "Automation Processes",
+    "about": "About Us",
+    "video": "Demo Video",
     "contact": "Contact",
-    "getStarted": "Get Started"
+    "getStarted": "Free Consultation"
   },
   "hero": {
     "badge": "AI-Powered Solutions",
-    "title": "Developing AI-Based Automation Solutions",
-    "subtitle": "We build intelligent automations and chatbots that boost efficiency and ROI instantly.",
-    "cta": "Talk to me"
+    "title": "A Business That Works For You.",
+    "subtitle": "Smart solutions that drive growth, profit, and freedom.",
+    "cta": "Talk to Me"
   },
   "about": {
     "title": "About Us",
-    "heading": "The question isn't if, but when.",
-    "paragraph1": "Businesses that adopt artificial intelligence with automation see a massive jump in performance: more sales, more satisfied customers, and much less unnecessary hassle.",
-    "paragraph2": "Meet your digital employees: working 24/7, never getting tired, never making mistakes, and giving customers a feeling of human, immediate, and accurate service. They close deals, handle issues, update systems, and take the load off you-all without salaries, sick days, or headaches.",
-    "paragraph3": "And this works for any business. Even if you're sure that \"it won't work for us,\" you'll be surprised to discover how much it changes the picture from the first week.",
-    "subheading": "What We Provide",
-    "service1": "Smart consultation and specification",
-    "service2": "Development of automations and AI agents that perform tasks like a human employee",
-    "service3": "Full integration with your systems",
-    "service4": "Ongoing support and maintenance, with extensive experience implementing solutions locally and globally.",
-    "paragraphFinal": "Those who don't adopt the new tools will be left behind. Let us take your business a step forward, into the era where everything works for you and you focus only on growth.",
-    "cta": "I want a free consultation",
-    "profileName": "Adam Tsityat - CEO & Founder",
-    "profileDescription": "We are a leading team of experts in automation and AI, providing our clients with personal guidance, precise solutions and the highest level of service.",
-    "profileQuote": "Real success is created when you work smart - not hard.",
-    "description1": "We're a global automation agency helping corporations worldwide implement AI-driven solutions. Combining deep tech knowledge with personal, professional service.",
-    "description2": "Our team of experts specializes in creating cutting-edge automation solutions that deliver measurable results. From small businesses to enterprise corporations, we've helped hundreds of clients transform their operations with AI.",
-    "stats": {
-      "projects": "Projects",
-      "countries": "Countries",
-      "satisfaction": "Satisfaction"
-    },
-    "cards": {
-      "globalReach": {
-        "title": "Global Reach",
-        "description": "Serving clients across 50+ countries"
-      },
-      "expertTeam": {
-        "title": "Expert Team",
-        "description": "Specialized AI engineers & consultants"
-      },
-      "resultDriven": {
-        "title": "Result-Driven",
-        "description": "Focused on delivering measurable ROI"
-      },
-      "fastDeploy": {
-        "title": "Fast Deploy",
-        "description": "Quick implementation & onboarding"
-      }
-    }
+    "subtitle": "",
+    "profileName": "Adam – Founder & CEO",
+    "profileDescription": "Our team transforms complexity into opportunity and heavy workloads into clear, human-centered results.",
+    "profileQuote": "Take action. Succeed.",
+    "heading": "The question is not if — but when.",
+    "paragraph1": "Businesses that adopt AI-driven automation experience a dramatic performance boost: more sales, happier customers, and far less operational friction.",
+    "paragraph2": "Meet your digital workforce: available 24/7, tireless, precise, and consistent. They close deals, handle support, update systems, and remove operational load — without salaries, sick days, or headaches.",
+    "paragraph3": "This works for every business. Even if you think \"it won’t work for us,\" you’ll be surprised how fast the impact is felt — often within the first week.",
+    "subheading": "What We Deliver",
+    "service1": "Strategic consulting & process design",
+    "service2": "Development of AI agents and automations that operate like human employees",
+    "service3": "Full integration with your existing systems",
+    "service4": "Ongoing support and maintenance, backed by global implementation experience",
+    "paragraphFinal": "Let us take your business into the next era — where everything works for you and your focus is purely on growth.",
+    "cta": "Book a Free Consultation"
   },
   "services": {
-    "title": "Our Services",
-    "subtitle": "Comprehensive AI solutions tailored to transform your business operations",
+    "title": "What We Do",
+    "subtitle": "",
     "items": {
       "virtualWorkers": {
-        "title": "Virtual Workers",
-        "description": "AI-based workers that perform tasks for you quickly, accurately, and intelligently: sales, support, data collection, providing information to customers, and guidance."
+        "title": "AI Virtual Workers",
+        "description": "AI-powered agents that execute tasks quickly and accurately: sales, customer support, data collection, information delivery, and guided decision-making."
       },
       "chatbots": {
-        "title": "Voice and Text Chatbots",
-        "description": "Customized for WhatsApp, Instagram, Telegram, and more with automation capabilities: CRM updates, email sending, appointment scheduling, inventory checking, and more."
+        "title": "Voice & Text Chatbots",
+        "description": "Custom-built for WhatsApp, Instagram, Telegram, and more — integrated with CRM updates, email automation, appointment booking, inventory checks, and beyond."
       },
       "fullStack": {
-        "title": "Complementary Software Solutions (Full Stack)",
-        "description": "Development of custom systems that complement automation-everything works seamlessly end-to-end."
+        "title": "Custom Software Solutions",
+        "description": "Tailored systems that complement automation and ensure smooth end-to-end operations."
       },
       "smallBusiness": {
-        "title": "Smart, Customized Solution Tailored to Your Business Needs",
-        "description": ""
-      },
-      "automation": {
-        "title": "AI Business Automation",
-        "description": "Streamline operations with intelligent automation solutions that reduce costs and boost productivity across your entire organization."
-      },
-      "integrations": {
-        "title": "Custom Integrations",
-        "description": "Smooth and fast integration with all your systems and platforms."
+        "title": "Tailored Business Solutions",
+        "description": "A smart solution built specifically for your business, systems, workflows, and goals."
       }
     }
   },
@@ -93,34 +60,34 @@
   },
   "technologies": {
     "title": "Our Technology Stack",
-    "subtitle": "We leverage cutting-edge technologies to build robust and scalable solutions",
-    "description": "Our tech stack is carefully chosen to ensure maximum performance, scalability, and reliability. We stay up-to-date with the latest technologies to provide you with the best solutions."
+    "subtitle": "We use advanced technologies to build scalable and robust solutions",
+    "description": "Our technology stack is carefully selected to ensure performance, scalability, and reliability. We continuously adopt the latest innovations to deliver best-in-class solutions."
   },
   "whyUs": {
     "title": "Why Choose Us",
     "subtitle": "We deliver results that matter to your business",
     "reasons": {
       "roi": {
-        "title": "Instant ROI",
-        "description": "See immediate returns on investment with automated processes that start working from day one."
+        "title": "Immediate ROI",
+        "description": "See fast returns with automated processes that start working from day one."
       },
       "global": {
         "title": "Global Experience",
-        "description": "Proven track record serving Fortune 500 companies and startups across 50+ countries."
+        "description": "Proven experience delivering software and automation solutions worldwide."
       },
       "service": {
         "title": "Personal & Professional Service",
-        "description": "Dedicated support team ensuring your success with personalized attention and expertise."
+        "description": "A dedicated team committed to your success with hands-on expertise."
       },
       "consultation": {
         "title": "Free Consultation",
-        "description": "Get expert advice and strategic planning at no cost. We analyze your needs before you commit."
+        "description": "Get expert analysis and strategic planning at no cost, before committing."
       }
     }
   },
   "contact": {
-    "title": "Get In Touch",
-    "subtitle": "Ready to transform your business? Contact us for a free consultation",
+    "title": "Contact Us",
+    "subtitle": "Ready to transform your business? Get a free consultation",
     "form": {
       "name": "Full Name",
       "namePlaceholder": "Your name",
@@ -128,108 +95,105 @@
       "emailPlaceholder": "your@email.com",
       "phone": "Phone",
       "phonePlaceholder": "Your phone number",
-      "description": "Brief Description",
+      "description": "Short Description",
       "descriptionPlaceholder": "Tell us about your needs",
-      "message": "Message",
-      "messagePlaceholder": "Tell us about your project",
       "send": "Send",
       "sending": "Sending...",
-      "success": "✓ Message Sent!",
+      "success": "✓ Message sent!",
       "error": "Failed to send message. Please try again.",
-      "successToast": "✅ Message sent successfully! We'll get back to you soon.",
-      "errorToast": "❌ Failed to send message. Please try again or contact us directly."
+      "successToast": "✅ Message sent successfully! We’ll be in touch shortly.",
+      "errorToast": "❌ Message failed to send. Please try again or contact us directly."
     },
     "whatsapp": "WhatsApp",
     "info": {
-      "title": "Let's Build Something Amazing",
-      "description": "Our team is ready to help you implement AI solutions that drive real results. Get in touch today and let's discuss how we can transform your business.",
+      "title": "Let’s Build Something Great",
+      "description": "Our team is ready to help you implement AI solutions that drive real results. Contact us today and let’s discuss how we can transform your business.",
       "email": "adamtsityat@gmail.com",
       "whatsapp": "24/7 WhatsApp Support",
       "coverage": "Global Coverage",
       "consultation": {
         "title": "Free Consultation",
         "description": "Schedule a free 30-minute consultation to discuss your automation needs",
-        "button": "Book Now"
+        "button": "Schedule Now"
       }
     }
   },
   "footer": {
-    "description": "Transforming businesses worldwide with cutting-edge AI automation solutions and intelligent chatbots.",
+    "description": "Transforming businesses worldwide with advanced AI automation and smart chatbots.",
     "quickLinks": "Quick Links",
     "contact": "Contact",
-    "phone": "+1 (555) 123-4567",
+    "phone": "+972 533807804",
     "coverage": "Global Coverage",
-    "copyright": "TSITYAT – AI Boutique Agency. All rights reserved."
+    "copyright": "TSITYAT – AI Boutique Agency"
   },
   "chatbot": {
     "title": "AI Assistant",
-    "subtitle": "We're here to help",
-    "welcome": "Hello! How can I help you today?",
-    "open": "Open chat",
-    "close": "Close chat",
+    "subtitle": "We’re here to help",
+    "welcome": "Hello! How can I assist you today?",
+    "open": "Open Chat",
+    "close": "Close Chat",
     "inputPlaceholder": "Type your message...",
-    "send": "Send message",
-    "error": "I apologize, but I encountered an error. Please try again.",
-    "serverError": "The server is experiencing issues. Please try again in a moment.",
-    "networkError": "Network error. Please check your connection and try again.",
-    "notFound": "The chat service is not available. Please contact us directly."
+    "send": "Send Message",
+    "error": "Sorry, something went wrong. Please try again.",
+    "serverError": "Server issues detected. Please try again shortly.",
+    "networkError": "Network error. Please check your connection.",
+    "notFound": "Chat service unavailable. Please contact us directly."
   },
   "accessibility": {
     "title": "Accessibility Options",
-    "open": "Open accessibility options",
-    "close": "Close menu",
+    "open": "Open Accessibility Options",
+    "close": "Close Menu",
     "fontSize": "Font Size",
-    "increaseFont": "Increase font size",
-    "decreaseFont": "Decrease font size",
-    "resetFont": "Reset font size",
+    "increaseFont": "Increase Font Size",
+    "decreaseFont": "Decrease Font Size",
+    "resetFont": "Reset Font Size",
     "reset": "Reset",
     "smaller": "Smaller",
     "larger": "Larger",
     "highContrast": "High Contrast",
-    "toggleContrast": "Toggle high contrast"
+    "toggleContrast": "Toggle High Contrast"
   },
   "businessProcesses": {
-    "title": "The Automation Processes Your Business Can't Do Without",
-    "subtitle": "We transform busy and exhausting processes into smart machines that work for you 24/7   from lead generation to payment processing.",
-    "description": "Less hassle, more sales, faster service, and an experience that leaves a professional impression.",
+    "title": "Automation Processes Your Business Can’t Live Without",
+    "subtitle": "We turn heavy, exhausting workflows into smart machines that operate 24/7 — from lead to payment.",
+    "description": "Less manual work, more sales, faster service, and a professional customer experience.",
     "items": {
       "leadCapture": {
-        "title": "Lead Capture and Nurturing",
-        "description": "A smart bot that talks to your customers at the right moment, asks targeted questions, sorts and filters leads   and sends you only the truly hot ones. No more lost leads."
+        "title": "Lead Capture & Qualification",
+        "description": "A smart bot that engages customers instantly, asks targeted questions, filters leads, and sends you only high-quality prospects."
       },
       "appointmentScheduling": {
-        "title": "Automatic Appointment Scheduling",
-        "description": "A bot that manages your calendar: suggests availability, schedules, reschedules, and sends reminders. Fewer phone calls   more customers arriving on time."
+        "title": "Automated Scheduling",
+        "description": "A bot that manages your calendar: offers availability, schedules, reschedules, and sends reminders."
       },
       "customerSupport": {
         "title": "Smart Customer Support",
-        "description": "Instant answers to all recurring questions, order status, service ticket opening, and more. Customers get instant service, and you free up time for what really matters."
+        "description": "Instant responses to FAQs, order statuses, and support tickets — customers get answers immediately."
       },
       "sales": {
-        "title": "Sales on WhatsApp / Instagram / Website",
-        "description": "The system asks what the customer is looking for, suggests tailored products, checks inventory, and sends a payment link. Your business closes deals 24/7   even when you're not available."
+        "title": "Sales via WhatsApp / Instagram / Website",
+        "description": "The system understands customer needs, recommends products, checks inventory, and sends payment links — closing deals 24/7."
       },
       "crmUpdate": {
-        "title": "Automatic CRM and Systems Update",
-        "description": "Every lead, conversation, or order is automatically recorded: opening customers, updating statuses, creating tasks. No double entries and no missed opportunities."
+        "title": "Automatic CRM & System Updates",
+        "description": "Every interaction is logged automatically: customers, statuses, tasks — no manual entry, no mistakes."
       },
       "onboarding": {
-        "title": "New Customer Onboarding",
-        "description": "Welcome messages, data collection, form sending, customer card creation   all automatic. The customer gets a professional and organized onboarding experience."
+        "title": "Customer Onboarding",
+        "description": "Welcome messages, data collection, forms, and customer records — all automated for a professional first impression."
       },
       "inventory": {
-        "title": "Inventory Check and Product Suggestions",
-        "description": "The bot connects to inventory, checks availability, and suggests the most suitable options to the customer. Less \"I'll get back to you\", more \"I already have several options for you\"."
+        "title": "Inventory Checks & Recommendations",
+        "description": "The bot checks availability and suggests the best options instantly."
       },
       "followUps": {
-        "title": "Automatic Follow-ups",
-        "description": "Smart reminders, post-conversation messages, updates, feedback requests   all on time. Stay in touch and remain in the customer's awareness."
+        "title": "Automated Follow-Ups",
+        "description": "Smart reminders, post-call messages, updates, and feedback requests — always on time."
       },
       "invoices": {
-        "title": "Automatic Invoices and Payments",
-        "description": "Sending invoices, payment links, status updates the moment payment is received. Less chasing money   more organized cash flow."
+        "title": "Automated Invoicing & Payments",
+        "description": "Invoices, payment links, and real-time payment status updates — clean cash flow, no chasing."
       }
     }
   }
 }
-

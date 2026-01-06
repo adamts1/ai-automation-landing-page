@@ -68,6 +68,19 @@ const Header: FC = () => {
     }
   };
 
+  const getLanguageFlag = (lang: SupportedLanguage): string => {
+    switch (lang) {
+      case 'en':
+        return '🇬🇧';
+      case 'he':
+        return '🇮🇱';
+      case 'fr':
+        return '🇫🇷';
+      default:
+        return '';
+    }
+  };
+
   const getLanguageCode = (lang: SupportedLanguage): string => {
     switch (lang) {
       case 'en':
@@ -139,16 +152,17 @@ const Header: FC = () => {
                     exit={{ opacity: 0, y: -10 }}
                     className="absolute right-0 mt-2 w-40 bg-[#0D1117] border border-[#30363D] rounded-lg shadow-xl overflow-hidden z-50"
                   >
-                    {(['en', 'he', 'fr'] as SupportedLanguage[]).map((lang) => (
+                    {(['he', 'en', 'fr'] as SupportedLanguage[]).map((lang) => (
                       <button
                         key={lang}
                         onClick={() => handleLanguageChange(lang)}
-                        className={`w-full px-4 py-3 text-left rtl:text-right text-sm transition-colors ${language === lang
+                        className={`w-full px-4 py-3 text-left rtl:text-right text-sm transition-colors flex items-center gap-2 ${language === lang
                             ? 'bg-[#161B22] text-[#58A6FF]'
                             : 'text-[#C9D1D9] hover:bg-[#21262D]'
                           }`}
                       >
-                        {getLanguageLabel(lang)}
+                        <span className="text-lg">{getLanguageFlag(lang)}</span>
+                        <span>{getLanguageLabel(lang)}</span>
                       </button>
                     ))}
                   </motion.div>
@@ -193,7 +207,7 @@ const Header: FC = () => {
             {/* Mobile Language Switcher */}
             <div className="border-t border-[#30363D]">
               <div className="px-4 py-2 text-xs text-[#8B949E] uppercase">Language</div>
-              {(['en', 'he', 'fr'] as SupportedLanguage[]).map((lang) => (
+              {(['he', 'en', 'fr'] as SupportedLanguage[]).map((lang) => (
                 <button
                   key={lang}
                   onClick={() => handleLanguageChange(lang)}
@@ -202,7 +216,7 @@ const Header: FC = () => {
                       : 'text-[#C9D1D9] hover:bg-[#21262D]'
                     }`}
                 >
-                  <Languages size={18} />
+                  <span className="text-lg">{getLanguageFlag(lang)}</span>
                   <span className="font-medium">{getLanguageLabel(lang)}</span>
                   {language === lang && (
                     <span className="ml-auto rtl:mr-auto rtl:ml-0 text-[#58A6FF]">✓</span>
