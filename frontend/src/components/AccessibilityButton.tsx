@@ -54,7 +54,7 @@ const AccessibilityButton: FC<AccessibilityButtonProps> = ({ isBusinessProcessMo
         animate={{ scale: 1 }}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
-        className={`fixed bottom-28 right-4 sm:right-6 md:right-8 w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-r from-[#10b981] to-[#059669] rounded-full items-center justify-center text-white shadow-2xl hover:shadow-[#10b981]/50 transition-all z-50 ${
+        className={`fixed bottom-8 left-4 sm:left-6 md:left-8 w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-r from-[#10b981] to-[#059669] rounded-full items-center justify-center text-white shadow-2xl hover:shadow-[#10b981]/50 transition-all z-50 ${
           isBusinessProcessModalOpen ? 'hidden md:flex' : 'flex'
         }`}
         aria-label={t('accessibility.open') || 'Accessibility Options'}
@@ -82,7 +82,7 @@ const AccessibilityButton: FC<AccessibilityButtonProps> = ({ isBusinessProcessMo
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 20, scale: 0.95 }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed bottom-32 right-4 sm:right-6 md:right-8 w-72 sm:w-80 bg-[#0D1117] border border-[#30363D] rounded-lg shadow-2xl z-[70] p-4 sm:p-6"
+              className="fixed bottom-20 left-4 sm:left-6 md:left-8 w-72 sm:w-80 bg-[#0D1117] border border-[#30363D] rounded-lg shadow-2xl z-[70] p-4 sm:p-6"
             >
               {/* Header */}
               <div className="flex items-center justify-between mb-4 sm:mb-6">

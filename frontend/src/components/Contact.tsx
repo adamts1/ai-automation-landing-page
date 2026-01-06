@@ -217,6 +217,19 @@ const Contact: FC<ContactProps> = ({
                   </>
                 )}
               </motion.button>
+
+              {/* WhatsApp Button */}
+              <motion.a
+                href="https://wa.me/+972533807804"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="w-full px-8 py-4 bg-green-500 rounded-lg font-semibold flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-green-500/30 hover:bg-green-600 transition-all"
+              >
+                <MessageCircle size={20} />
+                {t('contact.whatsapp') || 'WhatsApp'}
+              </motion.a>
             </form>
           </motion.div>
         </div>
@@ -231,22 +244,6 @@ const Contact: FC<ContactProps> = ({
 
       {/* Floating Accessibility Button */}
       <AccessibilityButton isBusinessProcessModalOpen={isBusinessProcessModalOpen} />
-
-      {/* Floating WhatsApp Button */}
-      <motion.a
-        href="https://wa.me/+972533807804"
-        target="_blank"
-        rel="noopener noreferrer"
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        className={`fixed bottom-8 right-8 w-16 h-16 bg-green-500 rounded-full items-center justify-center text-white shadow-2xl hover:bg-green-600 transition-colors z-50 ${
-          isBusinessProcessModalOpen ? 'hidden md:flex' : 'flex'
-        }`}
-      >
-        <MessageCircle size={32} />
-      </motion.a>
 
       {/* Toast Notifications */}
       <Toaster
