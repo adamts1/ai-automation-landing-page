@@ -173,6 +173,20 @@
     "networkError": "Network error. Please check your connection and try again.",
     "notFound": "The chat service is not available. Please contact us directly."
   },
+  "accessibility": {
+    "title": "Accessibility Options",
+    "open": "Open accessibility options",
+    "close": "Close menu",
+    "fontSize": "Font Size",
+    "increaseFont": "Increase font size",
+    "decreaseFont": "Decrease font size",
+    "resetFont": "Reset font size",
+    "reset": "Reset",
+    "smaller": "Smaller",
+    "larger": "Larger",
+    "highContrast": "High Contrast",
+    "toggleContrast": "Toggle high contrast"
+  },
   "businessProcesses": {
     "title": "The Automation Processes Your Business Can't Do Without",
     "subtitle": "We transform busy and exhausting processes into smart machines that work for you 24/7   from lead generation to payment processing.",

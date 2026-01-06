@@ -8,6 +8,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import { EMAILJS_CONFIG } from '../config/emailjs';
 import type { ContactFormData, FormStatus } from '../types';
 import Chatbot from './Chatbot';
+import AccessibilityButton from './AccessibilityButton';
 
 interface ContactProps {
   isBusinessProcessModalOpen: boolean;
@@ -227,6 +228,9 @@ const Contact: FC<ContactProps> = ({
         isOpen={isChatbotOpen}
         onOpenChange={onChatbotOpenChange}
       />
+
+      {/* Floating Accessibility Button */}
+      <AccessibilityButton isBusinessProcessModalOpen={isBusinessProcessModalOpen} />
 
       {/* Floating WhatsApp Button */}
       <motion.a
