@@ -11,9 +11,15 @@ import Chatbot from './Chatbot';
 
 interface ContactProps {
   isBusinessProcessModalOpen: boolean;
+  isChatbotOpen?: boolean;
+  onChatbotOpenChange?: (open: boolean) => void;
 }
 
-const Contact: FC<ContactProps> = ({ isBusinessProcessModalOpen }) => {
+const Contact: FC<ContactProps> = ({ 
+  isBusinessProcessModalOpen,
+  isChatbotOpen,
+  onChatbotOpenChange
+}) => {
   const { t } = useTranslation();
   
   const [formData, setFormData] = useState<ContactFormData>({
@@ -216,7 +222,11 @@ const Contact: FC<ContactProps> = ({ isBusinessProcessModalOpen }) => {
       </div>
 
       {/* Chatbot */}
-      <Chatbot isBusinessProcessModalOpen={isBusinessProcessModalOpen} />
+      <Chatbot 
+        isBusinessProcessModalOpen={isBusinessProcessModalOpen}
+        isOpen={isChatbotOpen}
+        onOpenChange={onChatbotOpenChange}
+      />
 
       {/* Floating WhatsApp Button */}
       <motion.a

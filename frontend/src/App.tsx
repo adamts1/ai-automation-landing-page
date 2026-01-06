@@ -11,11 +11,12 @@ import Footer from './components/Footer';
 
 const App: FC = () => {
   const [isBusinessProcessModalOpen, setIsBusinessProcessModalOpen] = useState(false);
+  const [isChatbotOpen, setIsChatbotOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-[#0D1117]">
       <Header />
-      <Hero />
+      <Hero onOpenChatbot={() => setIsChatbotOpen(true)} />
       <Services />
       <BusinessProcesses 
         isModalOpen={isBusinessProcessModalOpen}
@@ -23,7 +24,11 @@ const App: FC = () => {
       />
       <VideoDemo />
       <About />
-      <Contact isBusinessProcessModalOpen={isBusinessProcessModalOpen} />
+      <Contact 
+        isBusinessProcessModalOpen={isBusinessProcessModalOpen}
+        isChatbotOpen={isChatbotOpen}
+        onChatbotOpenChange={setIsChatbotOpen}
+      />
       <Footer />
     </div>
   );

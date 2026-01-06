@@ -83,9 +83,15 @@ const generateSessionId = (): string => {
  */
 interface ChatbotProps {
   isBusinessProcessModalOpen?: boolean;
+  isOpen?: boolean;
+  onOpenChange?: (open: boolean) => void;
 }
 
-const Chatbot: FC<ChatbotProps> = ({ isBusinessProcessModalOpen = false }) => {
+const Chatbot: FC<ChatbotProps> = ({ 
+  isBusinessProcessModalOpen = false,
+  isOpen: externalIsOpen,
+  onOpenChange
+}) => {
   // ========================================================================
   // Translation Hook
   // ========================================================================
@@ -98,8 +104,20 @@ const Chatbot: FC<ChatbotProps> = ({ isBusinessProcessModalOpen = false }) => {
   /** Unique session ID for maintaining conversation context */
   const [sessionId] = useState<string>(() => generateSessionId());
   
+  /** Internal state for isOpen if not controlled externally */
+  const [internalIsOpen, setInternalIsOpen] = useState<boolean>(false);
+  
   /** Controls whether the chat panel is open or closed */
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const isOpen = externalIsOpen !== undefined ? externalIsOpen : internalIsOpen;
+  
+  /** Function to update isOpen state */
+  const setIsOpen = (open: boolean): void => {
+    if (onOpenChange) {
+      onOpenChange(open);
+    } else {
+      setInternalIsOpen(open);
+    }
+  };
   
   /** Array of all messages in the conversation */
   const [messages, setMessages] = useState<Message[]>([
@@ -318,21 +336,6 @@ const Chatbot: FC<ChatbotProps> = ({ isBusinessProcessModalOpen = false }) => {
   
   return (
     <>
-      {/* Chatbot Bubble Button - Fixed position above WhatsApp button */}
-      <motion.button
-        onClick={handleOpenChat}
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        className={`fixed bottom-28 right-8 w-16 h-16 bg-gradient-to-r from-[#58A6FF] to-[#BC8CFF] rounded-full items-center justify-center text-white shadow-2xl hover:shadow-[#58A6FF]/50 transition-all z-50 ${
-          isBusinessProcessModalOpen ? 'hidden md:flex' : 'flex'
-        }`}
-        aria-label={t('chatbot.open') || 'Open chat'}
-      >
-        <Bot size={32} />
-      </motion.button>
-
       {/* Chat Interface - Slide-in panel */}
       <AnimatePresence>
         {isOpen && (

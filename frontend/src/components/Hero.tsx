@@ -1,17 +1,14 @@
 import type { FC } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { Bot, Sparkles } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
-const Hero: FC = () => {
+interface HeroProps {
+  onOpenChatbot?: () => void;
+}
+
+const Hero: FC<HeroProps> = ({ onOpenChatbot }) => {
   const { t } = useTranslation();
-  
-  const scrollToContact = (): void => {
-    const element: HTMLElement | null = document.getElementById('contact');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0D1117]">
@@ -71,11 +68,11 @@ const Hero: FC = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={scrollToContact}
+              onClick={onOpenChatbot}
               className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#58A6FF] to-[#BC8CFF] text-white rounded-lg font-semibold text-lg shadow-xl hover:shadow-2xl hover:shadow-[#58A6FF]/40 transition-all duration-200"
             >
-              {t('hero.cta')}
-              <ArrowRight size={20} className="rtl:rotate-180" />
+              דבר איתי
+              <Bot size={20} />
             </motion.button>
           </motion.div>
 
