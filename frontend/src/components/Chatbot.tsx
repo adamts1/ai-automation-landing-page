@@ -88,7 +88,7 @@ interface ChatbotProps {
 }
 
 const Chatbot: FC<ChatbotProps> = ({ 
-  isBusinessProcessModalOpen = false,
+  // isBusinessProcessModalOpen = false,
   isOpen: externalIsOpen,
   onOpenChange
 }) => {
@@ -319,9 +319,9 @@ const Chatbot: FC<ChatbotProps> = ({
   /**
    * Opens the chat panel
    */
-  const handleOpenChat = (): void => {
-    setIsOpen(true);
-  };
+  // const handleOpenChat = (): void => {
+  //   setIsOpen(true);
+  // };
 
   /**
    * Closes the chat panel
