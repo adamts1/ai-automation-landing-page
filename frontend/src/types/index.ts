@@ -53,7 +53,7 @@ export interface CardItem {
 export type FormStatus = 'idle' | 'loading' | 'success' | 'error';
 
 // Language Types
-export type SupportedLanguage = 'en' | 'he';
+export type SupportedLanguage = 'en' | 'he' | 'fr';
 
 export interface LanguageContextType {
   language: SupportedLanguage;

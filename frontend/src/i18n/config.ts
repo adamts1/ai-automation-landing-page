@@ -2,6 +2,7 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import enTranslations from './translations/en.json';
 import heTranslations from './translations/he.json';
+import frTranslations from './translations/fr.json';
 
 // Get saved language or default to 'he' (Hebrew)
 const savedLanguage = localStorage.getItem('language') || 'he';
@@ -15,6 +16,9 @@ i18n
       },
       he: {
         translation: heTranslations,
+      },
+      fr: {
+        translation: frTranslations,
       },
     },
     lng: savedLanguage,

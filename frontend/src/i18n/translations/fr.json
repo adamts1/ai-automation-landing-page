@@ -1,0 +1,235 @@
+{
+  "header": {
+    "logo": "TSITYAT – AI Boutique Agency",
+    "services": "Services",
+    "businessProcesses": "Processus Métier",
+    "about": "À Propos",
+    "video": "Démo Vidéo",
+    "whyUs": "Pourquoi Nous",
+    "contact": "Contact",
+    "getStarted": "Commencer"
+  },
+  "hero": {
+    "badge": "Solutions Alimentées par l'IA",
+    "title": "Développement de Solutions d'Automatisation Basées sur l'IA",
+    "subtitle": "Nous construisons des automatisations intelligentes et des chatbots qui augmentent l'efficacité et le ROI instantanément.",
+    "cta": "Parlez-moi"
+  },
+  "about": {
+    "title": "À Propos de Nous",
+    "heading": "La question n'est pas si, mais quand.",
+    "paragraph1": "Les entreprises qui adoptent l'intelligence artificielle avec l'automatisation voient une augmentation massive des performances : plus de ventes, plus de clients satisfaits et beaucoup moins de tracas inutiles.",
+    "paragraph2": "Rencontrez vos employés numériques : travaillant 24/7, ne se fatiguant jamais, ne faisant jamais d'erreurs et donnant aux clients une sensation de service humain, immédiat et précis. Ils concluent des affaires, gèrent les problèmes, mettent à jour les systèmes et vous soulagent - tout cela sans salaires, sans jours de maladie et sans maux de tête.",
+    "paragraph3": "Et cela fonctionne pour toute entreprise. Même si vous êtes sûr que \"cela ne fonctionnera pas pour nous\", vous serez surpris de découvrir à quel point cela change la donne dès la première semaine.",
+    "subheading": "Ce Que Nous Offrons",
+    "service1": "Consultation et spécification intelligentes",
+    "service2": "Développement d'automatisations et d'agents IA qui effectuent des tâches comme un employé humain",
+    "service3": "Intégration complète avec vos systèmes",
+    "service4": "Support et maintenance continus, avec une vaste expérience dans la mise en œuvre de solutions localement et mondialement.",
+    "paragraphFinal": "Ceux qui n'adoptent pas les nouveaux outils seront laissés pour compte. Laissez-nous faire avancer votre entreprise d'un pas, dans l'ère où tout fonctionne pour vous et où vous vous concentrez uniquement sur la croissance.",
+    "cta": "Je veux une consultation gratuite",
+    "profileName": "Adam Tsityat - PDG et Fondateur",
+    "profileDescription": "Nous sommes une équipe de premier plan d'experts en automatisation et IA, offrant à nos clients des conseils personnels, des solutions précises et le plus haut niveau de service.",
+    "profileQuote": "Le vrai succès est créé lorsque vous travaillez intelligemment - pas dur.",
+    "description1": "Nous sommes une agence d'automatisation mondiale aidant les entreprises du monde entier à mettre en œuvre des solutions basées sur l'IA. Combinant une connaissance technique approfondie avec un service personnel et professionnel.",
+    "description2": "Notre équipe d'experts se spécialise dans la création de solutions d'automatisation de pointe qui produisent des résultats mesurables. Des petites entreprises aux grandes entreprises, nous avons aidé des centaines de clients à transformer leurs opérations avec l'IA.",
+    "stats": {
+      "projects": "Projets",
+      "countries": "Pays",
+      "satisfaction": "Satisfaction"
+    },
+    "cards": {
+      "globalReach": {
+        "title": "Portée Mondiale",
+        "description": "Servir des clients dans plus de 50 pays"
+      },
+      "expertTeam": {
+        "title": "Équipe d'Experts",
+        "description": "Ingénieurs et consultants IA spécialisés"
+      },
+      "resultDriven": {
+        "title": "Axé sur les Résultats",
+        "description": "Concentré sur la livraison d'un ROI mesurable"
+      },
+      "fastDeploy": {
+        "title": "Déploiement Rapide",
+        "description": "Mise en œuvre et intégration rapides"
+      }
+    }
+  },
+  "services": {
+    "title": "Nos Services",
+    "subtitle": "Solutions IA complètes adaptées pour transformer vos opérations commerciales",
+    "items": {
+      "virtualWorkers": {
+        "title": "Travailleurs Virtuels",
+        "description": "Travailleurs basés sur l'IA qui effectuent des tâches pour vous rapidement, avec précision et intelligemment : ventes, support, collecte de données, fourniture d'informations aux clients et orientation."
+      },
+      "chatbots": {
+        "title": "Chatbots Vocaux et Textuels",
+        "description": "Personnalisés pour WhatsApp, Instagram, Telegram et plus encore avec des capacités d'automatisation : mises à jour CRM, envoi d'e-mails, planification de rendez-vous, vérification des stocks et plus encore."
+      },
+      "fullStack": {
+        "title": "Solutions Logicielles Complémentaires",
+        "description": "Développement de systèmes personnalisés qui complètent l'automatisation - tout fonctionne parfaitement de bout en bout."
+      },
+      "smallBusiness": {
+        "title": "Solution Intelligente et Personnalisée Adaptée aux Besoins de Votre Entreprise",
+        "description": ""
+      },
+      "automation": {
+        "title": "Automatisation Commerciale IA",
+        "description": "Rationalisez les opérations avec des solutions d'automatisation intelligentes qui réduisent les coûts et augmentent la productivité dans toute votre organisation."
+      },
+      "integrations": {
+        "title": "Intégrations Personnalisées",
+        "description": "Intégration fluide et rapide avec tous vos systèmes et plateformes."
+      }
+    }
+  },
+  "video": {
+    "title": "Vidéo de Démonstration",
+    "comingSoon": "Bientôt Disponible..."
+  },
+  "technologies": {
+    "title": "Notre Pile Technologique",
+    "subtitle": "Nous exploitons des technologies de pointe pour construire des solutions robustes et évolutives",
+    "description": "Notre pile technologique est soigneusement choisie pour assurer des performances, une évolutivité et une fiabilité maximales. Nous restons à jour avec les dernières technologies pour vous fournir les meilleures solutions."
+  },
+  "whyUs": {
+    "title": "Pourquoi Nous Choisir",
+    "subtitle": "Nous livrons des résultats qui comptent pour votre entreprise",
+    "reasons": {
+      "roi": {
+        "title": "ROI Instantané",
+        "description": "Voyez des retours immédiats sur investissement avec des processus automatisés qui commencent à fonctionner dès le premier jour."
+      },
+      "global": {
+        "title": "Expérience Mondiale",
+        "description": "Antécédents éprouvés au service des entreprises Fortune 500 et des startups dans plus de 50 pays."
+      },
+      "service": {
+        "title": "Service Personnel et Professionnel",
+        "description": "Équipe de support dédiée garantissant votre succès avec une attention personnalisée et une expertise."
+      },
+      "consultation": {
+        "title": "Consultation Gratuite",
+        "description": "Obtenez des conseils d'experts et une planification stratégique sans frais. Nous analysons vos besoins avant que vous ne vous engagiez."
+      }
+    }
+  },
+  "contact": {
+    "title": "Entrer en Contact",
+    "subtitle": "Prêt à transformer votre entreprise ? Contactez-nous pour une consultation gratuite",
+    "form": {
+      "name": "Nom Complet",
+      "namePlaceholder": "Votre nom",
+      "email": "E-mail",
+      "emailPlaceholder": "votre@email.com",
+      "phone": "Téléphone",
+      "phonePlaceholder": "Votre numéro de téléphone",
+      "description": "Description Brève",
+      "descriptionPlaceholder": "Parlez-nous de vos besoins",
+      "message": "Message",
+      "messagePlaceholder": "Parlez-nous de votre projet",
+      "send": "Envoyer",
+      "sending": "Envoi en cours...",
+      "success": "✓ Message Envoyé !",
+      "error": "Échec de l'envoi du message. Veuillez réessayer.",
+      "successToast": "✅ Message envoyé avec succès ! Nous vous répondrons bientôt.",
+      "errorToast": "❌ Échec de l'envoi du message. Veuillez réessayer ou nous contacter directement."
+    },
+    "whatsapp": "WhatsApp",
+    "info": {
+      "title": "Construisons Quelque Chose d'Extraordinaire",
+      "description": "Notre équipe est prête à vous aider à mettre en œuvre des solutions IA qui produisent de vrais résultats. Contactez-nous aujourd'hui et discutons de la façon dont nous pouvons transformer votre entreprise.",
+      "email": "adamtsityat@gmail.com",
+      "whatsapp": "Support WhatsApp 24/7",
+      "coverage": "Couverture Mondiale",
+      "consultation": {
+        "title": "Consultation Gratuite",
+        "description": "Planifiez une consultation gratuite de 30 minutes pour discuter de vos besoins en automatisation",
+        "button": "Réserver Maintenant"
+      }
+    }
+  },
+  "footer": {
+    "description": "Transformer les entreprises dans le monde entier avec des solutions d'automatisation IA de pointe et des chatbots intelligents.",
+    "quickLinks": "Liens Rapides",
+    "contact": "Contact",
+    "phone": "+1 (555) 123-4567",
+    "coverage": "Couverture Mondiale",
+    "copyright": "TSITYAT – AI Boutique Agency. Tous droits réservés."
+  },
+  "chatbot": {
+    "title": "Assistant IA",
+    "subtitle": "Nous sommes là pour vous aider",
+    "welcome": "Bonjour ! Comment puis-je vous aider aujourd'hui ?",
+    "open": "Ouvrir le chat",
+    "close": "Fermer le chat",
+    "inputPlaceholder": "Tapez votre message...",
+    "send": "Envoyer le message",
+    "error": "Je m'excuse, mais j'ai rencontré une erreur. Veuillez réessayer.",
+    "serverError": "Le serveur rencontre des problèmes. Veuillez réessayer dans un instant.",
+    "networkError": "Erreur réseau. Veuillez vérifier votre connexion et réessayer.",
+    "notFound": "Le service de chat n'est pas disponible. Veuillez nous contacter directement."
+  },
+  "accessibility": {
+    "title": "Options d'Accessibilité",
+    "open": "Ouvrir les options d'accessibilité",
+    "close": "Fermer le menu",
+    "fontSize": "Taille de Police",
+    "increaseFont": "Augmenter la taille de police",
+    "decreaseFont": "Diminuer la taille de police",
+    "resetFont": "Réinitialiser la taille de police",
+    "reset": "Réinitialiser",
+    "smaller": "Plus Petit",
+    "larger": "Plus Grand",
+    "highContrast": "Contraste Élevé",
+    "toggleContrast": "Basculer le contraste élevé"
+  },
+  "businessProcesses": {
+    "title": "Les Processus d'Automatisation Dont Votre Entreprise Ne Peut Pas Se Passer",
+    "subtitle": "Nous transformons les processus chargés et épuisants en machines intelligentes qui travaillent pour vous 24/7 - de la génération de prospects au traitement des paiements.",
+    "description": "Moins de tracas, plus de ventes, un service plus rapide et une expérience qui laisse une impression professionnelle.",
+    "items": {
+      "leadCapture": {
+        "title": "Capture et Nurturing de Prospects",
+        "description": "Un bot intelligent qui parle à vos clients au bon moment, pose des questions ciblées, trie et filtre les prospects et ne vous envoie que les plus chauds. Plus de prospects perdus."
+      },
+      "appointmentScheduling": {
+        "title": "Planification Automatique de Rendez-vous",
+        "description": "Un bot qui gère votre calendrier : suggère la disponibilité, planifie, reprogramme et envoie des rappels. Moins d'appels téléphoniques - plus de clients arrivant à l'heure."
+      },
+      "customerSupport": {
+        "title": "Support Client Intelligent",
+        "description": "Réponses instantanées à toutes les questions récurrentes, statut des commandes, ouverture de tickets de service et plus encore. Les clients reçoivent un service instantané et vous libérez du temps pour ce qui compte vraiment."
+      },
+      "sales": {
+        "title": "Ventes sur WhatsApp / Instagram / Site Web",
+        "description": "Le système demande ce que le client recherche, suggère des produits sur mesure, vérifie les stocks et envoie un lien de paiement. Votre entreprise conclut des affaires 24/7 - même lorsque vous n'êtes pas disponible."
+      },
+      "crmUpdate": {
+        "title": "Mise à Jour Automatique du CRM et des Systèmes",
+        "description": "Chaque prospect, conversation ou commande est automatiquement enregistré : ouverture de clients, mise à jour des statuts, création de tâches. Pas de doubles saisies et pas d'opportunités manquées."
+      },
+      "onboarding": {
+        "title": "Intégration de Nouveaux Clients",
+        "description": "Messages de bienvenue, collecte de données, envoi de formulaires, création de cartes clients - tout automatique. Le client bénéficie d'une expérience d'intégration professionnelle et organisée."
+      },
+      "inventory": {
+        "title": "Vérification des Stocks et Suggestions de Produits",
+        "description": "Le bot se connecte aux stocks, vérifie la disponibilité et suggère les options les plus adaptées au client. Moins de \"Je vous rappellerai\", plus de \"J'ai déjà plusieurs options pour vous\"."
+      },
+      "followUps": {
+        "title": "Suivis Automatiques",
+        "description": "Rappels intelligents, messages post-conversation, mises à jour, demandes de commentaires - tout à temps. Restez en contact et restez dans la conscience du client."
+      },
+      "invoices": {
+        "title": "Factures et Paiements Automatiques",
+        "description": "Envoi de factures, liens de paiement, mises à jour de statut au moment où le paiement est reçu. Moins de poursuite d'argent - plus de flux de trésorerie organisé."
+      }
+    }
+  }
+}
+

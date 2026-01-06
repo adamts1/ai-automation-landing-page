@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import type { FC } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Languages } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -11,6 +11,9 @@ const Header: FC = () => {
   const { language, changeLanguage } = useLanguage();
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
+  const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState<boolean>(false);
+
+  const languageMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,6 +24,23 @@ const Header: FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close language menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent): void => {
+      if (languageMenuRef.current && !languageMenuRef.current.contains(event.target as Node)) {
+        setIsLanguageMenuOpen(false);
+      }
+    };
+
+    if (isLanguageMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isLanguageMenuOpen]);
+
   const scrollToSection = (id: string): void => {
     const element: HTMLElement | null = document.getElementById(id);
     if (element) {
@@ -29,9 +49,36 @@ const Header: FC = () => {
     }
   };
 
-  const toggleLanguage = (): void => {
-    const newLang: SupportedLanguage = language === 'en' ? 'he' : 'en';
-    changeLanguage(newLang);
+  const handleLanguageChange = (lang: SupportedLanguage): void => {
+    changeLanguage(lang);
+    setIsLanguageMenuOpen(false);
+    setIsMobileMenuOpen(false);
+  };
+
+  const getLanguageLabel = (lang: SupportedLanguage): string => {
+    switch (lang) {
+      case 'en':
+        return 'English';
+      case 'he':
+        return 'עברית';
+      case 'fr':
+        return 'Français';
+      default:
+        return lang;
+    }
+  };
+
+  const getLanguageCode = (lang: SupportedLanguage): string => {
+    switch (lang) {
+      case 'en':
+        return 'EN';
+      case 'he':
+        return 'עב';
+      case 'fr':
+        return 'FR';
+      default:
+        return lang.toUpperCase();
+    }
   };
 
   const navItems: NavItem[] = [
@@ -74,17 +121,43 @@ const Header: FC = () => {
             ))}
             
             {/* Language Switcher */}
-            <div className="relative">
+            <div className="relative" ref={languageMenuRef}>
               <button
-                onClick={toggleLanguage}
+                onClick={() => setIsLanguageMenuOpen(!isLanguageMenuOpen)}
                 className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-200 ${
                   isScrolled ? 'text-[#C9D1D9] hover:bg-[#21262D]' : 'text-white hover:bg-white/10'
                 }`}
-                title={language === 'en' ? 'Switch to Hebrew' : 'Switch to English'}
+                title="Select language"
               >
                 <Languages size={18} />
-                <span className="text-sm font-medium">{language === 'en' ? 'EN' : 'עב'}</span>
+                <span className="text-sm font-medium">{getLanguageCode(language)}</span>
               </button>
+
+              {/* Language Dropdown */}
+              <AnimatePresence>
+                {isLanguageMenuOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    className="absolute right-0 mt-2 w-40 bg-[#0D1117] border border-[#30363D] rounded-lg shadow-xl overflow-hidden z-50"
+                  >
+                    {(['en', 'he', 'fr'] as SupportedLanguage[]).map((lang) => (
+                      <button
+                        key={lang}
+                        onClick={() => handleLanguageChange(lang)}
+                        className={`w-full px-4 py-3 text-left rtl:text-right text-sm transition-colors ${
+                          language === lang
+                            ? 'bg-[#161B22] text-[#58A6FF]'
+                            : 'text-[#C9D1D9] hover:bg-[#21262D]'
+                        }`}
+                      >
+                        {getLanguageLabel(lang)}
+                      </button>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
 
             <button
@@ -122,13 +195,26 @@ const Header: FC = () => {
             ))}
             
             {/* Mobile Language Switcher */}
-            <button
-              onClick={toggleLanguage}
-              className="flex items-center justify-center gap-2 w-full px-4 py-3 text-[#C9D1D9] hover:bg-[#21262D] transition-colors border-t border-[#30363D]"
-            >
-              <Languages size={20} />
-              <span className="font-medium">{language === 'en' ? 'עברית' : 'English'}</span>
-            </button>
+            <div className="border-t border-[#30363D]">
+              <div className="px-4 py-2 text-xs text-[#8B949E] uppercase">Language</div>
+              {(['en', 'he', 'fr'] as SupportedLanguage[]).map((lang) => (
+                <button
+                  key={lang}
+                  onClick={() => handleLanguageChange(lang)}
+                  className={`flex items-center gap-2 w-full px-4 py-3 text-left rtl:text-right transition-colors ${
+                    language === lang
+                      ? 'bg-[#161B22] text-[#58A6FF]'
+                      : 'text-[#C9D1D9] hover:bg-[#21262D]'
+                  }`}
+                >
+                  <Languages size={18} />
+                  <span className="font-medium">{getLanguageLabel(lang)}</span>
+                  {language === lang && (
+                    <span className="ml-auto rtl:mr-auto rtl:ml-0 text-[#58A6FF]">✓</span>
+                  )}
+                </button>
+              ))}
+            </div>
 
             {/* Mobile Get Started Button */}
             <div className="px-4 pt-3 pb-2 border-t border-[#30363D]">
