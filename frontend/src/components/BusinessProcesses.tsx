@@ -191,9 +191,9 @@ const BusinessProcesses: FC<BusinessProcessesProps> = ({ isModalOpen, setIsModal
                     : 'cursor-default'
                 }`}
               >
-                {/* Play Button - Top Left Corner (only for clickable processes) */}
+                {/* Play Button - Top Right Corner (LTR) / Top Left Corner (RTL) (only for clickable processes) */}
                 {!isCrmUpdate && (
-                  <div className="absolute top-3 left-3 md:top-4 md:left-4 z-10">
+                  <div className="absolute top-3 right-3 rtl:left-3 rtl:right-auto md:top-4 md:right-4 md:rtl:left-4 md:rtl:right-auto z-10">
                     <div className="bg-white/95 backdrop-blur-sm rounded-full p-2 md:p-2.5 shadow-lg md:group-hover:scale-110 transition-transform duration-300">
                       <Play className="w-4 h-4 md:w-5 md:h-5 text-[#58A6FF] fill-[#58A6FF] ml-0.5" />
                     </div>
