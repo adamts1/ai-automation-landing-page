@@ -178,21 +178,23 @@ const BusinessProcesses: FC<BusinessProcessesProps> = ({ isModalOpen, setIsModal
         >
           {processes.map((process, index) => {
             const isCrmUpdate = process.processKey === 'crmUpdate';
+            const isFollowUps = process.processKey === 'followUps';
+            const isNonClickable = isCrmUpdate || isFollowUps;
             return (
               <motion.div
                 key={index}
                 variants={itemVariants}
-                whileHover={!isCrmUpdate ? { y: -8, scale: 1.02 } : {}}
-                whileTap={!isCrmUpdate ? { scale: 0.98 } : {}}
-                onClick={() => handleProcessClick(process.processKey)}
+                whileHover={!isNonClickable ? { y: -8, scale: 1.02 } : {}}
+                whileTap={!isNonClickable ? { scale: 0.98 } : {}}
+                onClick={() => !isNonClickable && handleProcessClick(process.processKey)}
                 className={`group relative bg-[#0D1117] border border-[#30363D] p-6 rounded-xl transition-all duration-300 overflow-hidden ${
-                  !isCrmUpdate 
+                  !isNonClickable 
                     ? 'hover:border-[#58A6FF]/50 active:border-[#58A6FF]/50 cursor-pointer' 
                     : 'cursor-default'
                 }`}
               >
                 {/* Play Button - Top Right Corner (LTR) / Top Left Corner (RTL) (only for clickable processes) */}
-                {!isCrmUpdate && (
+                {!isNonClickable && (
                   <div className="absolute top-3 right-3 rtl:left-3 rtl:right-auto md:top-4 md:right-4 md:rtl:left-4 md:rtl:right-auto z-10">
                     <div className="bg-white/95 backdrop-blur-sm rounded-full p-2 md:p-2.5 shadow-lg md:group-hover:scale-110 transition-transform duration-300">
                       <Play className="w-4 h-4 md:w-5 md:h-5 text-[#58A6FF] fill-[#58A6FF] ml-0.5" />
