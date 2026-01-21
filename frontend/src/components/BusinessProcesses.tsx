@@ -9,7 +9,7 @@ import {
   Database,
   UserPlus,
   Package,
-  MessageSquare,
+  Store,
   Receipt,
   Play,
 } from 'lucide-react';
@@ -95,7 +95,7 @@ const BusinessProcesses: FC<BusinessProcessesProps> = ({ isModalOpen, setIsModal
       businessAccount: 'Business account',
     },
     {
-      icon: <MessageSquare size={32} />,
+      icon: <Store size={32} />,
       title: t('businessProcesses.items.followUps.title'),
       description: t('businessProcesses.items.followUps.description'),
       processKey: 'followUps',
