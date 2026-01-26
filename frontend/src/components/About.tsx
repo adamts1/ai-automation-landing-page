@@ -69,40 +69,59 @@ const About: FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="bg-[#0D1117] rounded-lg p-3 md:p-4 border border-[#30363D] md:flex-shrink-0 md:w-80 md:self-start"
+            className="bg-[#4696EB] rounded-lg p-4 md:p-6 border border-[#30363D] md:flex-shrink-0 md:w-96 md:self-start"
           >
-            <div className="flex flex-col items-center text-center space-y-2">
-              {/* Profile Image */}
+            <div className="flex flex-col items-center text-center space-y-4">
+              {/* Profile Image with Ellipse Frame */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="relative"
+                className="w-full flex justify-center"
               >
-                <div className="w-14 h-14 md:w-16 md:h-16 rounded-full shadow-md overflow-hidden border-2 border-[#30363D]">
-                  <img
-                    src={profileImage}
-                    alt="Adam Tsityat"
-                    className="w-full h-full object-cover"
-                  />
+                <div className="relative">
+                  {/* Ellipse Frame */}
+                  <div 
+                    className="border-8 border-white/90 shadow-xl overflow-hidden bg-[#4696EB] flex items-center justify-center"
+                    style={{ 
+                      width: '320px',
+                      height: '360px',
+                      borderRadius: '50%',
+                      clipPath: 'ellipse(160px 180px at 50% 50%)'
+                    }}
+                  >
+                    <img
+                      src={profileImage}
+                      alt="Adam Tsityat"
+                      className="w-full h-full object-contain"
+                      style={{ 
+                        clipPath: 'ellipse(160px 180px at 50% 50%)',
+                        objectPosition: 'center',
+                        backgroundColor: '#4696EB'
+                      }}
+                    />
+                  </div>
                 </div>
               </motion.div>
 
-              {/* Name */}
-              <h2 className="text-lg md:text-xl font-bold text-white">
-                {t('about.profileName')}
-              </h2>
-
-              {/* Description */}
-              <p className="text-xs text-[#C9D1D9] leading-relaxed text-center md:text-right max-w-lg md:max-w-full">
-                {t('about.profileDescription')}
-              </p>
-
-              {/* Quote */}
-              <p className="text-xs md:text-sm text-[#58A6FF] font-medium italic text-center max-w-lg md:max-w-full">
-                "{t('about.profileQuote')}"
-              </p>
+              {/* Text Content Below Image */}
+              <div className="w-full space-y-3 px-2">
+                {/* Name - Large and Bold */}
+                <h2 className="text-2xl md:text-3xl font-bold text-white drop-shadow-lg">
+                  {t('about.profileName')}
+                </h2>
+                
+                {/* Description/Tagline - Accent Color */}
+                <p className="text-base md:text-lg text-white font-semibold leading-relaxed drop-shadow-md">
+                  {t('about.profileDescription')}
+                </p>
+                
+                {/* Quote - Smaller, Italic */}
+                <p className="text-sm md:text-base text-white font-medium italic leading-relaxed drop-shadow-md">
+                  "{t('about.profileQuote')}"
+                </p>
+              </div>
 
               {/* LinkedIn Link */}
               <motion.a
@@ -110,9 +129,9 @@ const About: FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1 }}
-                className="mt-1 w-7 h-7 bg-[#161B22] border border-[#30363D] rounded-lg flex items-center justify-center hover:bg-[#21262D] hover:border-[#58A6FF] transition-colors"
+                className="mt-2 w-10 h-10 md:w-11 md:h-11 bg-white/20 backdrop-blur-sm border border-white/30 rounded-full flex items-center justify-center hover:bg-white/30 hover:border-white/50 transition-colors"
               >
-                <Linkedin size={14} className="text-[#C9D1D9]" />
+                <Linkedin size={18} className="text-white" />
               </motion.a>
             </div>
           </motion.div>
