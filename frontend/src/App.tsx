@@ -18,11 +18,11 @@ const App: FC = () => {
       <Header />
       <Hero onOpenChatbot={() => setIsChatbotOpen(true)} />
       <Services />
+      <VideoDemo />
       <BusinessProcesses 
         isModalOpen={isBusinessProcessModalOpen}
         setIsModalOpen={setIsBusinessProcessModalOpen}
       />
-      <VideoDemo />
       <About />
       <Contact 
         isBusinessProcessModalOpen={isBusinessProcessModalOpen}
