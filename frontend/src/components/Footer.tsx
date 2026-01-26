@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Twitter } from 'lucide-react';
+import { Linkedin } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 const Footer: FC = () => {
@@ -20,13 +20,6 @@ const Footer: FC = () => {
               {t('footer.description')}
             </p>
             <div className="flex gap-4">
-              <motion.a
-                whileHover={{ scale: 1.2 }}
-                href="#"
-                className="w-10 h-10 bg-[#161B22] border border-[#30363D] rounded-lg flex items-center justify-center hover:bg-[#21262D] hover:border-[#58A6FF] transition-colors"
-              >
-                <Twitter size={18} className="text-[#C9D1D9]" />
-              </motion.a>
               <motion.a
                 whileHover={{ scale: 1.2 }}
                 href="https://www.linkedin.com/in/adam-tsityat-05340a124/"
@@ -56,13 +49,6 @@ const Footer: FC = () => {
                 >
                   <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
                 </svg>
-              </motion.a>
-              <motion.a
-                whileHover={{ scale: 1.2 }}
-                href="#"
-                className="w-10 h-10 bg-[#161B22] border border-[#30363D] rounded-lg flex items-center justify-center hover:bg-[#21262D] hover:border-[#BC8CFF] transition-colors"
-              >
-                <Github size={18} className="text-[#C9D1D9]" />
               </motion.a>
             </div>
           </div>
