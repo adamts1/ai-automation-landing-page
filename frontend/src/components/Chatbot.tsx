@@ -40,7 +40,7 @@ interface ChatbotResponse {
 // ============================================================================
 
 /** n8n webhook URL for chatbot API */
-const CHATBOT_WEBHOOK_URL: string = 'https://adam-tsityat.app.n8n.cloud/webhook/faad1fce-b241-4234-a055-848ded3770f3/chat';
+const CHATBOT_WEBHOOK_URL: string = 'https://tsityat.app.n8n.cloud/webhook/faad1fce-b241-4234-a055-848ded3770f3/chat';
 
 /** LocalStorage key for storing session ID */
 const SESSION_ID_STORAGE_KEY: string = 'chatbot_session_id';
