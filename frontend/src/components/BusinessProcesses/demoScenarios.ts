@@ -886,15 +886,15 @@ export const processDemoScenarios: Record<ProcessKey, DemoScenario[] | Message[]
           time: '14:23',
           buttons: [
             { id: 'budget_under_1_5', title: 'עד 1.5 מ׳' },
-            { id: 'budget_1_5_to_2_5', title: '1.5–2.5 מ׳' },
-            { id: 'budget_2_5_to_4', title: '2.5–4 מ׳' },
+            { id: 'budget_1_5_to_2_5', title: '1.5-2.5 מ׳' },
+            { id: 'budget_2_5_to_4', title: '2.5-4 מ׳' },
             { id: 'budget_over_4', title: 'מעל 4 מ׳' }
           ]
         },
         { 
           type: 'user_reply_selection', 
           replyToText: 'סדר גודל של תקציב?', 
-          value: '2.5–4 מ׳', 
+          value: '2.5-4 מ׳', 
           choiceId: 'budget_2_5_to_4', 
           source: 'button', 
           time: '14:24' 
@@ -961,15 +961,15 @@ export const processDemoScenarios: Record<ProcessKey, DemoScenario[] | Message[]
           time: '14:23',
           buttons: [
             { id: 'budget_under_1_5', title: 'עד 1.5 מ׳' },
-            { id: 'budget_1_5_to_2_5', title: '1.5–2.5 מ׳' },
-            { id: 'budget_2_5_to_4', title: '2.5–4 מ׳' },
+            { id: 'budget_1_5_to_2_5', title: '1.5-2.5 מ׳' },
+            { id: 'budget_2_5_to_4', title: '2.5-4 מ׳' },
             { id: 'budget_over_4', title: 'מעל 4 מ׳' }
           ]
         },
         { 
           type: 'user_reply_selection', 
           replyToText: 'סדר גודל של תקציב?', 
-          value: '2.5–4 מ׳', 
+          value: '2.5-4 מ׳', 
           choiceId: 'budget_2_5_to_4', 
           source: 'button', 
           time: '14:24' 
@@ -1065,15 +1065,15 @@ export const processDemoScenarios: Record<ProcessKey, DemoScenario[] | Message[]
           time: '14:23',
           buttons: [
             { id: 'budget_under_1_5', title: 'עד 1.5 מ׳' },
-            { id: 'budget_1_5_to_2_5', title: '1.5–2.5 מ׳' },
-            { id: 'budget_2_5_to_4', title: '2.5–4 מ׳' },
+            { id: 'budget_1_5_to_2_5', title: '1.5-2.5 מ׳' },
+            { id: 'budget_2_5_to_4', title: '2.5-4 מ׳' },
             { id: 'budget_over_4', title: 'מעל 4 מ׳' }
           ]
         },
         { 
           type: 'user_reply_selection', 
           replyToText: 'סדר גודל של תקציב?', 
-          value: '2.5–4 מ׳', 
+          value: '2.5-4 מ׳', 
           choiceId: 'budget_2_5_to_4', 
           source: 'button', 
           time: '14:24' 
@@ -1351,14 +1351,14 @@ export const processDemoScenarios: Record<ProcessKey, DemoScenario[] | Message[]
         text: 'יש לי שתי אפשרויות מעולות:',
         time: '10:19',
         buttons: [
-          { id: 'option_black_dress', title: 'שמלה שחורה – 349₪' },
-          { id: 'option_blue_dress', title: 'שמלה כחולה – 379₪' }
+          { id: 'option_black_dress', title: 'שמלה שחורה - 349₪' },
+          { id: 'option_blue_dress', title: 'שמלה כחולה - 379₪' }
         ]
       },
       {
         type: 'user_reply_selection',
         replyToText: 'יש לי שתי אפשרויות מעולות:',
-        value: 'שמלה שחורה – 349₪',
+        value: 'שמלה שחורה - 349₪',
         choiceId: 'option_black_dress',
         source: 'button',
         time: '10:20'
@@ -1438,14 +1438,14 @@ export const processDemoScenarios: Record<ProcessKey, DemoScenario[] | Message[]
         text: 'יש לי שתי אפשרויות מעולות:',
         time: '10:19',
         buttons: [
-          { id: 'option_black_dress', title: 'שמלה שחורה – 349₪' },
-          { id: 'option_blue_dress', title: 'שמלה כחולה – 379₪' }
+          { id: 'option_black_dress', title: 'שמלה שחורה - 349₪' },
+          { id: 'option_blue_dress', title: 'שמלה כחולה - 379₪' }
         ]
       },
       {
         type: 'user_reply_selection',
         replyToText: 'יש לי שתי אפשרויות מעולות:',
-        value: 'שמלה שחורה – 349₪',
+        value: 'שמלה שחורה - 349₪',
         choiceId: 'option_black_dress',
         source: 'button',
         time: '10:20'
@@ -1478,7 +1478,7 @@ export const processDemoScenarios: Record<ProcessKey, DemoScenario[] | Message[]
         linkPreview: {
           url: 'https://payment.example.com/checkout',
           title: 'תשלום מאובטח',
-          description: 'שמלה שחורה – 349₪'
+          description: 'שמלה שחורה - 349₪'
         }
       },
       {

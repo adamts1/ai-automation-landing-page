@@ -1,6 +1,6 @@
 {
   "header": {
-    "logo": "TSITYAT – AI Boutique Agency",
+    "logo": "TSITYAT - AI Boutique Agency",
     "services": "What We Do",
     "businessProcesses": "Automation Processes",
     "about": "About Us",
@@ -17,7 +17,7 @@
   "about": {
     "title": "About Us",
     "subtitle": "",
-    "profileName": "Adam – Founder & CEO",
+    "profileName": "Adam - Founder & CEO",
     "profileDescription": "Our team transforms complexity into opportunity and heavy workloads into clear, human-centered results.",
     "profileQuote": "Take action. Succeed.",
     "heading": "The question is not if — but when.",
@@ -124,7 +124,7 @@
     "contact": "Contact",
     "phone": "+972 533807804",
     "coverage": "Global Coverage",
-    "copyright": "TSITYAT – AI Boutique Agency"
+    "copyright": "TSITYAT - AI Boutique Agency"
   },
   "chatbot": {
     "title": "AI Assistant",
