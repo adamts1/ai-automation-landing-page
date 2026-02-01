@@ -653,7 +653,7 @@ export const processDemoScenarios: Record<ProcessKey, DemoScenario[] | Message[]
         },
         {
           type: 'bot_text',
-          text: 'כדי לסגור את התור—\nשם מלא וטלפון ליצירת קשר',
+          text: 'כדי לסגור את \nשם מלא וטלפון ליצירת קשר',
           time: '09:20'
         },
         {
@@ -762,7 +762,7 @@ export const processDemoScenarios: Record<ProcessKey, DemoScenario[] | Message[]
         },
         {
           type: 'bot_text',
-          text: 'כדי לסגור את התור—\nשם מלא וטלפון ליצירת קשר',
+          text: 'כדי לסגור את התור-\nשם מלא וטלפון ליצירת קשר',
           time: '09:20'
         },
         {
@@ -1005,7 +1005,7 @@ export const processDemoScenarios: Record<ProcessKey, DemoScenario[] | Message[]
         },
         {
           type: 'bot_buttons',
-          text: 'כדי שנדע איך לגשת אליך —\nאיפה אתה נמצא בתהליך?',
+          text: 'כדי שנדע איך לגשת אליך -\nאיפה אתה נמצא בתהליך?',
           time: '14:26',
           buttons: [
             { id: 'readiness_ready', title: 'מוכן להתקדם' },
@@ -1109,7 +1109,7 @@ export const processDemoScenarios: Record<ProcessKey, DemoScenario[] | Message[]
         },
         {
           type: 'bot_buttons',
-          text: 'כדי שנדע איך לגשת אליך —\nאיפה אתה נמצא בתהליך?',
+          text: 'כדי שנדע איך לגשת אליך -\nאיפה אתה נמצא בתהליך?',
           time: '14:26',
           buttons: [
             { id: 'readiness_ready', title: 'מוכן להתקדם' },
@@ -1119,7 +1119,7 @@ export const processDemoScenarios: Record<ProcessKey, DemoScenario[] | Message[]
         },
         { 
           type: 'user_reply_selection', 
-          replyToText: 'כדי שנדע איך לגשת אליך —\nאיפה אתה נמצא בתהליך?', 
+          replyToText: 'כדי שנדע איך לגשת אליך -\nאיפה אתה נמצא בתהליך?', 
           value: 'מוכן להתקדם', 
           choiceId: 'readiness_ready', 
           source: 'button', 
@@ -1606,7 +1606,7 @@ export const processDemoScenarios: Record<ProcessKey, DemoScenario[] | Message[]
         },
         {
           type: 'bot_text',
-          text: 'כדי שנדייק את השירות—\nמה תחום הפעילות שלך?',
+          text: 'כדי שנדייק את השירות-\nמה תחום הפעילות שלך?',
           time: '10:03'
         },
         {
@@ -1621,7 +1621,7 @@ export const processDemoScenarios: Record<ProcessKey, DemoScenario[] | Message[]
       messages: [
         {
           type: 'bot_text',
-          text: 'כדי שנדייק את השירות—\nמה תחום הפעילות שלך?',
+          text: 'כדי שנדייק את השירות-\nמה תחום הפעילות שלך?',
           time: '10:03'
         },
         {
@@ -1795,7 +1795,7 @@ export const processDemoScenarios: Record<ProcessKey, DemoScenario[] | Message[]
       messages: [
         {
           type: 'bot_buttons',
-          text: 'היי 👋\nתודה על השיחה קודם.\nאם תרצה להתקדם או שיש שאלה — אני כאן.',
+          text: 'היי 👋\nתודה על השיחה קודם.\nאם תרצה להתקדם או שיש שאלה - אני כאן.',
           time: '16:30',
           buttons: [
             { id: 'continue_yes', title: 'כן, אשמח להמשיך' },
@@ -2049,7 +2049,7 @@ export const processDemoScenarios: Record<ProcessKey, DemoScenario[] | Message[]
         },
         {
           type: 'bot_buttons',
-          text: 'אם תרצה—\nאוכל לשלוח קבלה או לעזור במשהו נוסף.',
+          text: 'אם תרצה-\nאוכל לשלוח קבלה או לעזור במשהו נוסף.',
           time: '15:00',
           buttons: [
             { id: 'send_receipt', title: 'שליחת קבלה' },

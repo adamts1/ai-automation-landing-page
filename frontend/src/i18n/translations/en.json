@@ -20,16 +20,16 @@
     "profileName": "Adam - Founder & CEO",
     "profileDescription": "Our team transforms complexity into opportunity and heavy workloads into clear, human-centered results.",
     "profileQuote": "Take action. Succeed.",
-    "heading": "The question is not if — but when.",
+    "heading": "The question is not if - but when.",
     "paragraph1": "Businesses that adopt AI-driven automation experience a dramatic performance boost: more sales, happier customers, and far less operational friction.",
-    "paragraph2": "Meet your digital workforce: available 24/7, tireless, precise, and consistent. They close deals, handle support, update systems, and remove operational load — without salaries, sick days, or headaches.",
-    "paragraph3": "This works for every business. Even if you think \"it won’t work for us,\" you’ll be surprised how fast the impact is felt — often within the first week.",
+    "paragraph2": "Meet your digital workforce: available 24/7, tireless, precise, and consistent. They close deals, handle support, update systems, and remove operational load - without salaries, sick days, or headaches.",
+    "paragraph3": "This works for every business. Even if you think \"it won’t work for us,\" you’ll be surprised how fast the impact is felt - often within the first week.",
     "subheading": "What We Deliver",
     "service1": "Strategic consulting & process design",
     "service2": "Development of AI agents and automations that operate like human employees",
     "service3": "Full integration with your existing systems",
     "service4": "Ongoing support and maintenance, backed by global implementation experience",
-    "paragraphFinal": "Let us take your business into the next era — where everything works for you and your focus is purely on growth.",
+    "paragraphFinal": "Let us take your business into the next era - where everything works for you and your focus is purely on growth.",
     "cta": "Book a Free Consultation"
   },
   "services": {
@@ -42,7 +42,7 @@
       },
       "chatbots": {
         "title": "Voice & Text Chatbots",
-        "description": "Custom-built for WhatsApp, Instagram, Telegram, and more — integrated with CRM updates, email automation, appointment booking, inventory checks, and beyond."
+        "description": "Custom-built for WhatsApp, Instagram, Telegram, and more - integrated with CRM updates, email automation, appointment booking, inventory checks, and beyond."
       },
       "fullStack": {
         "title": "Custom Software Solutions",
@@ -155,7 +155,7 @@
   },
   "businessProcesses": {
     "title": "Automation Processes Your Business Can’t Live Without",
-    "subtitle": "We turn heavy, exhausting workflows into smart machines that operate 24/7 — from lead to payment.",
+    "subtitle": "We turn heavy, exhausting workflows into smart machines that operate 24/7 - from lead to payment.",
     "description": "Less manual work, more sales, faster service, and a professional customer experience.",
     "items": {
       "leadCapture": {
@@ -168,19 +168,19 @@
       },
       "customerSupport": {
         "title": "Smart Customer Support",
-        "description": "Instant responses to FAQs, order statuses, and support tickets — customers get answers immediately."
+        "description": "Instant responses to FAQs, order statuses, and support tickets - customers get answers immediately."
       },
       "sales": {
         "title": "Sales via WhatsApp / Instagram / Website",
-        "description": "The system understands customer needs, recommends products, checks inventory, and sends payment links — closing deals 24/7."
+        "description": "The system understands customer needs, recommends products, checks inventory, and sends payment links - closing deals 24/7."
       },
       "crmUpdate": {
         "title": "Automatic CRM & System Updates",
-        "description": "Every interaction is logged automatically: customers, statuses, tasks — no manual entry, no mistakes."
+        "description": "Every interaction is logged automatically: customers, statuses, tasks - no manual entry, no mistakes."
       },
       "onboarding": {
         "title": "Customer Onboarding",
-        "description": "Welcome messages, data collection, forms, and customer records — all automated for a professional first impression."
+        "description": "Welcome messages, data collection, forms, and customer records - all automated for a professional first impression."
       },
       "inventory": {
         "title": "Inventory Checks & Recommendations",
@@ -192,7 +192,7 @@
       },
       "invoices": {
         "title": "Automated Invoicing & Payments",
-        "description": "Invoices, payment links, and real-time payment status updates — clean cash flow, no chasing."
+        "description": "Invoices, payment links, and real-time payment status updates - clean cash flow, no chasing."
       }
     }
   }

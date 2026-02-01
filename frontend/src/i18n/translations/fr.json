@@ -20,16 +20,16 @@
     "profileName": "Adam - Fondateur & CEO",
     "profileDescription": "Notre équipe transforme la complexité en opportunités et les processus lourds en résultats clairs, efficaces et humains.",
     "profileQuote": "Agir. Réussir.",
-    "heading": "La question n’est pas si — mais quand.",
+    "heading": "La question n’est pas si - mais quand.",
     "paragraph1": "Les entreprises qui adoptent l’automatisation basée sur l’IA constatent une amélioration spectaculaire de leurs performances : plus de ventes, des clients plus satisfaits et beaucoup moins de charge opérationnelle.",
-    "paragraph2": "Découvrez vos collaborateurs digitaux : disponibles 24/7, infatigables, précis et cohérents. Ils vendent, assistent vos clients, mettent à jour vos systèmes et éliminent les tâches répétitives — sans salaires, sans congés et sans contraintes.",
-    "paragraph3": "Cette approche fonctionne pour tous les types d’entreprises. Même si vous pensez que « cela ne fonctionnera pas chez nous », vous serez surpris par l’impact — souvent visible dès la première semaine.",
+    "paragraph2": "Découvrez vos collaborateurs digitaux : disponibles 24/7, infatigables, précis et cohérents. Ils vendent, assistent vos clients, mettent à jour vos systèmes et éliminent les tâches répétitives - sans salaires, sans congés et sans contraintes.",
+    "paragraph3": "Cette approche fonctionne pour tous les types d’entreprises. Même si vous pensez que « cela ne fonctionnera pas chez nous », vous serez surpris par l’impact - souvent visible dès la première semaine.",
     "subheading": "Ce Que Nous Fournissons",
     "service1": "Conseil stratégique et analyse des processus",
     "service2": "Développement d’agents IA et d’automatisations agissant comme de véritables employés",
     "service3": "Intégration complète avec vos systèmes et outils existants",
     "service4": "Accompagnement continu et maintenance, avec une expertise internationale",
-    "paragraphFinal": "Faites passer votre entreprise à l’ère où tout fonctionne pour vous — et concentrez-vous uniquement sur la croissance.",
+    "paragraphFinal": "Faites passer votre entreprise à l’ère où tout fonctionne pour vous - et concentrez-vous uniquement sur la croissance.",
     "cta": "Réserver une Consultation Gratuite"
   },
   "services": {
@@ -42,7 +42,7 @@
       },
       "chatbots": {
         "title": "Chatbots Vocaux & Textuels",
-        "description": "Conçus sur mesure pour WhatsApp, Instagram, Telegram et plus encore — avec automatisation CRM, envoi d’emails, prise de rendez-vous, vérification des stocks et bien plus."
+        "description": "Conçus sur mesure pour WhatsApp, Instagram, Telegram et plus encore - avec automatisation CRM, envoi d’emails, prise de rendez-vous, vérification des stocks et bien plus."
       },
       "fullStack": {
         "title": "Solutions Logicielles Sur Mesure",
@@ -155,7 +155,7 @@
   },
   "businessProcesses": {
     "title": "Les Processus d’Automatisation Indispensables à Votre Entreprise",
-    "subtitle": "Nous transformons des processus lourds et chronophages en machines intelligentes qui fonctionnent 24/7 — du lead au paiement.",
+    "subtitle": "Nous transformons des processus lourds et chronophages en machines intelligentes qui fonctionnent 24/7 - du lead au paiement.",
     "description": "Moins de tâches manuelles, plus de ventes, un service rapide et une expérience client professionnelle.",
     "items": {
       "leadCapture": {
@@ -168,19 +168,19 @@
       },
       "customerSupport": {
         "title": "Support Client Intelligent",
-        "description": "Réponses immédiates aux questions fréquentes, suivi des commandes et gestion des demandes — sans attente."
+        "description": "Réponses immédiates aux questions fréquentes, suivi des commandes et gestion des demandes - sans attente."
       },
       "sales": {
         "title": "Ventes via WhatsApp / Instagram / Site Web",
-        "description": "Le système comprend les besoins du client, recommande les bons produits, vérifie le stock et envoie un lien de paiement — 24/7."
+        "description": "Le système comprend les besoins du client, recommande les bons produits, vérifie le stock et envoie un lien de paiement - 24/7."
       },
       "crmUpdate": {
         "title": "Mise à Jour Automatique du CRM",
-        "description": "Chaque interaction est enregistrée automatiquement : clients, statuts, tâches — sans saisie manuelle."
+        "description": "Chaque interaction est enregistrée automatiquement : clients, statuts, tâches - sans saisie manuelle."
       },
       "onboarding": {
         "title": "Onboarding des Nouveaux Clients",
-        "description": "Messages de bienvenue, collecte de données, formulaires et création de fiches clients — entièrement automatisés."
+        "description": "Messages de bienvenue, collecte de données, formulaires et création de fiches clients - entièrement automatisés."
       },
       "inventory": {
         "title": "Vérification des Stocks et Recommandations",
@@ -192,7 +192,7 @@
       },
       "invoices": {
         "title": "Facturation et Paiements Automatisés",
-        "description": "Factures, liens de paiement et mises à jour en temps réel — un flux de trésorerie propre et maîtrisé."
+        "description": "Factures, liens de paiement et mises à jour en temps réel - un flux de trésorerie propre et maîtrisé."
       }
     }
   }
