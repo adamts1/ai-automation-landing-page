@@ -12,9 +12,11 @@ import {
   Store,
   Receipt,
   Play,
+  Mic,
 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { DemoModal } from './BusinessProcesses/DemoModal';
+import { ContentModal } from './BusinessProcesses/ContentModal';
 import { processDemoScenarios, type ProcessKey } from './BusinessProcesses/demoScenarios';
 
 interface ProcessItem {
@@ -36,10 +38,12 @@ interface BusinessProcessesProps {
 const BusinessProcesses: FC<BusinessProcessesProps> = ({ isModalOpen, setIsModalOpen }) => {
   const { t } = useTranslation();
   const [selectedProcess, setSelectedProcess] = useState<ProcessKey | null>(null);
+  const [isContentModalOpen, setIsContentModalOpen] = useState(false);
+  const [contentModalData, setContentModalData] = useState<{ title: string; content: string } | null>(null);
 
   const processes: ProcessItem[] = [
     {
-      icon: <Users size={32} />,
+      icon: <Mic size={32} />,
       title: t('businessProcesses.items.leadCapture.title'),
       description: t('businessProcesses.items.leadCapture.description'),
       processKey: 'leadCapture',
@@ -112,19 +116,37 @@ const BusinessProcesses: FC<BusinessProcessesProps> = ({ isModalOpen, setIsModal
     },
   ];
 
-  const handleProcessClick = (processKey: ProcessKey) => {
+  const handleProcessClick = (processKey: ProcessKey, process: ProcessItem) => {
     // Skip modal for crmUpdate
     if (processKey === 'crmUpdate') {
       return;
     }
-    setSelectedProcess(processKey);
-    setIsModalOpen(true);
+    
+    // Check if this process has fullContent (HTML content modal)
+    const fullContent = t(`businessProcesses.items.${processKey}.fullContent`, { returnObjects: false });
+    if (fullContent && fullContent !== `businessProcesses.items.${processKey}.fullContent`) {
+      // Open content modal for HTML content
+      setContentModalData({
+        title: process.title,
+        content: fullContent,
+      });
+      setIsContentModalOpen(true);
+    } else {
+      // Open demo modal for regular processes
+      setSelectedProcess(processKey);
+      setIsModalOpen(true);
+    }
   };
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
     // Clear selected process after animation
     setTimeout(() => setSelectedProcess(null), 300);
+  };
+
+  const handleCloseContentModal = () => {
+    setIsContentModalOpen(false);
+    setTimeout(() => setContentModalData(null), 300);
   };
 
   const containerVariants = {
@@ -186,7 +208,7 @@ const BusinessProcesses: FC<BusinessProcessesProps> = ({ isModalOpen, setIsModal
                 variants={itemVariants}
                 whileHover={!isNonClickable ? { y: -8, scale: 1.02 } : {}}
                 whileTap={!isNonClickable ? { scale: 0.98 } : {}}
-                onClick={() => !isNonClickable && handleProcessClick(process.processKey)}
+                onClick={() => !isNonClickable && handleProcessClick(process.processKey, process)}
                 className={`group relative bg-[#0D1117] border border-[#30363D] p-6 rounded-xl transition-all duration-300 overflow-hidden ${
                   !isNonClickable 
                     ? 'hover:border-[#58A6FF]/50 active:border-[#58A6FF]/50 cursor-pointer' 
@@ -232,6 +254,16 @@ const BusinessProcesses: FC<BusinessProcessesProps> = ({ isModalOpen, setIsModal
           businessAccount={processes.find((p) => p.processKey === selectedProcess)?.businessAccount}
           brandName={processes.find((p) => p.processKey === selectedProcess)?.brandName}
           brandAvatar={processes.find((p) => p.processKey === selectedProcess)?.brandAvatar}
+        />
+      )}
+
+      {/* Content Modal for HTML content */}
+      {contentModalData && (
+        <ContentModal
+          isOpen={isContentModalOpen}
+          onClose={handleCloseContentModal}
+          title={contentModalData.title}
+          content={contentModalData.content}
         />
       )}
     </section>
