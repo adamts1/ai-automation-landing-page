@@ -17,6 +17,7 @@ import { useTranslation } from 'react-i18next';
 import { DemoModal } from './BusinessProcesses/DemoModal';
 import { ContentModal } from './BusinessProcesses/ContentModal';
 import { processDemoScenarios, type ProcessKey } from './BusinessProcesses/demoScenarios';
+import voiceAgentAudio from '../assets/voice-agent.mp3';
 
 interface ProcessItem {
   icon: any;
@@ -38,7 +39,7 @@ const BusinessProcesses: FC<BusinessProcessesProps> = ({ isModalOpen, setIsModal
   const { t } = useTranslation();
   const [selectedProcess, setSelectedProcess] = useState<ProcessKey | null>(null);
   const [isContentModalOpen, setIsContentModalOpen] = useState(false);
-  const [contentModalData, setContentModalData] = useState<{ title: string; content: string } | null>(null);
+  const [contentModalData, setContentModalData] = useState<{ title: string; content: string; processKey?: ProcessKey } | null>(null);
 
   const processes: ProcessItem[] = [
     {
@@ -128,6 +129,7 @@ const BusinessProcesses: FC<BusinessProcessesProps> = ({ isModalOpen, setIsModal
       setContentModalData({
         title: process.title,
         content: fullContent,
+        processKey: processKey,
       });
       setIsContentModalOpen(true);
     } else {
@@ -263,6 +265,7 @@ const BusinessProcesses: FC<BusinessProcessesProps> = ({ isModalOpen, setIsModal
           onClose={handleCloseContentModal}
           title={contentModalData.title}
           content={contentModalData.content}
+          audioSrc={contentModalData.processKey === 'leadCapture' ? voiceAgentAudio : undefined}
         />
       )}
     </section>
