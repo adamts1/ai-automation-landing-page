@@ -1,13 +1,9 @@
 import type { FC } from 'react';
 import { motion } from 'framer-motion';
-import { Bot, Sparkles } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
-interface HeroProps {
-  onOpenChatbot?: () => void;
-}
-
-const Hero: FC<HeroProps> = ({ onOpenChatbot }) => {
+const Hero: FC = () => {
   const { t } = useTranslation();
 
   return (

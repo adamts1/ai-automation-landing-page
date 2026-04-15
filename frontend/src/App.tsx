@@ -16,7 +16,7 @@ const App: FC = () => {
   return (
     <div className="min-h-screen bg-[#0D1117]">
       <Header />
-      <Hero onOpenChatbot={() => setIsChatbotOpen(true)} />
+      <Hero />
       <Services />
       <VideoDemo />
       <BusinessProcesses 
