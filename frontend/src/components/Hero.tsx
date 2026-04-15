@@ -1,37 +1,91 @@
 import type { FC } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { Sparkles } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 const Hero: FC = () => {
   const { t } = useTranslation();
+  const shouldReduceMotion = useReducedMotion();
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0D1117]">
       {/* Animated Background */}
-      <div className="absolute inset-0 gradient-bg animate-gradient opacity-20" />
-      
-      {/* Floating Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 bg-[#58A6FF] rounded-full opacity-30"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [0, -30, 0],
-              opacity: [0.2, 0.5, 0.2],
-            }}
-            transition={{
-              duration: 3 + Math.random() * 2,
-              repeat: Infinity,
-              delay: Math.random() * 2,
-            }}
-          />
-        ))}
+      <div aria-hidden="true" className="absolute inset-0 overflow-hidden">
+        {/* Deep base + refined layered gradients */}
+        <div className="absolute inset-0 bg-[#070A12]" />
+        <div
+          className="absolute inset-0 opacity-90"
+          style={{
+            background:
+              'radial-gradient(900px 520px at 18% 22%, rgba(99,102,241,0.22), transparent 60%), radial-gradient(820px 560px at 78% 26%, rgba(59,130,246,0.18), transparent 62%), radial-gradient(760px 600px at 50% 82%, rgba(139,92,246,0.16), transparent 60%)',
+          }}
+        />
+
+        {/* Slow aurora blobs (transform + opacity only) */}
+        <motion.div
+          className="absolute -left-28 -top-28 h-[520px] w-[520px] rounded-full blur-3xl opacity-60"
+          style={{
+            background:
+              'radial-gradient(closest-side, rgba(96,165,250,0.55), rgba(96,165,250,0) 70%)',
+          }}
+          animate={
+            shouldReduceMotion
+              ? undefined
+              : { x: [0, 18, -10, 0], y: [0, 10, 18, 0], opacity: [0.52, 0.62, 0.54] }
+          }
+          transition={{
+            duration: 18,
+            ease: [0.22, 1, 0.36, 1],
+            repeat: Infinity,
+            repeatType: 'mirror' as const,
+          }}
+        />
+        <motion.div
+          className="absolute -right-32 top-10 h-[560px] w-[560px] rounded-full blur-3xl opacity-55"
+          style={{
+            background:
+              'radial-gradient(closest-side, rgba(167,139,250,0.55), rgba(167,139,250,0) 70%)',
+          }}
+          animate={
+            shouldReduceMotion
+              ? undefined
+              : { x: [0, -14, 12, 0], y: [0, 14, -8, 0], opacity: [0.45, 0.58, 0.48] }
+          }
+          transition={{
+            duration: 20,
+            ease: [0.22, 1, 0.36, 1],
+            repeat: Infinity,
+            repeatType: 'mirror' as const,
+          }}
+        />
+        <motion.div
+          className="absolute left-1/2 top-[58%] h-[620px] w-[620px] -translate-x-1/2 rounded-full blur-3xl opacity-40"
+          style={{
+            background:
+              'radial-gradient(closest-side, rgba(56,189,248,0.35), rgba(56,189,248,0) 72%)',
+          }}
+          animate={shouldReduceMotion ? undefined : { x: [0, 10, -8, 0], y: [0, -10, 12, 0] }}
+          transition={{
+            duration: 22,
+            ease: [0.22, 1, 0.36, 1],
+            repeat: Infinity,
+            repeatType: 'mirror' as const,
+          }}
+        />
+
+        {/* Vignette + subtle highlight for readability */}
+        <div className="absolute inset-0 bg-[radial-gradient(1100px_700px_at_50%_30%,rgba(255,255,255,0.06),transparent_55%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(900px_520px_at_50%_110%,rgba(0,0,0,0.65),transparent_60%)]" />
+        <div className="absolute inset-0 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.04)]" />
+
+        {/* Optional ultra-subtle grain */}
+        <div
+          className="absolute inset-0 opacity-[0.06] mix-blend-overlay"
+          style={{
+            backgroundImage:
+              "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E\")",
+          }}
+        />
       </div>
 
       {/* Content */}
