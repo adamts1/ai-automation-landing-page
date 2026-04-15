@@ -44,8 +44,8 @@
         "description": "Conçus sur mesure pour WhatsApp, Instagram, Telegram et plus encore - avec automatisation CRM, envoi d’emails, prise de rendez-vous, vérification des stocks et bien plus."
       },
       "fullStack": {
-        "title": "Solutions Logicielles Sur Mesure",
-        "description": "Développement de systèmes personnalisés qui complètent l’automatisation et garantissent un fonctionnement fluide de bout en bout."
+        "title": "Solutions Logicielles Complémentaires",
+        "description": "Développement de systèmes sur mesure (Web, iOS, Android) de bout en bout - incluant le déploiement en production et le travail sur des systèmes à grande échelle avec de nombreux utilisateurs, avec un fort accent sur la stabilité et l’expérience utilisateur."
       },
       "smallBusiness": {
         "title": "Solutions Adaptées à Votre Entreprise",
@@ -174,8 +174,8 @@
         "description": "Le système comprend les besoins du client, recommande les bons produits, vérifie le stock et envoie un lien de paiement - 24/7."
       },
       "crmUpdate": {
-        "title": "Mise à Jour Automatique du CRM",
-        "description": "Chaque interaction est enregistrée automatiquement : clients, statuts, tâches - sans saisie manuelle."
+        "title": "Développement d’applications Web / iOS / Android",
+        "description": "Spécialisé dans le développement d’applications et de systèmes Web, avec une définition produit approfondie et une compréhension business, une expérience utilisateur soignée, et un développement rapide et de haute qualité qui génère des résultats concrets."
       },
       "onboarding": {
         "title": "Onboarding des Nouveaux Clients",
