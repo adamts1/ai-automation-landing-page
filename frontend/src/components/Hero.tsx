@@ -64,16 +64,6 @@ const Hero: FC<HeroProps> = ({ onOpenChatbot }) => {
             <p className="text-xl sm:text-2xl text-[#C9D1D9] mb-10 max-w-2xl mx-auto leading-relaxed">
               {t('hero.subtitle')}
             </p>
-
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={onOpenChatbot}
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#58A6FF] to-[#BC8CFF] text-white rounded-lg font-semibold text-lg shadow-xl hover:shadow-2xl hover:shadow-[#58A6FF]/40 transition-all duration-200"
-            >
-              {t('hero.cta')}
-              <Bot size={20} />
-            </motion.button>
           </motion.div>
 
           {/* Image/Illustration */}
