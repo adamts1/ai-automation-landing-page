@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "stop": "npx kill-port 5173 || true",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"

@@ -169,9 +169,9 @@
         "title": "Support Client Intelligent",
         "description": "Réponses immédiates aux questions fréquentes, suivi des commandes et gestion des demandes - sans attente."
       },
-      "sales": {
-        "title": "Ventes via WhatsApp / Instagram / Site Web",
-        "description": "Le système comprend les besoins du client, recommande les bons produits, vérifie le stock et envoie un lien de paiement - 24/7."
+      "privateAI": {
+        "title": "IA Privée et Sécurisée pour les Organisations",
+        "description": "Transformez vos documents, procédures et connaissances internes en un assistant IA précis, tout en garantissant une protection totale de la confidentialité et de la sécurité."
       },
       "crmUpdate": {
         "title": "Développement d’applications Web / iOS / Android",

@@ -10,7 +10,6 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 const App: FC = () => {
-  const [isBusinessProcessModalOpen, setIsBusinessProcessModalOpen] = useState(false);
   const [isChatbotOpen, setIsChatbotOpen] = useState(false);
 
   return (
@@ -19,13 +18,10 @@ const App: FC = () => {
       <Hero />
       <Services />
       <VideoDemo />
-      <BusinessProcesses 
-        isModalOpen={isBusinessProcessModalOpen}
-        setIsModalOpen={setIsBusinessProcessModalOpen}
-      />
+      <BusinessProcesses />
       <About />
       <Contact 
-        isBusinessProcessModalOpen={isBusinessProcessModalOpen}
+        isBusinessProcessModalOpen={false}
         isChatbotOpen={isChatbotOpen}
         onChatbotOpenChange={setIsChatbotOpen}
       />

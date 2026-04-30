@@ -4,20 +4,28 @@ import { motion } from 'framer-motion';
 import {
   Calendar,
   Headphones,
-  ShoppingCart,
+  ShieldCheck,
   Database,
   UserPlus,
   Package,
   Store,
   Receipt,
-  Play,
   Mic,
 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { DemoModal } from './BusinessProcesses/DemoModal';
 import { ContentModal } from './BusinessProcesses/ContentModal';
-import { processDemoScenarios, type ProcessKey } from './BusinessProcesses/demoScenarios';
 import voiceAgentAudio from '../assets/voice-agent.mp3';
+
+type ProcessKey =
+  | 'leadCapture'
+  | 'appointmentScheduling'
+  | 'customerSupport'
+  | 'privateAI'
+  | 'crmUpdate'
+  | 'onboarding'
+  | 'inventory'
+  | 'followUps'
+  | 'invoices';
 
 interface ProcessItem {
   icon: any;
@@ -30,14 +38,8 @@ interface ProcessItem {
   brandAvatar?: string;
 }
 
-interface BusinessProcessesProps {
-  isModalOpen: boolean;
-  setIsModalOpen: (open: boolean) => void;
-}
-
-const BusinessProcesses: FC<BusinessProcessesProps> = ({ isModalOpen, setIsModalOpen }) => {
+const BusinessProcesses: FC = () => {
   const { t } = useTranslation();
-  const [selectedProcess, setSelectedProcess] = useState<ProcessKey | null>(null);
   const [isContentModalOpen, setIsContentModalOpen] = useState(false);
   const [contentModalData, setContentModalData] = useState<{ title: string; content: string; processKey?: ProcessKey } | null>(null);
 
@@ -67,10 +69,10 @@ const BusinessProcesses: FC<BusinessProcessesProps> = ({ isModalOpen, setIsModal
       businessAccount: 'Business account',
     },
     {
-      icon: <ShoppingCart size={32} />,
-      title: t('businessProcesses.items.sales.title'),
-      description: t('businessProcesses.items.sales.description'),
-      processKey: 'sales',
+      icon: <ShieldCheck size={32} />,
+      title: t('businessProcesses.items.privateAI.title'),
+      description: t('businessProcesses.items.privateAI.description'),
+      processKey: 'privateAI',
       brandName: 'אופנה',
       businessAccount: 'Business account',
     },
@@ -133,16 +135,8 @@ const BusinessProcesses: FC<BusinessProcessesProps> = ({ isModalOpen, setIsModal
       });
       setIsContentModalOpen(true);
     } else {
-      // Open demo modal for regular processes
-      setSelectedProcess(processKey);
-      setIsModalOpen(true);
+      // No demo modal: nothing to open
     }
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-    // Clear selected process after animation
-    setTimeout(() => setSelectedProcess(null), 300);
   };
 
   const handleCloseContentModal = () => {
@@ -202,7 +196,11 @@ const BusinessProcesses: FC<BusinessProcessesProps> = ({ isModalOpen, setIsModal
           {processes.map((process, index) => {
             const isCrmUpdate = process.processKey === 'crmUpdate';
             const isFollowUps = process.processKey === 'followUps';
-            const isNonClickable = isCrmUpdate || isFollowUps;
+            const fullContent = t(`businessProcesses.items.${process.processKey}.fullContent`, { returnObjects: false });
+            const hasFullContent = Boolean(
+              fullContent && fullContent !== `businessProcesses.items.${process.processKey}.fullContent`
+            );
+            const isNonClickable = isCrmUpdate || isFollowUps || !hasFullContent;
             return (
               <motion.div
                 key={index}
@@ -216,15 +214,6 @@ const BusinessProcesses: FC<BusinessProcessesProps> = ({ isModalOpen, setIsModal
                     : 'cursor-default'
                 }`}
               >
-                {/* Play Button - Top Right Corner (LTR) / Top Left Corner (RTL) (only for clickable processes) */}
-                {!isNonClickable && (
-                  <div className="absolute top-3 right-3 rtl:left-3 rtl:right-auto md:top-4 md:right-4 md:rtl:left-4 md:rtl:right-auto z-10">
-                    <div className="bg-white/95 backdrop-blur-sm rounded-full p-2 md:p-2.5 shadow-lg md:group-hover:scale-110 transition-transform duration-300">
-                      <Play className="w-4 h-4 md:w-5 md:h-5 text-[#58A6FF] fill-[#58A6FF] ml-0.5" />
-                    </div>
-                  </div>
-                )}
-
                 {/* Content */}
                 <div className="relative z-0">
                   <div className="w-14 h-14 bg-gradient-to-br from-[#58A6FF] to-[#BC8CFF] rounded-lg flex items-center justify-center text-white mb-4">
@@ -242,21 +231,6 @@ const BusinessProcesses: FC<BusinessProcessesProps> = ({ isModalOpen, setIsModal
           })}
         </motion.div>
       </div>
-
-      {/* Demo Modal */}
-      {selectedProcess && (
-        <DemoModal
-          isOpen={isModalOpen}
-          onClose={handleCloseModal}
-          title={processes.find((p) => p.processKey === selectedProcess)?.title || ''}
-          scenarios={processDemoScenarios[selectedProcess]}
-          processKey={selectedProcess}
-          contactName={processes.find((p) => p.processKey === selectedProcess)?.contactName}
-          businessAccount={processes.find((p) => p.processKey === selectedProcess)?.businessAccount}
-          brandName={processes.find((p) => p.processKey === selectedProcess)?.brandName}
-          brandAvatar={processes.find((p) => p.processKey === selectedProcess)?.brandAvatar}
-        />
-      )}
 
       {/* Content Modal for HTML content */}
       {contentModalData && (

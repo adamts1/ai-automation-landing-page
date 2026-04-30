@@ -169,9 +169,9 @@
         "title": "Smart Customer Support",
         "description": "Instant responses to FAQs, order statuses, and support tickets - customers get answers immediately."
       },
-      "sales": {
-        "title": "Sales via WhatsApp / Instagram / Website",
-        "description": "The system understands customer needs, recommends products, checks inventory, and sends payment links - closing deals 24/7."
+      "privateAI": {
+        "title": "Private & Secure AI for Organizations",
+        "description": "Turn internal documents, procedures, and knowledge into an AI assistant that answers accurately—while keeping privacy and security fully protected."
       },
       "crmUpdate": {
         "title": "Web / iOS / Android App Development",
