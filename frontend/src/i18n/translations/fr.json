@@ -11,13 +11,13 @@
   "hero": {
     "badge": "Solutions Propulsées par l’Intelligence Artificielle",
     "title": "Une entreprise qui travaille pour vous.",
-    "subtitle": "Des solutions intelligentes qui génèrent croissance, rentabilité et liberté."
+    "subtitle": "Des solutions intelligentes qui génèrent croissance, rentabilité et temps."
   },
   "about": {
     "title": "À Propos de Nous",
     "subtitle": "",
     "profileName": "Adam - Fondateur & CEO",
-    "profileDescription": "Notre équipe transforme la complexité en opportunités et les processus lourds en résultats clairs, efficaces et humains.",
+    "profileDescription": "Notre équipe transforme la charge de travail en opportunités et les processus complexes en résultats clairs, avec une approche humaine que vous ne trouverez nulle part ailleurs.",
     "profileQuote": "Agir. Réussir.",
     "heading": "La question n’est pas si - mais quand.",
     "paragraph1": "Les entreprises qui adoptent l’automatisation basée sur l’IA constatent une amélioration spectaculaire de leurs performances : plus de ventes, des clients plus satisfaits et beaucoup moins de charge opérationnelle.",
@@ -158,16 +158,17 @@
     "description": "Moins de tâches manuelles, plus de ventes, un service rapide et une expérience client professionnelle.",
     "items": {
       "leadCapture": {
-        "title": "Capture et Qualification des Leads",
-        "description": "Un bot intelligent qui engage vos prospects instantanément, pose les bonnes questions, qualifie les leads et ne vous transmet que les plus pertinents."
+        "title": "La Révolution Vocale de Votre Entreprise Commence Ici",
+        "description": "Découvrez votre nouvel employé vedette : un agent intelligent qui mène des conversations naturelles et fluides. Réponse immédiate 24/7, exécution autonome et une expérience client améliorée.",
+        "fullContent": "<h2>La Révolution Vocale de Votre Entreprise : Un Agent Virtuel Qui Parle Votre Langue avec Clarté et Naturel</h2><p>Découvrez votre nouvel employé vedette : un agent intelligent qui mène des conversations naturelles et fluides dans plusieurs langues. Grâce aux technologies ASR, NLP et TTS, vos clients bénéficient de réponses humaines et précises, sans temps d'attente.</p><ul><li>Disponibilité 24/7 : réponse immédiate à chaque demande, à toute heure, sans manquer le moindre lead.</li><li>Exécution autonome : prise de rendez-vous, encaissement des paiements et synchronisation complète avec vos systèmes CRM.</li><li>Expérience client améliorée : un service personnalisé et de qualité qui valorise l'image de votre entreprise et réduit les coûts.</li></ul><p>Ne faites pas attendre vos clients - rejoignez l'avenir du service et des ventes.</p>"
       },
       "appointmentScheduling": {
         "title": "Prise de Rendez-vous Automatisée",
-        "description": "Un bot qui gère votre agenda : propose des créneaux, planifie, modifie et envoie des rappels."
+        "description": "Un bot qui gère votre agenda : propose des créneaux, planifie, modifie et envoie des rappels. Moins d'appels téléphoniques - plus de clients qui arrivent à l'heure."
       },
       "customerSupport": {
         "title": "Support Client Intelligent",
-        "description": "Réponses immédiates aux questions fréquentes, suivi des commandes et gestion des demandes - sans attente."
+        "description": "Réponses immédiates à toutes les questions récurrentes, au suivi des commandes, à l'ouverture de tickets de service et plus encore. Les clients sont servis instantanément, et vous vous libérez pour l'essentiel."
       },
       "privateAI": {
         "title": "IA Privée et Sécurisée pour les Organisations",
@@ -179,11 +180,11 @@
       },
       "onboarding": {
         "title": "Onboarding des Nouveaux Clients",
-        "description": "Messages de bienvenue, collecte de données, formulaires et création de fiches clients - entièrement automatisés."
+        "description": "Messages de bienvenue, collecte des informations, envoi de formulaires et création de fiche client - le tout automatisé. Le client bénéficie d'une expérience d'intégration professionnelle et soignée."
       },
       "inventory": {
         "title": "Vérification des Stocks et Recommandations",
-        "description": "Le bot vérifie la disponibilité et propose instantanément les meilleures options au client."
+        "description": "Le bot se connecte à votre stock, vérifie la disponibilité et propose au client les options les mieux adaptées. Moins de « je vous rappelle », plus de « j'ai déjà quelques options pour vous »."
       },
       "followUps": {
         "title": "Automatisations E-Commerce Intelligentes Qui Fonctionnent Pour Vous",

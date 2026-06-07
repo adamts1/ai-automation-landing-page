@@ -11,13 +11,13 @@
   "hero": {
     "badge": "AI-Powered Solutions",
     "title": "A Business That Works For You.",
-    "subtitle": "Smart solutions that drive growth, profit, and freedom."
+    "subtitle": "Smart solutions that drive growth, profit, and time."
   },
   "about": {
     "title": "About Us",
     "subtitle": "",
     "profileName": "Adam - Founder & CEO",
-    "profileDescription": "Our team transforms complexity into opportunity and heavy workloads into clear, human-centered results.",
+    "profileDescription": "Our team turns workload into opportunity and complex processes into clear results, with a human touch you won't find anywhere else.",
     "profileQuote": "Take action. Succeed.",
     "heading": "The question is not if - but when.",
     "paragraph1": "Businesses that adopt AI-driven automation experience a dramatic performance boost: more sales, happier customers, and far less operational friction.",
@@ -158,16 +158,17 @@
     "description": "Less manual work, more sales, faster service, and a professional customer experience.",
     "items": {
       "leadCapture": {
-        "title": "Lead Capture & Qualification",
-        "description": "A smart bot that engages customers instantly, asks targeted questions, filters leads, and sends you only high-quality prospects."
+        "title": "The Voice Revolution in Your Business Starts Here",
+        "description": "Meet your new star employee: a smart agent that handles natural, flowing conversations. Instant 24/7 response, autonomous performance, and an enhanced customer experience.",
+        "fullContent": "<h2>The Voice Revolution in Your Business: A Virtual Agent That Speaks Your Language Clearly and Naturally</h2><p>Meet your new star employee: a smart agent that handles natural, flowing conversations in multiple languages. Thanks to ASR, NLP, and TTS technologies, your customers enjoy human-like, accurate responses with zero wait times.</p><ul><li>24/7 Availability: Instant response to every inquiry, at any hour, without missing a single lead.</li><li>Autonomous Performance: Scheduling appointments, collecting payments, and full synchronization with your CRM systems.</li><li>Enhanced Customer Experience: Personal, high-quality service that elevates your business image and reduces costs.</li></ul><p>Don't keep your customers waiting - join the future of service and sales.</p>"
       },
       "appointmentScheduling": {
         "title": "Automated Scheduling",
-        "description": "A bot that manages your calendar: offers availability, schedules, reschedules, and sends reminders."
+        "description": "A bot that manages your calendar: offers availability, schedules, reschedules, and sends reminders. Fewer phone calls - more customers who show up on time."
       },
       "customerSupport": {
         "title": "Smart Customer Support",
-        "description": "Instant responses to FAQs, order statuses, and support tickets - customers get answers immediately."
+        "description": "Instant responses to all recurring questions, order statuses, opening service tickets, and more. Customers get immediate service, and you free up time for what really matters."
       },
       "privateAI": {
         "title": "Private & Secure AI for Organizations",
@@ -179,11 +180,11 @@
       },
       "onboarding": {
         "title": "Customer Onboarding",
-        "description": "Welcome messages, data collection, forms, and customer records - all automated for a professional first impression."
+        "description": "Welcome messages, data collection, sending forms, and opening customer records - all automated. The customer gets a professional, well-organized onboarding experience."
       },
       "inventory": {
         "title": "Inventory Checks & Recommendations",
-        "description": "The bot checks availability and suggests the best options instantly."
+        "description": "The bot connects to your inventory, checks availability, and offers the customer the options best suited to them. Less \"I'll get back to you,\" more \"I already have a few options for you.\""
       },
       "followUps": {
         "title": "Smart E-Commerce Automations That Work For You",
