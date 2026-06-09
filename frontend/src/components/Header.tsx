@@ -5,6 +5,7 @@ import { Menu, X, Languages } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useLanguage } from '../contexts/LanguageContext';
 import type { NavItem, SupportedLanguage } from '../types';
+import logo from '../assets/logo.png';
 
 const Header: FC = () => {
   const { t } = useTranslation();
@@ -113,9 +114,16 @@ const Header: FC = () => {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="text-lg sm:text-xl md:text-2xl lg:text-2xl font-bold gradient-text whitespace-nowrap overflow-hidden text-ellipsis flex-1 min-w-0 pr-2"
+            className="flex items-center gap-2 sm:gap-3 flex-1 min-w-0 pr-2"
           >
-            {t('header.logo')}
+            <img
+              src={logo}
+              alt={t('header.logo')}
+              className="h-9 sm:h-10 md:h-11 w-auto object-contain"
+            />
+            <span className="text-lg sm:text-xl md:text-2xl lg:text-2xl font-bold gradient-text whitespace-nowrap overflow-hidden text-ellipsis">
+              {t('header.logo')}
+            </span>
           </motion.div>
 
           {/* Desktop Navigation */}
