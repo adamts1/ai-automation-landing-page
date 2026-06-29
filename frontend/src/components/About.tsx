@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import { motion } from 'framer-motion';
 import {  Linkedin } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import profileImage from '../assets/profile.png';
+import profileImage from '../assets/profile.webp';
 
 const About: FC = () => {
   const { t } = useTranslation();

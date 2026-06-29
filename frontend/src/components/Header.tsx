@@ -5,7 +5,7 @@ import { Menu, X, Languages } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useLanguage } from '../contexts/LanguageContext';
 import type { NavItem, SupportedLanguage } from '../types';
-import logo from '../assets/logo.png';
+import logo from '../assets/logo.webp';
 
 const Header: FC = () => {
   const { t } = useTranslation();
