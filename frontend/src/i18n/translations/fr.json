@@ -100,8 +100,8 @@
       "sending": "Envoi en cours...",
       "success": "✓ Message envoyé !",
       "error": "Échec de l’envoi du message. Veuillez réessayer.",
-      "successToast": "✅ Message envoyé avec succès ! Nous vous contacterons rapidement.",
-      "errorToast": "❌ Échec de l’envoi. Veuillez réessayer ou nous contacter directement."
+      "successToast": "Message envoyé avec succès ! Nous vous contacterons rapidement.",
+      "errorToast": "Échec de l’envoi. Veuillez réessayer ou nous contacter directement."
     },
     "whatsapp": "WhatsApp",
     "info": {

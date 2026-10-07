@@ -100,8 +100,8 @@
       "sending": "Sending...",
       "success": "✓ Message sent!",
       "error": "Failed to send message. Please try again.",
-      "successToast": "✅ Message sent successfully! We’ll be in touch shortly.",
-      "errorToast": "❌ Message failed to send. Please try again or contact us directly."
+      "successToast": "Message sent successfully! We’ll be in touch shortly.",
+      "errorToast": "Message failed to send. Please try again or contact us directly."
     },
     "whatsapp": "WhatsApp",
     "info": {
