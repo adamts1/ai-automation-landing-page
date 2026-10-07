@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import { motion } from 'framer-motion';
 import {  Linkedin } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import profileImage from '../assets/profile.webp';
+import logo from '../assets/logo.webp';
 
 const About: FC = () => {
   const { t } = useTranslation();
@@ -81,27 +81,11 @@ const About: FC = () => {
                 className="w-full flex justify-center"
               >
                 <div className="relative">
-                  {/* Ellipse Frame */}
-                  <div 
-                    className="border-8 border-white/90 shadow-xl overflow-hidden bg-[#4696EB] flex items-center justify-center"
-                    style={{ 
-                      width: '320px',
-                      height: '360px',
-                      borderRadius: '50%',
-                      clipPath: 'ellipse(160px 180px at 50% 50%)'
-                    }}
-                  >
-                    <img
-                      src={profileImage}
-                      alt="Adam Tsityat"
-                      className="w-full h-full object-contain"
-                      style={{ 
-                        clipPath: 'ellipse(160px 180px at 50% 50%)',
-                        objectPosition: 'center',
-                        backgroundColor: '#4696EB'
-                      }}
-                    />
-                  </div>
+                  <img
+                    src={logo}
+                    alt={t('header.logo')}
+                    className="w-64 h-64 sm:w-80 sm:h-80 object-contain rounded-full shadow-xl"
+                  />
                 </div>
               </motion.div>
 

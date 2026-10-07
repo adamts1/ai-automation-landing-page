@@ -1,6 +1,6 @@
 {
   "header": {
-    "logo": "TSITYAT - AI Boutique Agency",
+    "logo": "TSITYAT - AI Agency",
     "services": "מה אנחנו עושים",
     "businessProcesses": "תהליכי אוטומציה",
     "about": "מי אנחנו",
@@ -16,7 +16,7 @@
   "about": {
     "title": "מי אנחנו",
     "subtitle": "",
-    "profileName": "אדם  - מנכ״ל ומייסד",
+    "profileName": "",
     "profileDescription": "הצוות שלנו הופך עומס להזדמנות ותהליכים מסובכים לתוצאות ברורות עם אנושיות שלא מוצאים במקום אחר",
     "profileQuote": "תעשה, תצליח",
     "heading": "השאלה היא לא אם, אלא מתי.",
@@ -123,7 +123,7 @@
     "contact": "צור קשר",
     "phone": "525600493 972+",
     "coverage": "כיסוי גלובלי",
-    "copyright": "TSITYAT - AI Boutique Agency"
+    "copyright": "TSITYAT - AI Agency"
   },
   "chatbot": {
     "title": "עוזר AI",
