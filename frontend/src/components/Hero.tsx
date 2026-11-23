@@ -1,122 +1,60 @@
 import type { FC } from 'react';
-import { motion, useReducedMotion } from 'framer-motion';
-import { Sparkles } from 'lucide-react';
+import { motion } from 'framer-motion';
+import HeroScene from './HeroScene';
 import { useTranslation } from 'react-i18next';
 
 const Hero: FC = () => {
   const { t } = useTranslation();
-  const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0D1117]">
-      {/* Animated Background */}
-      <div aria-hidden="true" className="absolute inset-0 overflow-hidden">
-        {/* Deep base + refined layered gradients */}
-        <div className="absolute inset-0 bg-[#070A12]" />
-        <div
-          className="absolute inset-0 opacity-90"
-          style={{
-            background:
-              'radial-gradient(900px 520px at 18% 22%, rgba(99,102,241,0.22), transparent 60%), radial-gradient(820px 560px at 78% 26%, rgba(59,130,246,0.18), transparent 62%), radial-gradient(760px 600px at 50% 82%, rgba(139,92,246,0.16), transparent 60%)',
-          }}
-        />
+    <section className="relative min-h-screen min-h-[100svh] flex items-center overflow-hidden isolate bg-[#070A12] pt-20 pb-20 lg:pb-0">
+      {/* Ultra-subtle grain */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 z-[3] pointer-events-none opacity-[0.06] mix-blend-overlay"
+        style={{
+          backgroundImage:
+            "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E\")",
+        }}
+      />
 
-        {/* Slow aurora blobs (transform + opacity only) */}
+      {/* Mobile: globe on top, text right under it. Desktop: text on the start side (right in Hebrew), globe on the other. */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-1 lg:grid-cols-2 items-center gap-2 lg:gap-8">
+        {/* Text Content */}
         <motion.div
-          className="absolute -left-28 -top-28 h-[520px] w-[520px] rounded-full blur-3xl opacity-60"
-          style={{
-            background:
-              'radial-gradient(closest-side, rgba(96,165,250,0.55), rgba(96,165,250,0) 70%)',
-          }}
-          animate={
-            shouldReduceMotion
-              ? undefined
-              : { x: [0, 18, -10, 0], y: [0, 10, 18, 0], opacity: [0.52, 0.62, 0.54] }
-          }
-          transition={{
-            duration: 18,
-            ease: [0.22, 1, 0.36, 1],
-            repeat: Infinity,
-            repeatType: 'mirror' as const,
-          }}
-        />
-        <motion.div
-          className="absolute -right-32 top-10 h-[560px] w-[560px] rounded-full blur-3xl opacity-55"
-          style={{
-            background:
-              'radial-gradient(closest-side, rgba(167,139,250,0.55), rgba(167,139,250,0) 70%)',
-          }}
-          animate={
-            shouldReduceMotion
-              ? undefined
-              : { x: [0, -14, 12, 0], y: [0, 14, -8, 0], opacity: [0.45, 0.58, 0.48] }
-          }
-          transition={{
-            duration: 20,
-            ease: [0.22, 1, 0.36, 1],
-            repeat: Infinity,
-            repeatType: 'mirror' as const,
-          }}
-        />
-        <motion.div
-          className="absolute left-1/2 top-[58%] h-[620px] w-[620px] -translate-x-1/2 rounded-full blur-3xl opacity-40"
-          style={{
-            background:
-              'radial-gradient(closest-side, rgba(56,189,248,0.35), rgba(56,189,248,0) 72%)',
-          }}
-          animate={shouldReduceMotion ? undefined : { x: [0, 10, -8, 0], y: [0, -10, 12, 0] }}
-          transition={{
-            duration: 22,
-            ease: [0.22, 1, 0.36, 1],
-            repeat: Infinity,
-            repeatType: 'mirror' as const,
-          }}
-        />
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="order-2 lg:order-1 -mt-10 sm:-mt-6 lg:mt-0 text-center lg:text-start"
+        >
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight max-w-2xl mx-auto lg:mx-0">
+            {t('hero.title')}
+          </h1>
 
-        {/* Vignette + subtle highlight for readability */}
-        <div className="absolute inset-0 bg-[radial-gradient(1100px_700px_at_50%_30%,rgba(255,255,255,0.06),transparent_55%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(900px_520px_at_50%_110%,rgba(0,0,0,0.65),transparent_60%)]" />
-        <div className="absolute inset-0 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.04)]" />
+          <p className="text-xl sm:text-2xl text-[#C9D1D9] max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+            {t('hero.subtitle')}
+          </p>
+        </motion.div>
 
-        {/* Optional ultra-subtle grain */}
-        <div
-          className="absolute inset-0 opacity-[0.06] mix-blend-overlay"
-          style={{
-            backgroundImage:
-              "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E\")",
-          }}
-        />
-      </div>
-
-      {/* Content */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          {/* Text Content */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center md:text-center"
-          >
-  
-
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight tracking-tight max-w-2xl mx-auto">
-              {t('hero.title')}
-            </h1>
-
-            <p className="text-xl sm:text-2xl text-[#C9D1D9] mb-10 max-w-2xl mx-auto leading-relaxed">
-              {t('hero.subtitle')}
-            </p>
-          </motion.div>
-
-          {/* Image/Illustration */}
-
+        {/* 3D globe */}
+        <div className="order-1 lg:order-2 relative h-[46vh] max-h-[420px] lg:h-[620px] lg:max-h-none">
+          <div
+            aria-hidden="true"
+            className="absolute left-1/2 top-1/2 w-[min(950px,150vw)] lg:w-[900px] aspect-square -translate-x-1/2 -translate-y-1/2 -z-10 pointer-events-none"
+            style={{
+              background:
+                'radial-gradient(circle, rgba(139,92,246,0.20), rgba(56,189,248,0.06) 38%, transparent 64%)',
+            }}
+          />
+          <HeroScene className="absolute inset-0 w-full h-full" />
+        </div>
       </div>
 
       {/* Scroll Indicator */}
       <motion.div
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        className="absolute bottom-6 left-1/2 z-10 transform -translate-x-1/2"
       >
         <div className="w-6 h-10 border-2 border-[#30363D] rounded-full flex justify-center">
           <div className="w-1 h-3 bg-[#58A6FF] rounded-full mt-2" />
