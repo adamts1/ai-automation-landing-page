@@ -17,12 +17,18 @@ const Header: FC = () => {
   const languageMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // On mobile the page scrolls inside #scroll-root (see App.tsx), on desktop the window scrolls
+    const root = document.getElementById('scroll-root');
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 50 || (root?.scrollTop ?? 0) > 50);
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    root?.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      root?.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   // Close language menu when clicking outside

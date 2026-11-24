@@ -13,7 +13,12 @@ const App: FC = () => {
   const [isChatbotOpen, setIsChatbotOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#0D1117]">
+    // On mobile the page scrolls inside this box instead of the window, so the
+    // browser's toolbar (address bar) stays visible instead of hiding on scroll.
+    <div
+      id="scroll-root"
+      className="bg-[#0D1117] h-[100dvh] overflow-y-auto lg:h-auto lg:min-h-screen lg:overflow-visible"
+    >
       <Header />
       <Hero />
       <Services />

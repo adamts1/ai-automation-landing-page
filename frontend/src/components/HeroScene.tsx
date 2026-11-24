@@ -97,15 +97,9 @@ async function buildTexture(): Promise<HTMLCanvasElement> {
   if (img) ctx.drawImage(img, cx - 230, cy - 230, 460, 460);
   else drawLogo(ctx, cx, cy);
 
-  // small wordmark on the back of the ball
-  const c = ctx as CanvasRenderingContext2D & { letterSpacing?: string };
-  ctx.save();
-  ctx.textAlign = 'center';
-  ctx.font = '700 44px Montserrat, sans-serif';
-  if ('letterSpacing' in c) c.letterSpacing = '14px';
-  ctx.fillStyle = 'rgba(167,139,250,0.35)';
-  ctx.fillText('TSITYAT', W * 0.75, H * 0.52);
-  ctx.restore();
+  // same logo on the back of the ball (u = 0.75)
+  if (img) ctx.drawImage(img, W * 0.75 - 230, cy - 230, 460, 460);
+  else drawLogo(ctx, W * 0.75, cy);
 
   return tc;
 }
@@ -218,7 +212,7 @@ const HeroScene: FC<{ className?: string }> = ({ className = '' }) => {
         if (!w || !h) return;
         renderer.setSize(w, h, false);
         camera.aspect = w / h;
-        camera.position.z = w < 640 ? 8.5 : 7;
+        camera.position.z = w < 640 ? 8.5 : 7.6;
         camera.updateProjectionMatrix();
         if (reduceMotion) renderer.render(scene, camera);
       };
@@ -251,7 +245,7 @@ const HeroScene: FC<{ className?: string }> = ({ className = '' }) => {
         ball.rotation.y = t * SPEED;
         group.rotation.x = 0.12 + cur.y * 0.12;
         group.rotation.z = -0.08 + cur.x * 0.05;
-        group.position.y = Math.sin(t * 0.8) * 0.06;
+        group.position.y = 0.25 + Math.sin(t * 0.8) * 0.06; // lifted to leave room for the floor glow
 
         renderer.render(scene, camera);
         if (!reduceMotion && visible) raf = requestAnimationFrame(frame);
